@@ -1,0 +1,78 @@
+import math;
+import string;
+ 
+include sstring.txt;
+
+function convertIntToBase : int as input, int as newBase;
+	string strValue = "";
+	string strTmp;
+	
+	int inputCopy = input;
+	
+	while input > 0;
+		inputCopy = input % newBase;
+		input /= newBase;
+		
+		call int_to_string : inputCopy -> strTmp;
+		strValue += strTmp;
+		
+		inputCopy = input;
+	end;
+	
+	string reversed;
+	call reverseString : strValue -> reversed;
+return reversed;
+
+function convertIntToHex : int as input, int as newBase;
+	string strValue = "";
+	string strTmp;
+	
+	int inputCopy = input;
+	
+	while input > 0;
+		inputCopy = input % newBase;
+		input /= newBase;
+		
+		call int_to_string : inputCopy -> strTmp;
+			
+		int tmpInt;
+		call to_int : strTmp -> tmpInt;
+								
+		if tmpInt < 10;
+			strValue += strTmp;
+		else;						
+			if strTmp == "10";
+				strValue += "a";
+			else;
+				if strTmp == "11";
+					strValue += "b";
+				else;
+					if strTmp == "12";
+						strValue += "c";
+					else;
+						if strTmp == "13";
+							strValue += "d";
+						else;
+							if strTmp == "14";
+								strValue += "e";
+							else;
+								if strTmp == "15";
+									strValue += "f";
+								else;								
+									
+								end;
+							end;
+						end;
+					end;
+				end;
+			end;
+		end;
+		
+		inputCopy = input;
+	end;
+	
+	string reversed;
+	call reverseString : strValue -> reversed;
+return reversed;
+
+exit;
