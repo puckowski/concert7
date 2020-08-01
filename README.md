@@ -5,11 +5,11 @@
 ```cpp
 import string;
 
-const string WELCOME = "Hello, world!";
+string WELCOME = "Hello, world!";
 
 # Adler-32 is a checksum algorithm invented by Mark Adler in 1995.
 function adler32 : string as message, int as messageLength;
-    const int MOD_ADLER = 65521;
+    int MOD_ADLER = 65521;
 
     string char;
     int charValue;
@@ -45,6 +45,8 @@ call adler32 : WELCOME, welcomeLength -> hash;
 
 [Types](basic_concepts/types.md)
 
+[Objects](basic_concepts/objects.md)
+
 [Arrays](basic_concepts/arrays.md)
 
 [Escape sequences](basic_concepts/escape_sequences.md)
@@ -54,8 +56,6 @@ call adler32 : WELCOME, welcomeLength -> hash;
 [Identifiers](basic_concepts/identifiers.md)
 
 [Scope](basic_concepts/scope.md)
-
-[Structs](basic_concepts/structs.md)
 
 [Arguments](basic_concepts/arguments.md)
 
