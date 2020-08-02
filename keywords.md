@@ -25,12 +25,10 @@
 |catch      |catch an exception after a try block                         |[catch details](keywords/keyword_catch.md)          |
 |try        |try executing potentially unsafe code                        |[try details](keywords/keyword_try.md)              |
 |break      |break enclosing loop                                         |[break details](keywords/keyword_break.md)          |
-|const      |const value declaration                                      |[const details](keywords/keyword_const.md)          |
 |else       |if statement alternative branch declaration                  |[else details](keywords/keyword_else.md)            |
 |system     |execute system command                                       |[system details](keywords/keyword_system.md)        |
 |exec       |execute code                                                 |[exec details](keywords/keyword_exec.md)            |
 |instanceof |determine the type of a variable                             |[instanceof details](keywords/keyword_instanceof.md)|
 |exit       |terminate script or exit program immediately                 |[exit details](keywords/keyword_exit.md)            |
-|new        |create a new struct                                          |[new details](keywords/keyword_new.md)              |
-|struct     |define the template for a struct                             |[struct details](keywords/keyword_struct.md)        |
 |continue   |restart enclosing loop                                       |[continue details](keywords/keyword_continue.md)    |
+|keys       |get list og object keys                                      |[keys details](keywords/keyword_keys.md)            |
