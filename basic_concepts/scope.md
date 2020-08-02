@@ -6,11 +6,8 @@ Each function receives a unique scope.
 
 ## Global scope
 
-Declarations outside of any function exist in the global scope. 
-
-## Structs
-
-All structs, regardless of where they are created, exist in the global scope.
+- Declarations outside of any function exist in the global scope. 
+- All mutex objects are in global scope.
 
 ## Example
 
