@@ -2,7 +2,7 @@
 
 # Arrays
 
-Arrays are declared similarly to variables. Arrays of all primitive types, except for mutex, may be created. Arrays may be const.
+Arrays are declared similarly to variables. Arrays of all primitive types, except for mutex, may be created.
 
 ## Mutex arrays
 
@@ -64,6 +64,16 @@ string sArr 5 = "";
 
 int size = 10;
 string secondArr size;
+```
+
+### object array declaration examples
+
+```cpp
+# Declare array "oArr", size 5
+object oArr 5;
+
+int size = 10;
+object secondArr size;
 ```
 
 ## Assignment

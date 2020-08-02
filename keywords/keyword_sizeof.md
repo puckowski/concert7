@@ -16,7 +16,6 @@ Size represents the number of bytes used by that variable.
 int numArray 100 = 0;
 int sizeOfNumArray = 0;
 
-# sizeOfNumArray is set to 400.
-# sizeOfNumArray is of type int (4 bytes) and is an array of size of 100, so 400 bytes are used in all.
+# sizeOfNumArray is set to 100.
 sizeof numArray sizeOfNumArray;
 ```
