@@ -10,7 +10,7 @@ Arrays of all primitive types except for mutexes are allowed.
 
 ## Multidimensional arrays
 
-Currently Concert does not allow for creation multidimensional arrays.
+Multidimensional arrays may be achieved via objects.
 
 ## Declaration
 
