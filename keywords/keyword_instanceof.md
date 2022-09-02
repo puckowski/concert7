@@ -19,3 +19,12 @@ instanceof lock varType;
 int testInt = 5;
 instanceof testInt varType;
 ```
+
+## Result table
+
+| Variable type   | instanceof result                                                |
+|:----------|:------------------------------------------------------------|
+|int          |int                                                  |
+|long         |long                                                 |
+|string       |string                                               |
+|double       |double                                               |
