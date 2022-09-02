@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/) <span>&emsp;</span> [Standard library](https://puckowski.github.io/concert/standard_library/standard_library.html)
+[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Standard library](https://puckowski.github.io/concert7/standard_library/standard_library.html)
 
 # String library
 
@@ -35,7 +35,7 @@ import string;
 ### substring
 
 ```cpp
-const string SUBSTRING_TEST_STRING = "This is a test string.";
+string SUBSTRING_TEST_STRING = "This is a test string.";
 string testSubstring;
 call substring : SUBSTRING_TEST_STRING, 0, 4 -> testSubstring;
 ```
@@ -43,7 +43,7 @@ call substring : SUBSTRING_TEST_STRING, 0, 4 -> testSubstring;
 ### find
 
 ```cpp
-const string FIND_TEST_STRING = "This is a test string.";
+string FIND_TEST_STRING = "This is a test string.";
 int findResult = -1;
 call find : FIND_TEST_STRING, "a" -> findResult;
 ```
@@ -51,7 +51,7 @@ call find : FIND_TEST_STRING, "a" -> findResult;
 ### contains
 
 ```cpp
-const string CONTAINS_TEST_STRING = "This is a test string.";
+string CONTAINS_TEST_STRING = "This is a test string.";
 int containsResult;
 call contains : CONTAINS_TEST_STRING, "This" -> containsResult;
 ```
@@ -59,7 +59,7 @@ call contains : CONTAINS_TEST_STRING, "This" -> containsResult;
 ### length
 
 ```cpp
-const string LENGTH_TEST_STRING = "This is a test string.";
+string LENGTH_TEST_STRING = "This is a test string.";
 int testStringLength = -1;
 call length : LENGTH_TEST_STRING -> testStringLength;
 ```
@@ -83,7 +83,7 @@ call to_double : sToD -> tempDouble;
 ### char_at
 
 ```cpp
-const string CHAR_AT_TEST_STRING = "This is a test string.";
+string CHAR_AT_TEST_STRING = "This is a test string.";
 string firstChar = "?";
 call char_at : CHAR_AT_TEST_STRING, 0 -> firstChar;
 ```

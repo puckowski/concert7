@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/) <span>&emsp;</span> [Keywords](https://puckowski.github.io/concert/keywords.html)
+[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Keywords](https://github.com/puckowski/concert7/keywords.html)
 
 # Keyword detach
 
@@ -27,7 +27,7 @@ int start = 0;
 int end = 5;
 
 while end <= 10;
-    detach "calculateSumAndPrint" : valArray, start, end;
+    detach calculateSumAndPrint : valArray, start, end;
   
     start += 5;
     end += 5;

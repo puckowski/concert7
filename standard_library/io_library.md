@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/) <span>&emsp;</span> [Standard library](https://puckowski.github.io/concert/standard_library/standard_library.html)
+[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Standard library](https://github.com/puckowski/concert7/standard_library/standard_library.html)
 
 # Input output library
 
@@ -106,7 +106,7 @@ call get_file_size : "musicmanagerinstaller.exe" -> musicManagerSize;
 ### seek_file_pointer
 
 ```cpp
-const int OPEN_AS_BINARY = 1;
+int OPEN_AS_BINARY = 1;
 call open_file : "create_file_test.txt", OPEN_AS_BINARY;
 int filePointer = 1;
 call seek_file_pointer : "create_file_test.txt", filePointer;
@@ -116,7 +116,7 @@ call close_file : "create_file_test.txt";
 ### read_byte
 
 ```cpp
-const int OPEN_AS_BINARY = 1;
+int OPEN_AS_BINARY = 1;
 call open_file : "create_file_test.txt", OPEN_AS_BINARY;
 int byte;
 call read_byte : "create_file_test.txt" -> byte;
@@ -126,7 +126,7 @@ call close_file : "create_file_test.txt";
 ### write_byte
 
 ```cpp
-const int OPEN_AS_BINARY = 1;
+int OPEN_AS_BINARY = 1;
 call open_file : "create_file_test.txt", OPEN_AS_BINARY;
 call write_byte : "create_file_test.txt", 63;
 call close_file : "create_file_test.txt";
@@ -147,7 +147,7 @@ call rename_file : "create_file_test.txt", "create_file_test_2.txt";
 ### tell_file_pointer
 
 ```cpp
-const int OPEN_AS_BINARY = 1;
+int OPEN_AS_BINARY = 1;
 call open_file : "create_file_test.txt", OPEN_AS_BINARY;
 int filePointer = 0;
 call tell_file_pointer : "create_file_test.txt" -> filePointer;

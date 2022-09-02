@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/)
+[Home](https://github.com/puckowski/concert7)
 
 # Keywords
 
@@ -31,4 +31,6 @@
 |instanceof |determine the type of a variable                             |[instanceof details](keywords/keyword_instanceof.md)|
 |exit       |terminate script or exit program immediately                 |[exit details](keywords/keyword_exit.md)            |
 |continue   |restart enclosing loop                                       |[continue details](keywords/keyword_continue.md)    |
-|keys       |get list og object keys                                      |[keys details](keywords/keyword_keys.md)            |
+|keys       |get list of object keys                                      |[keys details](keywords/keyword_keys.md)            |
+|using   |Used in function declarations                                         |[function details](keywords/keyword_function.md)    |
+|as   |Used in function declarations                                         |[function details](keywords/keyword_function.md)    |

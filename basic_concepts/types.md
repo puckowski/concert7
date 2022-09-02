@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/)
+[Home](https://github.com/puckowski/concert7)
 
 # Types
 

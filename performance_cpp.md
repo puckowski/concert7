@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/)
+[Home](https://github.com/puckowski/concert7)
 
 # Performance: Concert vs. C++
 
@@ -8,7 +8,7 @@ Average Adler-32 hash time, averaged over 10,000,000 hashes. Ten test runs were 
 
 ## Results
 
-![Concert vs. C++ Graph](https://raw.githubusercontent.com/puckowski/concert/master/Performance%20Concert%20vs%20C%2B%2B.png)
+![Concert vs. C++ Graph](https://raw.githubusercontent.com/puckowski/concert7/master/Performance%20Concert%20vs%20C%2B%2B.png)
 
 ## C++ implementation
 
@@ -40,11 +40,11 @@ void main() {
 ```cpp
 import string;
 
-const string WELCOME = "Hello, world!";
+string WELCOME = "Hello, world!";
 
 # Adler-32 is a checksum algorithm invented by Mark Adler in 1995.
 function adler32 : string as message, int as messageLength;
-    const int DIVISOR = 65521;
+    int DIVISOR = 65521;
 
     string char;
     int charValue;

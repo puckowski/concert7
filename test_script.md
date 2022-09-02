@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/)
+[Home](https://github.com/puckowski/concert7)
 
 # Test script
 
@@ -179,7 +179,7 @@ println "called seed_random.";
 
 int rand;
 int currentRand = 0;
-const int numberOfRandInterations = 20;
+int numberOfRandInterations = 20;
 
 while currentRand < numberOfRandInterations;
 	call get_random -> rand;
@@ -207,7 +207,7 @@ call int_to_long : iToL -> tempLong;
 println "called int_to_long.";
 println "int_to_long result: ", tempLong, ".";
 
-const string CONTAINS_TEST_STRING = "This is a test string.";
+string CONTAINS_TEST_STRING = "This is a test string.";
 
 int containsResult;
 call contains : CONTAINS_TEST_STRING, "This" -> containsResult;

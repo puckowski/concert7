@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/) <span>&emsp;</span> [Keywords](https://puckowski.github.io/concert/keywords.html)
+[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Keywords](https://github.com/puckowski/concert7/keywords.html)
 
 # Keyword while
 
@@ -10,7 +10,7 @@ Declares a while loop. Used to execute a statement, or statements, repeatedly.
 
 ```cpp
 int startIndex = 0;
-const int TARGET_INDEX = 10;
+int TARGET_INDEX = 10;
 
 while startIndex < TARGET_INDEX;
     println "Looping... index is: ", startIndex;

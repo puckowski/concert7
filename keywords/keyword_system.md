@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/) <span>&emsp;</span> [Keywords](https://puckowski.github.io/concert/keywords.html)
+[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Keywords](https://puckowski.github.io/concert7/keywords.html)
 
 # Keyword system
 
@@ -9,7 +9,7 @@ Used to execute a system command.
 ## Example
 
 ```cpp
-const string BASH_DIRECTORY_LISTING_COMMAND = "ls -lFa";
+string BASH_DIRECTORY_LISTING_COMMAND = "ls -lFa";
 
 system BASH_DIRECTORY_LISTING_COMMAND;
 ```

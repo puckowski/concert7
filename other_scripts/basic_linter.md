@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/)
+[Home](https://github.com/puckowski/concert7)
 
 # Basic linter
 
@@ -246,10 +246,10 @@ function ifEqualsCheck : using LINT_FILENAME, using tokens, using TOKENS_SIZE, i
 	end;	
 return;
 
-const int TOKENS_SIZE = 200;
+int TOKENS_SIZE = 200;
 string tokens TOKENS_SIZE;
 
-const string LINT_FILENAME = "lint_out.cc";
+string LINT_FILENAME = "lint_out.cc";
 
 call create_file : LINT_FILENAME;
 call open_file : LINT_FILENAME;

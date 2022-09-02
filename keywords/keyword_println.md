@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/) <span>&emsp;</span> [Keywords](https://puckowski.github.io/concert/keywords.html)
+[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Keywords](https://github.com/puckowski/concert7/keywords.html)
 
 # Keyword println
 
@@ -9,7 +9,7 @@ Print a string to standard output. A newline is automatically sent to standard o
 ## Example
 
 ```cpp
-const string WELCOME_MESSAGE = "Welcome!";
+string WELCOME_MESSAGE = "Welcome!";
 
 # A newline is automatically inserted after this message.
 println WELCOME_MESSAGE;

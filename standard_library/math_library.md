@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/) <span>&emsp;</span> [Standard library](https://puckowski.github.io/concert/standard_library/standard_library.html)
+[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Standard library](https://puckowski.github.io/concert7/standard_library/standard_library.html)
 
 # Math library
 

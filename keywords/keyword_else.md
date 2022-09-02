@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/) <span>&emsp;</span> [Keywords](https://puckowski.github.io/concert/keywords.html)
+[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Keywords](https://github.com/puckowski/concert7/keywords.html)
 
 # Keyword else
 
@@ -9,8 +9,8 @@ Declares the alternative branch to an if statement. This branch is executed if i
 ## Example
 
 ```cpp
-const double E_TRUNCATED = 2.71;
-const double PI_TRUNCATED = 3.14;
+double E_TRUNCATED = 2.71;
+double PI_TRUNCATED = 3.14;
 
 if E_TRUNCATED > PI_TRUNCATED;
     println "This print will never execute.";

@@ -1,4 +1,4 @@
-[Home](https://puckowski.github.io/concert/)
+[Home](https://github.com/puckowski/concert7)
 
 # Operator precedence
   
@@ -45,14 +45,14 @@ array[0] = array[currentIndex] + currentValue;
 ## Bitwise left shift example
 
 ```cpp
-const int MULTIPLIER = 200 << 24;
+int MULTIPLIER = 200 << 24;
 int shiftResult = (16 * 8) << 4;
 ```
 
 ## Bitwise right shift example
 
 ```cpp
-const int RIGHT_MULTIPLIER = -200 >> 24;
+int RIGHT_MULTIPLIER = -200 >> 24;
 int secondShift = (32 / 2) >> 16;
 ```
 
