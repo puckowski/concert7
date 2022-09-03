@@ -24,6 +24,8 @@ import regex;
 
 ### regex_search
 
+The first argument is the name of the object variable to create. The object variable will contain a string array named ```data``` and an int count named ```length``` which indicates how long ```data``` is.
+
 ```cpp
 string data = "(Speed:366 Mass:35 Speed:378 Mass:32";
 string regex = "(Speed:\d*)";
