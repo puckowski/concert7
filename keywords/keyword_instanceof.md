@@ -28,3 +28,4 @@ instanceof testInt varType;
 |long         |long                                                 |
 |string       |string                                               |
 |double       |double                                               |
+|mutex        |mutex                                                |
