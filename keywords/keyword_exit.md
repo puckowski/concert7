@@ -6,6 +6,8 @@
 
 Exit the current script. Has effect of terminating program if run in main script.
 
+As of Concert 8.0, there is an implicit ```exit``` call added to each script, so specifying ```exit``` at the end of a script is not required.
+
 ## Example
 
 ```cpp

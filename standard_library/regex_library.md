@@ -2,7 +2,7 @@
 
 # Regex library
 
-Provides standard regular expression functions.
+Provides standard regular expression functions. For Concert versions 8.0+.
 
 ## Import
 
