@@ -125,3 +125,32 @@ secondArr[0] = "1";
 string s = sArr[1];
 string t = sArr[secondArr[0]];
 ```
+
+### Two-dimensional arrays
+
+Two-dimensional arrays may be created using objects.
+
+```cpp
+object maze 5;
+int index = 0;
+while index < 5;
+    int maze[index].x 5;
+    int initIndex = 0;
+    while initIndex < 5;
+        maze[index].x[initIndex] = initIndex + 1;
+        initIndex += 1;
+    end;
+    index += 1;
+end;
+
+index = 0;
+while index < 5;
+    int innerIndex = 0;
+    while innerIndex < 5;
+        print maze[index].x[innerIndex];
+		innerIndex += 1;
+    end;
+    println " ";
+	index += 1;
+end;
+```
