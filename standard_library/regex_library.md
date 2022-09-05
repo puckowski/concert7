@@ -45,6 +45,8 @@ end;
 
 ### regex_match
 
+Will return 1 if there was an exact match, or 0 if there was no exact match.
+
 ```cpp
 int match;
 string data2 = "subject";
