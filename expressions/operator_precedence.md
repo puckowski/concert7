@@ -17,18 +17,15 @@
 |5           |&         |Bitwise AND                  |
 |5           |^         |Bitwise XOR                  |
 |5           |~         |Binary ones complement       |
+|5           |>>>       |Unsigned right shift         |
 
 ## Scope example
 
 ```cpp
-struct "coordinate";
-	int x;
-	int y;
-struct;
+object animal 5;
 
-new "coordinate" "c1";
-
-c1.x = 1313;
+int animal.x 1;
+animal.x = 100;
 ```
 
 ## Subscript example
@@ -111,5 +108,12 @@ int xorResult = 31 ^ 128;
 
 ```cpp
 # onesComplementResult equals -51 after assignment.
-int onesComplementResult = ~50;
+int onesComplementResult = 0 ~ 50;
+```
+
+## Unsigned right shift example
+
+```cpp
+# unsignedRightShiftResult equals 30 after assignment.
+int unsignedRightShiftResult = 123 >>> 2;
 ```

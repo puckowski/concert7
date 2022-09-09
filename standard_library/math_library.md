@@ -24,6 +24,7 @@ import math;
 | long_to_int    | Convert a long to an integer                       |
 | long_to_double | Convert a long to a double                         |
 | double_to_long | Convert a double to a long                         |
+| absolute_value | Convert a integer, long, or double to its absolute value |
 
 ## Examples
 
@@ -92,4 +93,13 @@ double toLong = 3.14;
 long l;
 
 call double_to_long : toLong -> l;
+```
+
+### absolute_value
+
+```cpp
+double toLong = -3.14;
+long l;
+
+call absolute_value : toLong -> l;
 ```

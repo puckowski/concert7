@@ -6,7 +6,7 @@ Provides standard regular expression functions. For Concert versions 8.0+.
 
 ## Import
 
-The following statement may be used to import the math library:
+The following statement may be used to import the regex library:
 
 ```cpp
 import regex;

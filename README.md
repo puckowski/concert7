@@ -108,3 +108,4 @@ call adler32 : WELCOME, welcomeLength -> hash;
 ## Other scripts
 
 [Basic linter](other_scripts/basic_linter.md)
+[CRC-16](other_scripts/crc16.md)

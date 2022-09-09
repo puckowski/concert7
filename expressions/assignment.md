@@ -10,6 +10,7 @@
 |\*=        |Multiply equals    |
 |\\=        |Divide equals      |
 |~=         |Bitwise NOT equals |
+|^=         |Bitwise XOR equals |
 
 ## int assignment examples
 

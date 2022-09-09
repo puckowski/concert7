@@ -17,3 +17,4 @@
 |&         |Bitwise AND                  |
 |^         |Bitwise XOR                  |
 |~         |Binary ones complement       |
+|>>>       |Unsigned right shift         |
