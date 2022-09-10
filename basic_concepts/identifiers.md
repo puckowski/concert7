@@ -2,7 +2,11 @@
 
 # Identifiers
 
-Identifiers are any sequence of uninterrupted characters separated by space characters. An identifier should not be a keyword.
+Identifiers are any sequence of uninterrupted characters separated by space characters. 
+
+An identifier should not be a keyword.
+
+An identifier should not be recognizable as an integer, long, or double.
 
 ## Identifier examples
 
