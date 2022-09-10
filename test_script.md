@@ -6,6 +6,8 @@
 import string;
 import math;
 import io;
+import regex;
+import thread;
 
 int count = 0;
 mutex m;
@@ -263,250 +265,120 @@ tempString = "?";
 call double_to_string : dToS -> tempString;
 println "called double_to_string on ", dToS, ".";
 println "double_to_string result: ", tempString, ".";
-```
 
-# Test script output
+import string;
+import math;
 
-```
-Concert
-Version: 0.0.4.1
-Author: Daniel Puckowski
-count: 1000000
-is_file_exist result: musicmanagerinstaller.exe query returned 1.
-called create_file... created "create_file_test.txt".
-is_file_exist result: create_file_test.txt query returned 1.
-get_file_size result: musicmanagerinstaller.exe is 1129376 bytes large.
-called open_file on: "create_file_test.txt".
-called close_file on: "create_file_test.txt".
-called remove_file on: "create_file_test.txt".
-is_file_exist result: create_file_test.txt query returned 0.
-called create_file... created "create_file_test.txt".
-called open_file on: "create_file_test.txt".
-called is_open on "create_file_test.txt".
-is_open result: 1.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called write_string on: "create_file_test.txt".
-wrote: "Hello, world!".
-called close_file on: "create_file_test.txt".
-called open_file on: "create_file_test.txt".
-get_line result: Hello, world!
-called close_file on: "create_file_test.txt".
-called rename_file on : "create_file_test.txt".
-renamed to: "create_file_test_2.txt".
-called remove_file on: "create_file_test_2.txt".
-is_file_exist result: create_file_test_2.txt query returned 0.
-called create_file... created "create_file_test.txt".
-called open_file on: "create_file_test.txt".
-called write_string on: "create_file_test.txt".
-wrote: "Hello, world!".
-called close_file on: "create_file_test.txt".
-called open_file on: "create_file_test.txt".
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 0.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 72.
-called char_to_string on 72.
-char_to_string result: H.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 1.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 101.
-called char_to_string on 101.
-char_to_string result: e.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 2.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 108.
-called char_to_string on 108.
-char_to_string result: l.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 3.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 108.
-called char_to_string on 108.
-char_to_string result: l.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 4.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 111.
-called char_to_string on 111.
-char_to_string result: o.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 5.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 44.
-called char_to_string on 44.
-char_to_string result: ,.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 6.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 32.
-called char_to_string on 32.
-char_to_string result:  .
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 7.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 119.
-called char_to_string on 119.
-char_to_string result: w.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 8.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 111.
-called char_to_string on 111.
-char_to_string result: o.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 9.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 114.
-called char_to_string on 114.
-char_to_string result: r.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 10.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 108.
-called char_to_string on 108.
-char_to_string result: l.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 11.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 100.
-called char_to_string on 100.
-char_to_string result: d.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 12.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: 33.
-called char_to_string on 33.
-char_to_string result: !.
-called is_end on "create_file_test.txt".
-is_end result: 0.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: 13.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: -57.
-called char_to_string on -57.
-char_to_string result: ╟.
-called is_end on "create_file_test.txt".
-is_end result: 1.
-called tell_file_pointer on "create_file_test.txt".
-tell_file_pointer result: -1.
-called seek_file_pointer on "create_file_test.txt".
-called read_byte on "create_file_test.txt".
-read_byte result: -57.
-called char_to_string on -57.
-char_to_string result: ╟.
-called close_file on: "create_file_test.txt".
-called open_file on: "create_file_test.txt".
-called close_file on: "create_file_test.txt".
-called remove_file on: "create_file_test.txt".
-called seed_random.
-called get_random.
-get_random result: 718.
-called get_random.
-get_random result: 27133.
-called get_random.
-get_random result: 13276.
-called get_random.
-get_random result: 6701.
-called get_random.
-get_random result: 5340.
-called get_random.
-get_random result: 28572.
-called get_random.
-get_random result: 17383.
-called get_random.
-get_random result: 2709.
-called get_random.
-get_random result: 22603.
-called get_random.
-get_random result: 1180.
-called get_random.
-get_random result: 3902.
-called get_random.
-get_random result: 4294.
-called get_random.
-get_random result: 30552.
-called get_random.
-get_random result: 21463.
-called get_random.
-get_random result: 22695.
-called get_random.
-get_random result: 23164.
-called get_random.
-get_random result: 18075.
-called get_random.
-get_random result: 1555.
-called get_random.
-get_random result: 29214.
-called get_random.
-get_random result: 19671.
-called int_to_double.
-int_to_double result: 5.000000.
-called double_to_int.
-double_to_int result: 5.
-called int_to_long.
-int_to_long result: 1000.
-called contains on "This is a test string.".
-contains check for "This" result: 1.
-called length on "This is a test string.".
-length result: 22.
-called find on "This is a test string.".
-find check for "a" result: 8.
-called substring on "This".
-substring from 0 to 4 result: "This".
-called char_at on "This".
-char_at result for 0: T.
-called char_to_int on "T".
-char_to_int result: 84.
-called to_int on 987.
-to_int result: 987.
-called to_double on 2.718.
-to_double result: 2.718000.
-called int_to_string on 234.
-int_to_string result: 234.
-called double_to_string on 3.140000.
-double_to_string result: 3.140000.
-Delta: 6s 6213ms 6213117281ns
+function crc16 : string as message, int as length;
+	int crc = 65535;
+	int j = 0;
+	string char;
+	int charValue;
+	
+	while j < length;
+		crc = ((crc >>> 8) | (crc << 8)) & 65535;
+		
+		call char_at : message, j -> char;
+        call char_to_int : char -> charValue;
+		
+		int tmp = charValue & 255;
+		crc ^= tmp;
+		
+		tmp = ((crc & 255) >> 4);
+		crc ^= tmp;
+		
+		tmp = (crc << 12) & 65535;
+		crc ^= tmp;
+		
+		tmp = ((crc & 255) << 5) & 65535;
+		crc ^= tmp;
+	
+		j += 1;
+	end;
+	
+	crc = crc & 65535;
+	
+return crc;
+
+string message = "hello, world!";
+int messageLength;
+call length : message -> messageLength;
+
+int checksum;
+
+call crc16 : message, messageLength -> checksum;
+
+println checksum;
+
+int y = -5;
+double z = -3.14;
+int yy;
+call absolute_value : y -> yy;
+double zz;
+call absolute_value : z -> zz;
+println yy, " ", zz;
+int oc = 0 ~ 50;
+println oc;
+oc = 0;
+oc ~= 50;
+println oc;
+
+object maze 5;
+int index = 0;
+while index < 5;
+    int maze[index].x 5;
+    int initIndex = 0;
+    while initIndex < 5;
+        maze[index].x[initIndex] = initIndex + 1;
+        initIndex += 1;
+    end;
+    index += 1;
+end;
+
+index = 0;
+while index < 5;
+    int innerIndex = 0;
+    while innerIndex < 5;
+        #print maze[index].x[innerIndex];
+		innerIndex += 1;
+    end;
+    #println " ";
+	index += 1;
+end;
+
+string data = "(Speed:366 Mass:35 Speed:378 Mass:32";
+string regex = "(Speed:\d*)";
+
+call regex_search : "result", data, regex;
+
+println result.length;
+println result.data[0], result.data[1], " done.";
+
+int x = 0;
+
+while x < result.length[0]; println "in in loop"; int y = 5; println y; y ~= 123; println y;
+	println result.data[x];
+	x += 1;
+end;
+
+int match;
+string data2 = "subject";
+string regex2 = "(sub)(.*)";
+
+call regex_match : data2, regex2 -> match;
+
+println match;
+
+string r1 = "there is a subsequence in the string\n";
+string r2 = "\b(sub)([^ ]*)";
+string r3;
+string r4 = "sub-$2";
+
+call regex_replace : r1, r2, r4 -> r3;
+
+println r3;
+
+string threadName;
+call get_thread_id -> threadName;
+println "thread name: ", threadName;
 ```
