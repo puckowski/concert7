@@ -30,7 +30,7 @@ return;
 
 ## Arguments with as
 
-Only ```int```, ```double```, ```string```, and ```long``` variables may be specified with the ```as``` keyword.
+Only ```object```, ```int```, ```double```, ```string```, and ```long``` variables may be specified with the ```as``` keyword.
 
 ```cpp
 function printMessage : message as string;
