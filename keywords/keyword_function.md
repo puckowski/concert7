@@ -33,7 +33,18 @@ return;
 Only ```object```, ```int```, ```double```, ```string```, and ```long``` variables may be specified with the ```as``` keyword.
 
 ```cpp
-function printMessage : message as string;
+function printMessage : string as message;
     println message;
+return;
+```
+
+## Arguments with as by reference
+
+Adding a ```&``` character before the variable name in the ```as``` clause will copy the variable by reference into scope. Modifying the ```as``` variable modifies the original argument variable as well.
+
+```cpp
+function printMessage : string as &message;
+    println message;
+    message = "The argument variable will now contain this text.";
 return;
 ```
