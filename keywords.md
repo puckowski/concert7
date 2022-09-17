@@ -32,5 +32,7 @@
 |exit       |terminate script or exit program immediately                 |[exit details](keywords/keyword_exit.md)            |
 |continue   |restart enclosing loop                                       |[continue details](keywords/keyword_continue.md)    |
 |keys       |get list of object keys                                      |[keys details](keywords/keyword_keys.md)            |
-|using   |Used in function declarations                                         |[function details](keywords/keyword_function.md)    |
-|as   |Used in function declarations                                         |[function details](keywords/keyword_function.md)    |
+|using   |Used in function declarations                                         |[using details](keywords/keyword_function.md)    |
+|as   |Used in function declarations                                         |[as details](keywords/keyword_function.md)    |
+|alias   |Used to create a reference to a variable                                         |[alias details](keywords/keyword_alias.md)    |
+|reassign   |Used to point a variable to different data                                         |[reassign details](keywords/keyword_reassign.md)    |
