@@ -89,6 +89,8 @@ call adler32 : WELCOME, welcomeLength -> hash;
 
 [Regex library](standard_library/regex_library.md)
 
+[Thread library](standard_library/thread_library.md)
+
 ## Examples
 
 [Code examples](code_examples.md)
