@@ -1,0 +1,107 @@
+object v 5;
+int v[0].x 5;
+v[0].x = 123;
+v[0].x[1] = 456;
+v[0].x[2] = 789;
+v[0].x[3] = 111;
+v[0].x[4] = 222;
+int v[0].index 1;
+v[0].index = 5;
+
+function vectorGet : int as index, using standard_vector, returnVal as toReturn;
+	toReturn = standard_vector[index];
+return toReturn;
+
+function vectorAdd : using standard_vector, int as index, insertVal as value;
+	int size = 0;
+	sizeof standard_vector size;
+		
+	if index >= size;
+		call vectorCopy : standard_vector;
+		standard_vector[index] = value;
+	end;
+	
+	if index < size;
+		standard_vector[index] = value;
+	end;
+	
+	index += 1;
+return index;
+
+function vectorCopy : using standard_vector;
+	int size = 0;
+	sizeof standard_vector size;
+	
+	int doubleSize = size * 2;
+	
+	string type;
+	instanceof standard_vector type;
+			
+	if type == "int";
+		int newArray doubleSize;
+		int i = 0;
+		while i < size;
+			newArray[i] = standard_vector[i];
+			i += 1;
+		end;
+		reassign standard_vector newArray;
+	end;
+	
+	if type == "long";
+		long newArray doubleSize;
+		int i = 0;
+		while i < size;
+			newArray[i] = standard_vector[i];
+			i += 1;
+		end;
+		reassign standard_vector newArray;
+	end;
+		
+	if type == "double";
+		double newArray doubleSize;
+		int i = 0;
+		while i < size;
+			newArray[i] = standard_vector[i];
+			i += 1;
+		end;
+		reassign standard_vector newArray;
+	end;
+		
+	if type == "string";
+		string newArray doubleSize;
+		int i = 0;
+		while i < size;
+			newArray[i] = standard_vector[i];
+			i += 1;
+		end;
+		reassign standard_vector newArray;
+	end;
+return;
+
+alias v[0].x "standard_vector";
+call vectorCopy : standard_vector;
+
+int size = 0;
+sizeof standard_vector size;
+int i = 0;
+while i < size;
+	println standard_vector[i];
+	i += 1;
+end;
+
+int value = 0;
+call vectorGet : 1, standard_vector, value -> value;
+println value;
+
+println "v[0].index : ", v[0].index;
+call vectorAdd : standard_vector, v[0].index, 999 -> v[0].index;
+println v[0].index;
+
+function testRef : int as &num;
+	num = 5;
+return;
+
+int tmp = 7;
+
+call testRef : tmp;
+println tmp;

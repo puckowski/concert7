@@ -1,0 +1,82 @@
+﻿  CodeStore.cpp
+  HandleStore.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\filesystem(13): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\HandleStore.cpp(46,14): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\HandleStore.cpp(46,26): error C2039: 'create_directory': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\unordered_map(24,1): message : see declaration of 'std'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\HandleStore.cpp(46,42): error C3861: 'create_directory': identifier not found
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\HandleStore.cpp(155,31): warning C4244: 'return': conversion from 'std::streamoff' to 'int', possible loss of data
+  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\filesystem(13): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\sourceFunctions.h(75,42): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\sourceFunctions.h(440,42): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\keywordInclude.h(15,47): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\keywordDetach.h(25,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\stringLibrary.h(146,46): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\stringLibrary.h(187,57): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\fileLibrary.h(23,53): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\mathLibrary.h(15,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\mathLibrary.h(101,36): warning C4244: '=': conversion from '__int64' to 'double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\mathLibrary.h(137,36): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\mathLibrary.h(154,36): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\mathLibrary.h(171,36): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\keywordSizeof.h(25,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\keywordJoin.h(25,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\keywordExec.h(29,48): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\keywordExec.h(41,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\keywordKeys.h(27,90): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\interpreter.h(82,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\interpreter.h(91,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  ObjectStore.cpp
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(70,27): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(92,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(127,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(140,53): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(145,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(159,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(163,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(164,41): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(183,32): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(232,33): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(276,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(289,53): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(294,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(308,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(312,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(313,41): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(332,32): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(381,37): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(449,58): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(474,55): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(489,44): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(502,54): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(509,54): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(547,37): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+  Var.cpp
+  VarStore.cpp
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(64,27): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(107,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(142,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(155,53): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(160,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(174,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(178,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(179,41): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(198,32): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(247,33): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(291,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(304,53): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(309,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(323,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(327,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(328,41): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(347,32): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(396,37): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(468,58): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(493,55): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(508,44): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(527,54): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(534,54): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(571,37): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+  WorkspaceStore.cpp
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\WorkspaceStore.cpp(96,21): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data

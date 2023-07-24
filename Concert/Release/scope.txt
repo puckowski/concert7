@@ -1,0 +1,60 @@
+import string;
+
+int POLY = 33800;
+
+function crc16 : message as string, length as int;
+	int i;
+	int data;
+	int crc = 65535;
+	
+	if length == 0;
+		crc ~= crc;
+	end;
+	
+	if length > 0;
+		int char;
+		int index = 0;
+		
+		while index < length;		
+			call char_at : message, index -> char;
+			
+			data = 255 & char;
+			i = 0;
+			
+			while i < 8;
+				int tmp;
+				tmp = crc & 1;
+				tmp = tmp ^ (data & 1);
+				
+				if tmp > 0;
+					crc = crc >> 1;
+					crc = crc ^ POLY;
+				end;
+				
+				if tmp <= 0;
+					crc = crc >> 1;
+				end;
+				
+				i += 1;
+				data = data >> 1;
+			end;
+		end;
+		
+		crc ~= crc;
+		data = crc;
+		crc = crc << 8;
+		crc = crc | ((data >> 8) & 255);
+	end;
+
+return crc;
+
+string toChecksum = "helllo, world!";
+
+int dataLength;
+call length : toChecksum -> dataLength;
+
+int checksum;
+
+call crc16 : toChecksum, dataLength -> checksum;
+
+println checksum;

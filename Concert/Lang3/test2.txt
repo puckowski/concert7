@@ -1,0 +1,19 @@
+int count;
+
+count = 5;
+
+function use : using count;
+
+	count += 5;
+	println count;
+return;
+
+detach use : count;
+
+println count;
+
+join use : count;
+
+string s;
+
+readln s;

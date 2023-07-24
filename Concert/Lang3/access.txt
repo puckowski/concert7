@@ -1,0 +1,6 @@
+object corge 5;
+int corge[2].x;
+corge[2].x = 9;
+println corge[2].x;
+# println corge[0].x;
+println "the99";

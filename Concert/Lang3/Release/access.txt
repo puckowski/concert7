@@ -1,0 +1,44 @@
+print "hi";
+
+int a 5;
+int b 1;
+int c 1;
+int d 1;
+b[0] = 2;
+c[0] = 0;
+d[0] = 0;
+a[b[c[d[0]]] = 5;
+print a[b[0]];
+
+object x;
+
+int x.x;
+print x.x;
+x.x = 5;
+println "hi";
+print x.x;
+println "arr1";
+print x.x[0];
+
+object x.y;
+int x.y.z;
+x.y.z = 6;
+print x.y.z;
+println "arr2";
+print x.y.z[0];
+
+object x.y.e;
+int x.y.e.t;
+x.y.e.t = 7;
+println "arr3";
+print x.y.e.t[0];
+
+print x.y.e.t;
+
+println "OK";
+
+double xx = -5.5;
+double yy = -.413;
+
+println xx;
+println yy;

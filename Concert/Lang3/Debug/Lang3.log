@@ -1,0 +1,16 @@
+﻿  VarStore.cpp
+  WorkspaceStore.cpp
+  main.cpp
+c:\users\dan\source\repos\lang3\lang3\operatorfunctions.h(158): warning C4018: '<': signed/unsigned mismatch
+c:\users\dan\source\repos\lang3\lang3\filelibrary.h(23): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+c:\users\dan\source\repos\lang3\lang3\mathlibrary.h(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\dan\source\repos\lang3\lang3\mathlibrary.h(54): warning C4244: '=': conversion from '__int64' to 'double', possible loss of data
+c:\users\dan\source\repos\lang3\lang3\mathlibrary.h(90): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+c:\users\dan\source\repos\lang3\lang3\mathlibrary.h(107): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\dan\source\repos\lang3\lang3\mathlibrary.h(124): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
+c:\users\dan\source\repos\lang3\lang3\keywordprintln.h(16): warning C4018: '<': signed/unsigned mismatch
+c:\users\dan\source\repos\lang3\lang3\keywordprint.h(15): warning C4018: '<': signed/unsigned mismatch
+c:\users\dan\source\repos\lang3\lang3\keywordsystem.h(12): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  LINK : C:\Users\Dan\source\repos\Lang3\Debug\Lang3.exe not found or not built by the last incremental link; performing full link
+  Lang3.vcxproj -> C:\Users\Dan\source\repos\Lang3\Debug\Lang3.exe

@@ -1,0 +1,28 @@
+
+
+function vectorGet : int as index, genericArray as vector, returnVal as toReturn;
+	toReturn = vector[index];
+return toReturn;
+
+object vec;
+int vec.data 5;
+vec.data[0] = 123;
+int vec.length;
+vec.length = 5;
+
+int value = 0;
+call vectorGet : 0, vec.data, value -> value;
+
+println value;
+
+object vec2;
+string vec2.data 5;
+vec2.data[0] = "456";
+println vec2.data[0];
+int vec2.length;
+vec2.length = 5;
+
+string value2 = 0;
+call vectorGet : 0, vec2.data, value2 -> value2;
+
+println value2;

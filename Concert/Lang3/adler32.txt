@@ -1,0 +1,36 @@
+import string;
+
+string WELCOME = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit turpis cursus in hac. Tempus urna et pharetra pharetra massa massa ultricies. A cras semper auctor neque vitae tempus quam. Vitae turpis massa sed elementum tempus. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Lorem dolor sed viverra ipsum nunc aliquet bibendum. In aliquam sem fringilla ut. Turpis egestas pretium aenean pharetra magna. Congue quisque egestas diam in arcu cursus euismod quis. Netus et malesuada fames ac. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Nibh nisl condimentum id venenatis a condimentum vitae. Cursus eget nunc scelerisque viverra mauris in. Ut sem viverra aliquet eget sit amet. Eu volutpat odio facilisis mauris sit. Netus et malesuada fames ac turpis egestas integer eget aliquet. Erat imperdiet sed euismod nisi porta lorem. Ac turpis egestas sed tempus urna et. Ultricies mi eget mauris pharetra et.Amet dictum sit amet justo donec enim diam.Cursus euismod quis viverra nibh cras pulvinar mattis nunc.Mattis aliquam faucibus purus in.Urna duis convallis convallis tellus id interdum velit laoreet.Suspendisse interdum consectetur libero id faucibus nisl tincidunt.Ornare arcu odio ut sem nulla pharetra diam sit.Cras pulvinar mattis nunc sed blandit libero.Lectus urna duis convallis convallis tellus id interdum.Bibendum arcu vitae elementum curabitur vitae.Id neque aliquam vestibulum morbi blandit.Felis eget nunc lobortis mattis aliquam faucibus purus in.Massa enim nec dui nunc mattis enim ut tellus elementum.Bibendum est ultricies integer quis auctor elit sed vulputate mi.Consectetur purus ut faucibus pulvinar elementum.Morbi tincidunt augue interdum velit.Tortor at auctor urna nunc id cursus. Elementum nibh tellus molestie nunc non blandit massa.Nulla pellentesque dignissim enim sit amet.Metus vulputate eu scelerisque felis imperdiet proin fermentum.Augue neque gravida in fermentum et sollicitudin ac orci phasellus.Facilisis gravida neque convallis a cras semper.Dictum sit amet justo donec enim.Aliquam vestibulum morbi blandit cursus risus at ultrices mi.Et netus et malesuada fames ac turpis egestas.Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae.At augue eget arcu dictum.Justo donec enim diam vulputate ut pharetra sit amet. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare.Ac orci phasellus egestas tellus rutrum.Semper quis lectus nulla at volutpat.Purus faucibus ornare suspendisse sed nisi lacus.Commodo quis imperdiet massa tincidunt nunc pulvinar sapien.Pretium lectus quam id leo in vitae turpis massa sed.Massa placerat duis ultricies lacus sed turpis tincidunt id.Ultricies integer quis auctor elit sed vulputate mi sit.Blandit turpis cursus in hac habitasse platea dictumst.Eu sem integer vitae justo eget magna fermentum.Vestibulum sed arcu non odio euismod lacinia.Duis tristique sollicitudin nibh sit. Nibh nisl condimentum id venenatis a condimentum.Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.Molestie a iaculis at erat pellentesque adipiscing commodo elit at.Lobortis mattis aliquam faucibus purus in.Arcu dui vivamus arcu felis bibendum ut tristique et.Pellentesque nec nam aliquam sem.Dignissim convallis aenean et tortor.Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis.Volutpat diam ut venenatis tellus in metus vulputate eu.Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci.Eget mi proin sed libero enim sed faucibus turpis.Id leo in vitae turpis massa sed elementum tempus egestas.Ac ut consequat semper viverra nam libero justo laoreet.Rutrum tellus pellentesque eu tincidunt.Nisi est sit amet facilisis magna etiam tempor.Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc.Nec ullamcorper sit amet risus.Sem integer vitae justo eget.";
+
+# Adler-32 is a checksum algorithm invented by Mark Adler in 1995.
+function adler32 : string as message, int as messageLength;
+    int MOD_ADLER = 65521;
+
+    string char;
+    int charValue;
+  
+    int s1 = 1;
+    int s2 = 0;
+    int n = 0;
+  
+    while n < messageLength;
+        call char_at : message, n -> char;
+        call char_to_int : char -> charValue;
+    
+        s1 = (s1 + charValue) % MOD_ADLER;
+        s2 = (s2 + s1) % MOD_ADLER;
+    
+        n += 1;
+    end;
+  
+    s2 = (s2 << 16) | s1;
+return s2;
+
+int welcomeLength;
+call length : WELCOME -> welcomeLength;
+
+int hash;
+
+call adler32 : WELCOME, welcomeLength -> hash;
+
+println hash;

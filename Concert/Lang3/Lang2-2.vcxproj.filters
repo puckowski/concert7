@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CodeStore.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fileLibrary.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleStore.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="intDeclaration.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interpreter.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordBreak.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordCall.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordDetach.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordEnd.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordFunction.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordIf.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordImport.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordInclude.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordJoin.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordLock.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordPrint.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordPrintln.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordRead.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordReadln.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordReturn.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordSizeof.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordTry.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordUnlock.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordWhile.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mutexFunctions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="operatorFunctions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="printFunctions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="reservedWord.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sourceFunctions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="standardLibrary.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringDeclaration.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringFunctions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringLibrary.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Var.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="variableFunctions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VarStore.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkspaceStore.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordDelete.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="declaration.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordConst.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mathLibrary.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordSystem.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="doubleDeclaration.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="longDeclaration.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordExec.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordElse.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keywordInstanceof.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkspaceStore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VarStore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="test2.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="test3.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

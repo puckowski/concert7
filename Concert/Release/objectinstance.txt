@@ -1,0 +1,33 @@
+import regex;
+
+string data = "(Speed:366 Mass:35 Speed:378 Mass:32";
+string regex = "(Speed:\d*)";
+
+call regex_search : "result", data, regex;
+
+println result.length;
+println result.data[0], result.data[1], " done.";
+
+int x = 0;
+
+while x < result.length[0]; println "in in loop"; int y = 5; println y; y ~= 123; println y;
+	println result.data[x];
+	x += 1;
+end;
+
+int match;
+string data2 = "subject";
+string regex2 = "(sub)(.*)";
+
+call regex_match : data2, regex2 -> match;
+
+println match;
+
+string r1 = "there is a subsequence in the string\n";
+string r2 = "\b(sub)([^ ]*)";
+string r3;
+string r4 = "sub-$2";
+
+call regex_replace : r1, r2, r4 -> r3;
+
+println r3;
