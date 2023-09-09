@@ -196,7 +196,6 @@ function hasInvalidImport : using LINT_FILENAME, using tokens, using TOKENS_SIZE
 	
 	int match = 0;
 	string regex = "import\s\\"(.*)\\".*";
-	println regex;
 	
 	call regex_match : line, regex -> match;
 	
