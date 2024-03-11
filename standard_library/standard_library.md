@@ -1,11 +1,11 @@
-[Home](https://github.com/puckowski/concert7)
+[Home](https://github.com/puckowski/concert7/blob/master/)
 
 # Standard library
 
 |Name                                                                               |Description                                   |
 |:----------------------------------------------------------------------------------|:---------------------------------------------|
-|[io](https://puckowski.github.io/concert7/standard_library/io_library.html)         |Input and output functions                    |
-|[string](https://puckowski.github.io/concert7/standard_library/string_library.html) |String functions                              |
-|[math](https://puckowski.github.io/concert7/standard_library/math_library.html)     |Facility for generating pseudo-random numbers |
-|[regex](https://puckowski.github.io/concert7/standard_library/regex_library.html)     |Standard regular expression functions |
-|[thread](https://puckowski.github.io/concert7/standard_library/thread_library.html)     |Thread utility functions |
+|[io](https://github.com/puckowski/concert7/blob/master/standard_library/io_library.md)         |Input and output functions                    |
+|[string](https://github.com/puckowski/concert7/blob/master/standard_library/string_library.md) |String functions                              |
+|[math](https://github.com/puckowski/concert7/blob/master/standard_library/math_library.md)     |Facility for generating pseudo-random numbers |
+|[regex](https://github.com/puckowski/concert7/blob/master/standard_library/regex_library.md)     |Standard regular expression functions |
+|[thread](https://github.com/puckowski/concert7/blob/master/standard_library/thread_library.md)     |Thread utility functions |

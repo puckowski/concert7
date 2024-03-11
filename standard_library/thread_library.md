@@ -1,4 +1,4 @@
-[Home](https://github.com/puckowski/concert7) <span>&emsp;</span> [Standard library](https://puckowski.github.io/concert7/standard_library/standard_library.html)
+[Home](https://github.com/puckowski/concert7/blob/master/) <span>&emsp;</span> [Standard library](https://github.com/puckowski/concert7/blob/master/standard_library/standard_library.md)
 
 # Thread library
 

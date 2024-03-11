@@ -1,4 +1,4 @@
-[Home](https://github.com/puckowski/concert7)
+[Home](https://github.com/puckowski/concert7/blob/master/)
 
 # Code examples
 
