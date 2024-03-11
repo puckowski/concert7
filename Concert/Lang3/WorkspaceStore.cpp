@@ -96,4 +96,13 @@ int WorkspaceStore::count()
 	return mVars.size();
 }
 
+std::set<long long>& WorkspaceStore::getDeletedDataSet() {
+	return deletedDataSet;
+}
+
+void WorkspaceStore::setDeletedDataSet(std::set<long long>& set) {
+	deletedDataSet.clear();
+	deletedDataSet = set;
+}
+
 #endif

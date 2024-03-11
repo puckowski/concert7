@@ -4,6 +4,7 @@
 
 #include <vector>
 #include <string>
+#include <set>
 #include <unordered_map>
 
 class WorkspaceStore;
@@ -17,6 +18,7 @@ class WorkspaceStore
 	std::list < std::pair<const std::string, VarStore*>, std::allocator<std::pair<const std::string, VarStore*>>>::iterator mBackIterator;
 	std::unordered_map<std::string, VarStore*> mVars;
 	VarStore* mBack;
+	std::set<long long> deletedDataSet;
 
 public:
 	WorkspaceStore();
@@ -24,6 +26,8 @@ public:
 	~WorkspaceStore();
 
 	void print();
+	std::set<long long>& getDeletedDataSet();
+	void setDeletedDataSet(std::set<long long>& set);
 
 	VarStore* getStore(const std::string &name);
 

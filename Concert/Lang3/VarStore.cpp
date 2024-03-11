@@ -87,11 +87,20 @@ void VarStore::addVarAliasWithPointer(Var* toAliasVar, int &varIndex, const std:
 	mVars.insert({ aliasName, v });
 }
 
-void VarStore::reassignVar(Var* toReassign, Var* newVar)
+void VarStore::reassignVar(Var* toReassign, Var* newVar, std::set<long long> &deletedDataSet)
 {
-	toReassign->deleteData();
+	long long ref = reinterpret_cast<long long>(toReassign->data);
+
+	if (deletedDataSet.count(ref) == 0) {
+		toReassign->deleteData();
+	} else {
+		deletedDataSet.erase(ref);
+	}
+
 	toReassign->data = newVar->data;
 	toReassign->size = newVar->size;
+
+	deletedDataSet.insert(ref);
 }
 
 Var* VarStore::addVarWithReference(const std::string name, const ReservedWord type, const int size)

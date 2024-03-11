@@ -1,6 +1,7 @@
 import io;
 import string;
 import math;
+import regex;
 
 string filename;
 println "Enter name of file to run linter on.";
@@ -167,37 +168,78 @@ function tokenizeLine : using LINT_FILENAME, using tokens, using TOKENS_SIZE, us
 	tokens[tokenIndex] = line;
 return;
 
-function hasSemicolon : using LINT_FILENAME, using tokens, using TOKENS_SIZE, int as index;
+function hasInvalidImport : using LINT_FILENAME, using tokens, using TOKENS_SIZE, int as index;
 	int i = 0;
-	
-	int foundSemicolon = 0;
+	string line = "";
 	
 	while i < TOKENS_SIZE;
 		if tokens[i] == "";
 			i += 1;
-		
+			
 			continue;
 		end;
-		
-		call contains : tokens[i], ";" -> foundSemicolon;
-		
-		if foundSemicolon == 1;
-			break;
-		end;
+			
+		line += tokens[i];
+		line += " ";
 		
 		i += 1;
 	end;
-
-	if foundSemicolon == 0;
+	
+	int match = 0;
+	string regex = "import\s\\"(.*)\\".*";
+	
+	call regex_match : line, regex -> match;
+	
+	if match == 1;
 		string indexMessage = "Index: ";
 		string indexString;
 		call int_to_string : index -> indexString;
 		indexMessage += indexString;
-			
-		call write_string : LINT_FILENAME, "Line has no semicolon.";
+				
+		call write_string : LINT_FILENAME, "Invalid import. Do not use quotes.";
 		call write_string : LINT_FILENAME, "\n";
 		call write_string : LINT_FILENAME, indexMessage;
 		call write_string : LINT_FILENAME, "\n";
+	end;
+return;
+
+function hasSemicolon : using LINT_FILENAME, using tokens, using TOKENS_SIZE, int as index;
+	if TOKENS_SIZE > 0;
+		int i = 0;
+		int blankTokenCount = 0;
+		
+		int foundSemicolon = 0;
+		
+		while i < TOKENS_SIZE;
+			if tokens[i] == "";
+				i += 1;
+				blankTokenCount += 1;
+			
+				continue;
+			end;
+			
+			call contains : tokens[i], ";" -> foundSemicolon;
+			
+			if foundSemicolon == 1;
+				break;
+			end;
+			
+			i += 1;
+		end;
+
+		if foundSemicolon == 0;
+			if blankTokenCount != TOKENS_SIZE;
+				string indexMessage = "Index: ";
+				string indexString;
+				call int_to_string : index -> indexString;
+				indexMessage += indexString;
+					
+				call write_string : LINT_FILENAME, "Line has no semicolon.";
+				call write_string : LINT_FILENAME, "\n";
+				call write_string : LINT_FILENAME, indexMessage;
+				call write_string : LINT_FILENAME, "\n";
+			end;
+		end;
 	end;
 return;
 
@@ -237,10 +279,10 @@ function ifEqualsCheck : using LINT_FILENAME, using tokens, using TOKENS_SIZE, i
 	end;	
 return;
 
-const int TOKENS_SIZE = 200;
+int TOKENS_SIZE = 200;
 string tokens TOKENS_SIZE;
 
-const string LINT_FILENAME = "lint_out.cc";
+string LINT_FILENAME = "lint_out.cc";
 
 call create_file : LINT_FILENAME;
 call open_file : LINT_FILENAME;
@@ -255,6 +297,7 @@ while index < lineCount;
 	# Lint functions
 	call hasSemicolon : LINT_FILENAME, tokens, TOKENS_SIZE, index;
 	call ifEqualsCheck : LINT_FILENAME, tokens, TOKENS_SIZE, index;
+	call hasInvalidImport : LINT_FILENAME, tokens, TOKENS_SIZE, index;
 	
 	index += 1;
 end;

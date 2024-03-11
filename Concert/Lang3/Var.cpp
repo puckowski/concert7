@@ -235,6 +235,10 @@ Var::~Var()
 
 void Var::deleteData()
 {
+	if (data == nullptr) {
+		return;
+	}
+
 	switch (type)
 	{
 	case TYPE_INT:

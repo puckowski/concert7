@@ -1,41 +1,5 @@
-﻿  CodeStore.cpp
-  HandleStore.cpp
+﻿  Var.cpp
   main.cpp
-  ObjectStore.cpp
-  Var.cpp
-  VarStore.cpp
-  WorkspaceStore.cpp
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(183,32): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(192,16): warning C4457: declaration of 'var' hides function parameter
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(125,59): message : see declaration of 'var'
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(232,33): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(242,16): warning C4457: declaration of 'var' hides function parameter
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(125,59): message : see declaration of 'var'
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(150,6): warning C4189: 'lastIndex': local variable is initialized but not referenced
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(216,10): warning C4189: 'indexVar': local variable is initialized but not referenced
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(332,32): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(341,16): warning C4457: declaration of 'var' hides function parameter
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(274,59): message : see declaration of 'var'
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(381,37): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(391,16): warning C4457: declaration of 'var' hides function parameter
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(274,59): message : see declaration of 'var'
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(547,37): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\HandleStore.cpp(155,31): warning C4244: 'return': conversion from 'std::streamoff' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(198,32): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(207,16): warning C4457: declaration of 'var' hides function parameter
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(140,56): message : see declaration of 'var'
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(247,33): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(257,16): warning C4457: declaration of 'var' hides function parameter
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(140,56): message : see declaration of 'var'
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(165,6): warning C4189: 'lastIndex': local variable is initialized but not referenced
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(231,10): warning C4189: 'indexVar': local variable is initialized but not referenced
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(347,32): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(356,16): warning C4457: declaration of 'var' hides function parameter
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(289,56): message : see declaration of 'var'
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(396,37): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(406,16): warning C4457: declaration of 'var' hides function parameter
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(289,56): message : see declaration of 'var'
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(571,37): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\sourceFunctions.h(863,69): warning C4459: declaration of 'codeStore' hides global declaration (compiling source file main.cpp)
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\header.h(33,32): message : see declaration of 'codeStore' (compiling source file main.cpp)
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\sourceFunctions.h(863,69): warning C4100: 'codeStore': unreferenced formal parameter (compiling source file main.cpp)
@@ -136,11 +100,8 @@ C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\L
               _Fn=int (__cdecl *)(int)
           ] (compiling source file main.cpp)
   Generating code
-  Previous IPDB not found, fall back to full compilation.
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(461): warning C4701: potentially uninitialized local variable 'secondQuoteIndex' used
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\ObjectStore.cpp(539): warning C4701: potentially uninitialized local variable 'currVarIndex' used
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(480): warning C4701: potentially uninitialized local variable 'secondQuoteIndex' used
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3\VarStore.cpp(563): warning C4701: potentially uninitialized local variable 'currVarIndex' used
-  All 3852 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  39 of 3974 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    39 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Lang3.vcxproj -> C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Release\Lang3.exe

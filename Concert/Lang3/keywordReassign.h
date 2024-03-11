@@ -19,8 +19,12 @@ void executeKeywordReassign(std::vector<std::string>& tokens)
 
 	Var* nameVar = getVar(tokens[2], index2, createdVar2);
 
-	VarStore* vs = gWorkspaceStore->getStore();
-	vs->reassignVar(toReassignVar, nameVar);
+	if (toReassignVar->data != nameVar->data) {
+		VarStore* vs = gWorkspaceStore->getStore();
+		std::set<long long> deletedDataSet = gWorkspaceStore->getDeletedDataSet();
+		vs->reassignVar(toReassignVar, nameVar, deletedDataSet);
+		gWorkspaceStore->setDeletedDataSet(deletedDataSet);
+	}
 
 	if (createdVar)
 		delete toReassignVar;

@@ -9,6 +9,7 @@
 #include <cctype>
 #include <sstream>
 #include <algorithm>
+#include <set>
 
 class WorkspaceStore;
 
@@ -38,7 +39,7 @@ public:
 
 	Var* getVar(const std::string &name, int &val);
 
-	void reassignVar(Var* toReassign, Var* newVar);
+	void reassignVar(Var* toReassign, Var* newVar, std::set<long long>& deletedDataSet);
 
 	//
 	Var* getSimpleWithIndex(const std::string& var, int& index);
