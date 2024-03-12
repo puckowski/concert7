@@ -115,7 +115,6 @@ void libraryRegexSearch(std::vector<std::string>& arguments, const int& argument
 	std::smatch sm;
 	while (std::regex_search(textToSearch, sm, regexp))
 	{
-		std::cout << sm.str();
 		data.push_back(sm.str());
 		textToSearch = sm.suffix();
 		len++;
