@@ -10,7 +10,7 @@ class CodeStore
 private:
 
 public:
-	std::vector<std::vector<std::string>> gStatements;
+	std::vector<std::vector<std::wstring>> gStatements;
 
 	CodeStore();
 

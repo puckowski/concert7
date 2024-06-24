@@ -19,36 +19,36 @@ extern thread_local WorkspaceStore* gWorkspaceStore;
 
 class VarStore
 {
-	std::unordered_map<std::string, Var*> mVars;
+	std::unordered_map<std::wstring, Var*> mVars;
 
 public:
 	~VarStore();
 	void print();
 
-	void addVar(const std::string &name, const ReservedWord &type);
-
+	void addVar(const std::wstring &name, const ReservedWord &type);
 	void addVar(Var* var);
 
-	int removeVar(const std::string &name);
+	int removeVar(const std::wstring &name);
 
-	void addVar(const std::string name, const ReservedWord type, const int size);
-	void addVarAlias(const std::string toAliasName, const std::string aliasName);
-	void addVarAliasWithPointer(Var* toAliasVar, int& varIndex, const std::string aliasName);
+	void addVar(const std::wstring name, const ReservedWord type, const int size);
+	void addVarAlias(const std::wstring toAliasName, const std::wstring aliasName);
+	void addVarAliasWithPointer(Var* toAliasVar, int& varIndex, const std::wstring aliasName);
 
-	Var* addVarWithReference(const std::string name, const ReservedWord type, const int size);
+	Var* addVarWithReference(const std::wstring name, const ReservedWord type, const int size);
 
-	Var* getVar(const std::string &name, int &val);
+	Var* getVar(const std::wstring &name, int &val);
 
-	void reassignVar(Var* toReassign, Var* newVar, std::set<long long>& deletedDataSet);
-
-	//
-	Var* getSimpleWithIndex(const std::string& var, int& index);
-	std::string getForBracket(const std::string& var);
-	Var* getVar2(const std::string& name, int& index);
-
+	void reassignVar(Var* toReassign, Var* newVar);// , std::set<long long>& deletedDataSet);
 
 	//
-	std::string getForBracket(const std::string& var, bool getReplacement);
+	Var* getSimpleWithIndex(const std::wstring& var, int& index);
+	std::wstring getForBracket(const std::wstring& var);
+	Var* getVar2(const std::wstring& name, int& index);
+
+
+	//
+	std::wstring getForBracket(const std::wstring& var, bool getReplacement);
+	void reassignAllVar(Var* toReassign, Var* newVar);
 };
 
 #endif

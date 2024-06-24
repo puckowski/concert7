@@ -7,16 +7,16 @@
 
 #include "sourceFunctions.h"
 
-void executeKeywordAlias(std::vector<std::string>& tokens)
+void executeKeywordAlias(std::vector<std::wstring>& tokens)
 {
-	const std::string toAliasName = tokens[1];
+	const std::wstring toAliasName = tokens[1];
 
 	int index2;
 	bool createdVar2 = false;
 
 	Var* nameVar = getVar(tokens[2], index2, createdVar2);
-	std::string* objectName = static_cast<std::string*>(nameVar->data);
-	const std::string aliasName = objectName[index2];
+	std::wstring* objectName = static_cast<std::wstring*>(nameVar->data);
+	const std::wstring aliasName = objectName[index2];
 
 	VarStore* vs = gWorkspaceStore->getStore();
 	vs->addVarAlias(toAliasName, aliasName);

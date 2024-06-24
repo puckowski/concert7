@@ -20,13 +20,13 @@ class VarStore;
 class WorkspaceStore;
 class ObjectStore;
 
-const std::string SOFTWARE_NAME = "Concert";
-const std::string SOFTWARE_VERSION_STRING = "0.0.8.5";
-const std::string SOFTWARE_VERSION_CODE = "1220";
-const std::string SOFTWARE_AUTHOR = "Daniel Puckowski";
+const std::wstring SOFTWARE_NAME = L"Concert";
+const std::wstring SOFTWARE_VERSION_STRING = L"0.0.8.8";
+const std::wstring SOFTWARE_VERSION_CODE = L"1300";
+const std::wstring SOFTWARE_AUTHOR = L"Daniel Puckowski";
 
-extern std::unordered_map<std::string, std::string> varLockMap;
-extern std::unordered_map<std::string, std::mutex*> lockMap;
+extern std::unordered_map<std::wstring, std::wstring> varLockMap;
+extern std::unordered_map<std::wstring, std::mutex*> lockMap;
 extern std::thread::id mainThreadId;
 
 extern ConcertHandleEnvironment::HandleStore gHandleStore;
@@ -36,10 +36,10 @@ extern thread_local VarStore* lastWorkspace;
 extern thread_local Var* returnVar;
 
 extern thread_local std::stack<int> conditionalStack;
-extern thread_local std::vector<std::string> callStack;
+extern thread_local std::vector<std::wstring> callStack;
 
-extern thread_local std::unordered_map<std::string, int> mFunctionMap;
-extern thread_local std::unordered_map<std::string, LibraryFunction> mLibraryMap;
+extern thread_local std::unordered_map<std::wstring, int> mFunctionMap;
+extern thread_local std::unordered_map<std::wstring, LibraryFunction> mLibraryMap;
 
 extern thread_local int currentLine;
 extern thread_local int statementCount;
@@ -47,7 +47,7 @@ extern thread_local int returnVarInt;
 extern thread_local bool createdRetVar;
 
 extern std::mutex callNameMutex;
-extern std::vector<std::string> callNameStack;
+extern std::vector<std::wstring> callNameStack;
 extern bool debugEnabled;
 
 #include "stringFunctions.h"
@@ -65,9 +65,9 @@ extern bool debugEnabled;
 
 void printSoftwareInformation()
 {
-	std::cout << SOFTWARE_NAME << std::endl;
-	std::cout << "Version: " << SOFTWARE_VERSION_STRING << std::endl;
-	std::cout << "Author: " << SOFTWARE_AUTHOR << std::endl;
+	std::wcout << SOFTWARE_NAME << std::endl;
+	std::wcout << "Version: " << SOFTWARE_VERSION_STRING << std::endl;
+	std::wcout << "Author: " << SOFTWARE_AUTHOR << std::endl;
 }
 
 #endif

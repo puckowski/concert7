@@ -7,7 +7,7 @@
 
 #include "operatorFunctions.h"
 
-void executeKeywordIf(std::vector<std::string> &tokens)
+void executeKeywordIf(std::vector<std::wstring> &tokens)
 {
 	conditionalStack.push(-1);
 
@@ -18,7 +18,7 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 	Var* lhsVar = getVar(tokens[1], r1, createdLhs);
 	Var* rhsVar = getVar(tokens[3], r2, createdRhs);
 
-	std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string, const Operator>>>> opCheck = OPERATOR_MAP.find(tokens[2]);
+	std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const Operator>>>> opCheck = OPERATOR_MAP.find(tokens[2]);
 	Operator op = opCheck->second;
 
 	switch (op) {
@@ -41,15 +41,15 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 						continue;
 					}
 
-					if (tokens[0] == "if") {
+					if (tokens[0] == L"if") {
 						nestedEnd++;
 						//conditionalStack.push(-1);
 					}
-					else if (tokens[0] == "try")
+					else if (tokens[0] == L"try")
 						nestedEnd++;
-					else if (tokens[0] == "while")
+					else if (tokens[0] == L"while")
 						nestedEnd++;
-					else if (tokens[0] == "else") {
+					else if (tokens[0] == L"else") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -57,7 +57,7 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 							break;
 						}
 					}
-					else if (tokens[0] == "end") {
+					else if (tokens[0] == L"end") {
 						if (nestedEnd > 0) 
 							nestedEnd--;
 						else {
@@ -89,15 +89,15 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 						continue;
 					}
 
-					if (tokens[0] == "if") {
+					if (tokens[0] == L"if") {
 						nestedEnd++;
 						//conditionalStack.push(-1);
 					}
-					else if (tokens[0] == "try")
+					else if (tokens[0] == L"try")
 						nestedEnd++;
-					else if (tokens[0] == "while")
+					else if (tokens[0] == L"while")
 						nestedEnd++;
-					else if (tokens[0] == "else") {
+					else if (tokens[0] == L"else") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -105,7 +105,7 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 							break;
 						}
 					}
-					else if (tokens[0] == "end") {
+					else if (tokens[0] == L"end") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -137,15 +137,15 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 						continue;
 					}
 
-					if (tokens[0] == "if") {
+					if (tokens[0] == L"if") {
 						nestedEnd++;
 						//conditionalStack.push(-1);
 					}
-					else if (tokens[0] == "try")
+					else if (tokens[0] == L"try")
 						nestedEnd++;
-					else if (tokens[0] == "while")
+					else if (tokens[0] == L"while")
 						nestedEnd++;
-					else if (tokens[0] == "else") {
+					else if (tokens[0] == L"else") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -153,7 +153,7 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 							break;
 						}
 					}
-					else if (tokens[0] == "end") {
+					else if (tokens[0] == L"end") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -185,15 +185,15 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 						continue;
 					}
 
-					if (tokens[0] == "if") {
+					if (tokens[0] == L"if") {
 						nestedEnd++;
 						//conditionalStack.push(-1);
 					}
-					else if (tokens[0] == "try")
+					else if (tokens[0] == L"try")
 						nestedEnd++;
-					else if (tokens[0] == "while")
+					else if (tokens[0] == L"while")
 						nestedEnd++;
-					else if (tokens[0] == "else") {
+					else if (tokens[0] == L"else") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -201,7 +201,7 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 							break;
 						}
 					}
-					else if (tokens[0] == "end") {
+					else if (tokens[0] == L"end") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -233,15 +233,15 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 						continue;
 					}
 
-					if (tokens[0] == "if") {
+					if (tokens[0] == L"if") {
 						nestedEnd++;
 						//conditionalStack.push(-1);
 					}
-					else if (tokens[0] == "try")
+					else if (tokens[0] == L"try")
 						nestedEnd++;
-					else if (tokens[0] == "while")
+					else if (tokens[0] == L"while")
 						nestedEnd++;
-					else if (tokens[0] == "else") {
+					else if (tokens[0] == L"else") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -249,7 +249,7 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 							break;
 						}
 					}
-					else if (tokens[0] == "end") {
+					else if (tokens[0] == L"end") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -281,15 +281,15 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 						continue;
 					}
 
-					if (tokens[0] == "if") {
+					if (tokens[0] == L"if") {
 						nestedEnd++;
 						//conditionalStack.push(-1);
 					}
-					else if (tokens[0] == "try")
+					else if (tokens[0] == L"try")
 						nestedEnd++;
-					else if (tokens[0] == "while")
+					else if (tokens[0] == L"while")
 						nestedEnd++;
-					else if (tokens[0] == "else") {
+					else if (tokens[0] == L"else") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {
@@ -297,7 +297,7 @@ void executeKeywordIf(std::vector<std::string> &tokens)
 							break;
 						}
 					}
-					else if (tokens[0] == "end") {
+					else if (tokens[0] == L"end") {
 						if (nestedEnd > 0)
 							nestedEnd--;
 						else {

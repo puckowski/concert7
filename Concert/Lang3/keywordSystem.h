@@ -7,7 +7,7 @@
 
 #include "sourceFunctions.h"
 
-void executeKeywordSystem(const int &tokensSize, std::vector<std::string> &tokens)
+void executeKeywordSystem(const int &tokensSize, std::vector<std::wstring> &tokens)
 {
 	for (int i = 1; i < tokens.size(); ++i)
 	{
@@ -15,8 +15,8 @@ void executeKeywordSystem(const int &tokensSize, std::vector<std::string> &token
 		int r1;
 		Var* v = getVar(tokens[i], r1, created);
 
-		std::string* pstr = static_cast<std::string*>(v->data);
-		system(pstr[r1].c_str());
+		std::wstring* pstr = static_cast<std::wstring*>(v->data);
+		system(wstring_to_utf8(pstr[r1]).c_str());
 
 		if (created)
 		{

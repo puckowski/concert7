@@ -7,13 +7,20 @@
 #include <iostream>
 #include <unordered_map>
 #include <filesystem>
+#include <locale>
+#include <boost/locale.hpp>
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <locale>
+#include <codecvt>
+#include "utf8.h"
 
 namespace ConcertHandleEnvironment
 {
 	class HandleStore
 	{
 	private:
-		std::unordered_map<std::string, std::fstream*> mHandleMap;
+		std::unordered_map<std::wstring, std::wfstream*> mHandleMap;
 
 	protected:
 
@@ -23,36 +30,36 @@ namespace ConcertHandleEnvironment
 		~HandleStore();
 
 		void clearStore();
-		std::fstream* getHandle(const std::string& name);
-		int createDirectory(const std::string& name);
+		std::wfstream* getHandle(const std::wstring& name);
+		int createDirectory(const std::wstring& name);
 
-		std::ifstream::pos_type getFileSize(const std::string& name);
+		std::ifstream::pos_type getFileSize(const std::wstring& name);
 
-		bool isFileExist(const std::string& name);
+		bool isFileExist(const std::wstring& name);
 
-		void createFile(const std::string& name);
+		void createFile(const std::wstring& name);
 
-		void openFile(const std::string& name, int& openFileFlag);
+		void openFile(const std::wstring& name, int& openFileFlag);
 
-		void closeFile(const std::string& name);
+		void closeFile(const std::wstring& name);
 
-		void writeStringToFile(const std::string& name, const std::string& text);
-		std::string getLineFromFile(const std::string& name);
+		void writeStringToFile(const std::wstring& name, const std::wstring& text);
+		std::wstring getLineFromFile(const std::wstring& name);
 
-		bool isOpen(const std::string& name);
+		bool isOpen(const std::wstring& name);
 
-		bool isAtEndOfFile(const std::string& name);
+		bool isAtEndOfFile(const std::wstring& name);
 
-		int removeFile(const std::string& name);
+		int removeFile(const std::wstring& name);
 
-		int renameFile(const std::string& name, std::string& newName);
-		void seekg(const std::string& name, int& position);
+		int renameFile(const std::wstring& name, std::wstring& newName);
+		void seekg(const std::wstring& name, int& position);
 
-		int tellg(const std::string& name);
+		int tellg(const std::wstring& name);
 
-		int read(const std::string& name);
+		int read(const std::wstring& name);
 
-		void write(const std::string& name, char& data);
+		void write(const std::wstring& name, wchar_t& data);
 	};
 }
 

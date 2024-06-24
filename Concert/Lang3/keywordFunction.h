@@ -10,7 +10,7 @@
 #include "operatorFunctions.h"
 #include "sourceFunctions.h"
 
-void executeKeywordFunction(const int &tokensSize, std::vector<std::string> &tokens)
+void executeKeywordFunction(const int &tokensSize, std::vector<std::wstring> &tokens)
 {
 	if (getFunctionLineFromMap(tokens[1]) == -1)
 	{
@@ -28,11 +28,11 @@ void executeKeywordFunction(const int &tokensSize, std::vector<std::string> &tok
 				continue;
 			}
 
-			if (tokens[0] == "return" && funcCount == 0)
+			if (tokens[0] == L"return" && funcCount == 0)
 				break;
-			else if (tokens[0] == "return")
+			else if (tokens[0] == L"return")
 				funcCount--;
-			else if (tokens[0] == "function")
+			else if (tokens[0] == L"function")
 				funcCount++;
 		} while (true);
 	}
@@ -44,13 +44,14 @@ void executeKeywordFunction(const int &tokensSize, std::vector<std::string> &tok
 
 		for (int i = 2; i < tokensSize; ++i)
 		{
-			if (tokens[i] == "using") 
+			if (tokens[i] == L"using") 
 			{
 				bool createdVar = false;
 				i++;
 				Var* var = lastWorkspace->getVar(tokens[i], r1);
 
 				gWorkspaceStore->getStore()->addVar(var);
+				var->reassignCount++;
 
 				//callStack.pop_back();
 				callStack.erase(callStack.begin());
@@ -70,7 +71,7 @@ void executeKeywordFunction(const int &tokensSize, std::vector<std::string> &tok
 
 				callStack.erase(callStack.begin());
 
-				if (tokens[i + 2] == "&")
+				if (tokens[i + 2] == L"&")
 				{
 					i += 3;
 

@@ -10,7 +10,7 @@
 #include "variableFunctions.h"
 #include "printFunctions.h"
 
-void executeKeywordPrint(const int &tokensSize, std::vector<std::string> &tokens)
+void executeKeywordPrint(const int &tokensSize, std::vector<std::wstring> &tokens)
 {
 	for (int i = 1; i < tokens.size(); ++i)
 	{
@@ -48,9 +48,9 @@ void executeKeywordPrint(const int &tokensSize, std::vector<std::string> &tokens
 		}
 		case TYPE_STRING:
 		{
-			std::string* pstr = static_cast<std::string*>(v->data);
+			std::wstring* pstr = static_cast<std::wstring*>(v->data);
 
-			std::cout << pstr[r1];
+			std::wcout << pstr[r1];
 
 			break;
 		}

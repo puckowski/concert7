@@ -4,7 +4,7 @@
 
 #include "sourceFunctions.h"
 
-void executeKeywordElse(const int &tokensSize, std::vector<std::string> &tokens, int &currentLine)
+void executeKeywordElse(const int &tokensSize, std::vector<std::wstring> &tokens, int &currentLine)
 {
 	if (conditionalStack.top() == -2) {
 		int nestedEnd = 0;
@@ -20,19 +20,19 @@ void executeKeywordElse(const int &tokensSize, std::vector<std::string> &tokens,
 				continue;
 			}
 
-			if (tokens[0] == "if")
+			if (tokens[0] == L"if")
 				nestedEnd++;
-			else if (tokens[0] == "try")
+			else if (tokens[0] == L"try")
 				nestedEnd++;
-			else if (tokens[0] == "while")
+			else if (tokens[0] == L"while")
 				nestedEnd++;
-			else if (tokens[0] == "else") {
+			else if (tokens[0] == L"else") {
 				if (nestedEnd > 0)
 					nestedEnd--;
 				else
 					break;
 			}
-			else if (tokens[0] == "end") {
+			else if (tokens[0] == L"end") {
 				if (nestedEnd > 0)
 					nestedEnd--;
 				else {

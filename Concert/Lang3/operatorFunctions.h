@@ -10,66 +10,66 @@
 #include "Var.h"
 #include "variableFunctions.h"
 
-const std::map<std::string, int> OPERATOR_PRECEDENCE_MAP =
+const std::map<std::wstring, int> OPERATOR_PRECEDENCE_MAP =
 {
-	{ "(",  0 },
-	{ ")",  0 },
-	{ "<<", 1 },
-	{ ">>", 1 },
-	{ "*",  2 },
-	{ "/",  2 },
-	{ "%",  2 },
-	{ "+",  3 },
-	{ "-",  3 },
-	{ "|",  4 },
-	{ "&",  4 },
-	{ "^",  4 },
-	{ "~",  4 },
-	{ ">>>", 4 }
+	{ L"(",  0 },
+	{ L")",  0 },
+	{ L"<<", 1 },
+	{ L">>", 1 },
+	{ L"*",  2 },
+	{ L"/",  2 },
+	{ L"%",  2 },
+	{ L"+",  3 },
+	{ L"-",  3 },
+	{ L"|",  4 },
+	{ L"&",  4 },
+	{ L"^",  4 },
+	{ L"~",  4 },
+	{ L">>>", 4 }
 };
 
-const std::map<std::string, int> OPERATOR_ID_MAP =
+const std::map<std::wstring, int> OPERATOR_ID_MAP =
 {
-	{ "(",  0 },
-	{ ")",  0 },
-	{ "<<", 1 },
-	{ ">>", 2 },
-	{ "*",  3 },
-	{ "/",  4 },
-	{ "%",  5 },
-	{ "+",  6 },
-	{ "-",  7 },
-	{ "|",  8 },
-	{ "&",  9 },
-	{ "^",  10 },
-	{ "~",  11 },
-	{ ">>>", 12 }
+	{ L"(",  0 },
+	{ L")",  0 },
+	{ L"<<", 1 },
+	{ L">>", 2 },
+	{ L"*",  3 },
+	{ L"/",  4 },
+	{ L"%",  5 },
+	{ L"+",  6 },
+	{ L"-",  7 },
+	{ L"|",  8 },
+	{ L"&",  9 },
+	{ L"^",  10 },
+	{ L"~",  11 },
+	{ L">>>", 12 }
 };
 
-bool execPlusOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execMinusOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execMultiplyOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execDivideOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execModuloOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execXorOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execAndOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execOrOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execBitwiseComplementOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execUnsignedRightShiftOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
+bool execPlusOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execMinusOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execMultiplyOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execDivideOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execModuloOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execXorOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execAndOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execOrOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execBitwiseComplementOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execUnsignedRightShiftOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
 
-bool execLeftShiftOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
-bool execRightShiftOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs);
+bool execLeftShiftOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
+bool execRightShiftOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs);
 
 void execAssignOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2);
 void execAssignOperator(Var* lhsVar, Var* rhsVar);
-void execAssignOperator(const std::string& lhs, const std::string& rhs);
-void execAssignOperator(const std::string& lhs, int r1, const std::string& rhs);
+void execAssignOperator(const std::wstring& lhs, const std::wstring& rhs);
+void execAssignOperator(const std::wstring& lhs, int r1, const std::wstring& rhs);
 
 // Returns true if 'op2' has higher or same precedence as 'op1',
 // otherwise returns false.
-bool hasPrecedence(std::string& op1, std::string& op2)
+bool hasPrecedence(std::wstring& op1, std::wstring& op2)
 {
-	if (op2 == "(")
+	if (op2 == L"(")
 	{
 		return false;
 	}
@@ -89,7 +89,7 @@ bool hasPrecedence(std::string& op1, std::string& op2)
 
 // A utility method to apply an operator 'op' on operands 'a' 
 // and 'b'. Return the result.
-std::string applyOp(ReservedWord& assignmentType, const std::string& op, std::string& b, std::string& a)
+std::wstring applyOp(ReservedWord& assignmentType, const std::wstring& op, std::wstring& b, std::wstring& a)
 {
 	const int op1Id = OPERATOR_ID_MAP.find(op)->second;
 
@@ -160,32 +160,32 @@ std::string applyOp(ReservedWord& assignmentType, const std::string& op, std::st
 	return nullptr;
 }
 
-std::string evaluate(ReservedWord& assignmentType, int startIndex, std::vector<std::string>& expressions)
+std::wstring evaluate(ReservedWord& assignmentType, int startIndex, std::vector<std::wstring>& expressions)
 {
-	std::stack<std::string> values;
+	std::stack<std::wstring> values;
 
-	std::stack<std::string> ops;
+	std::stack<std::wstring> ops;
 
 	bool lastWasOperator = false;
 	bool appendNegative = false;
 
 	for (int i = startIndex; i < expressions.size(); i++)
 	{
-		std::string expression = expressions[i];
+		std::wstring expression = expressions[i];
 		auto opId = OPERATOR_ID_MAP.find(expression);
 
-		if (expression == "(")
+		if (expression == L"(")
 		{
 			ops.push(expression);
 
 			lastWasOperator = false;
 		}
 
-		else if (expression == ")")
+		else if (expression == L")")
 		{
-			std::string val1, val2;
+			std::wstring val1, val2;
 
-			while (ops.top() != "(")
+			while (ops.top() != L"(")
 			{
 				val1 = values.top();
 				values.pop();
@@ -204,7 +204,7 @@ std::string evaluate(ReservedWord& assignmentType, int startIndex, std::vector<s
 
 		else if (lastWasOperator == false && opId != OPERATOR_ID_MAP.end())
 		{
-			std::string val1, val2;
+			std::wstring val1, val2;
 
 			while (!ops.empty() && hasPrecedence(expression, ops.top()))
 			{
@@ -223,9 +223,9 @@ std::string evaluate(ReservedWord& assignmentType, int startIndex, std::vector<s
 			lastWasOperator = true;
 		}
 
-		else if (expression != " ")
+		else if (expression != L" ")
 		{
-			if (expression == "-")
+			if (expression == L"-")
 			{
 				appendNegative = true;
 			}
@@ -233,7 +233,7 @@ std::string evaluate(ReservedWord& assignmentType, int startIndex, std::vector<s
 			{
 				if (appendNegative == true)
 				{
-					expression = "-" + expression;
+					expression = L"-" + expression;
 
 					appendNegative = false;
 				}
@@ -245,7 +245,7 @@ std::string evaluate(ReservedWord& assignmentType, int startIndex, std::vector<s
 		}
 	}
 
-	std::string val1, val2;
+	std::wstring val1, val2;
 
 	while (!ops.empty())
 	{
@@ -259,13 +259,13 @@ std::string evaluate(ReservedWord& assignmentType, int startIndex, std::vector<s
 		ops.pop();
 	}
 
-	std::string result = values.top();
+	std::wstring result = values.top();
 	values.pop();
 
 	return result;
 }
 
-void executeInitialization(const int& initializeVariableIndex, std::vector<std::string>& tokens)
+void executeInitialization(const int& initializeVariableIndex, std::vector<std::wstring>& tokens)
 {
 	int r1;
 	Var* lhsVar = getVar(tokens[1], r1);
@@ -273,12 +273,12 @@ void executeInitialization(const int& initializeVariableIndex, std::vector<std::
 	execAssignOperator(tokens[1], 0, evaluate(lhsVar->type, initializeVariableIndex, tokens));
 }
 
-void executeInitialization(const int& initializeVariableIndex, int size, std::vector<std::string>& tokens)
+void executeInitialization(const int& initializeVariableIndex, int size, std::vector<std::wstring>& tokens)
 {
 	int r1;
 	Var* lhsVar = getVar(tokens[1], r1);
 
-	std::string result = evaluate(lhsVar->type, initializeVariableIndex, tokens);
+	std::wstring result = evaluate(lhsVar->type, initializeVariableIndex, tokens);
 
 	for (int i = 0; i < size; ++i)
 	{
@@ -286,20 +286,20 @@ void executeInitialization(const int& initializeVariableIndex, int size, std::ve
 	}
 }
 
-void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
+void executeAssignment(const int& tokensSize, std::vector<std::wstring>& tokens)
 {
 	Var* lhsVar;
 	Var* rhsVar;
 	ReservedWord lhsType;
 
-	if (tokens[1] == "=")
+	if (tokens[1] == L"=")
 	{
 		int r1;
 		lhsVar = getVar(tokens[0], r1);
 
 		execAssignOperator(tokens[0], evaluate(lhsVar->type, 2, tokens));
 	}
-	else if (tokens[1] == "+=")
+	else if (tokens[1] == L"+=")
 	{
 		int r1, r2;
 		lhsVar = getVar(tokens[0], r1);
@@ -359,7 +359,7 @@ void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
 		{
 			if (rhsVar == nullptr)
 			{
-				std::string temp = tokens[2];
+				std::wstring temp = tokens[2];
 
 				//findAndReplaceNewline(temp);
 				//findAndReplaceQuoteEscape(temp);
@@ -367,14 +367,14 @@ void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
 				temp = temp.substr(1);
 				temp = temp.substr(0, temp.length() - 1);
 
-				std::string* pstr = static_cast<std::string*>(lhsVar->data);
-				//std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+				std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+				//std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 				pstr[r1] += temp;
 			}
 			else
 			{
-				std::string* pstr = static_cast<std::string*>(lhsVar->data);
-				std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+				std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+				std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 				pstr[r1] += rpstr[r2];
 			}
 
@@ -382,7 +382,7 @@ void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
 		}
 		}
 	}
-	else if (tokens[1] == "-=")
+	else if (tokens[1] == L"-=")
 	{
 		int r1, r2;
 		lhsVar = getVar(tokens[0], r1);
@@ -440,7 +440,7 @@ void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
 		}
 		}
 	}
-	else if (tokens[1] == "*=")
+	else if (tokens[1] == L"*=")
 	{
 		int r1, r2;
 		lhsVar = getVar(tokens[0], r1);
@@ -498,7 +498,7 @@ void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
 		}
 		}
 	}
-	else if (tokens[1] == "/=")
+	else if (tokens[1] == L"/=")
 	{
 		int r1, r2;
 		lhsVar = getVar(tokens[0], r1);
@@ -556,7 +556,7 @@ void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
 		}
 		}
 	}
-	else if (tokens[1] == "~=")
+	else if (tokens[1] == L"~=")
 	{
 		int r1, r2;
 		lhsVar = getVar(tokens[0], r1);
@@ -600,7 +600,7 @@ void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
 		}
 		}
 	}
-	else if (tokens[1] == "^=")
+	else if (tokens[1] == L"^=")
 	{
 		int r1, r2;
 		lhsVar = getVar(tokens[0], r1);
@@ -646,7 +646,7 @@ void executeAssignment(const int& tokensSize, std::vector<std::string>& tokens)
 	}
 }
 
-bool execPlusOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs)
+bool execPlusOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
@@ -673,7 +673,7 @@ bool execPlusOperator(ReservedWord& assignmentType, std::string& lhs, std::strin
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] + rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] + rpstr[r2]);
 
 		break;
 	}
@@ -693,7 +693,7 @@ bool execPlusOperator(ReservedWord& assignmentType, std::string& lhs, std::strin
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] + rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] + rpstr[r2]);
 
 		break;
 	}
@@ -713,7 +713,7 @@ bool execPlusOperator(ReservedWord& assignmentType, std::string& lhs, std::strin
 
 		double* pstr = static_cast<double*>(lhsVar->data);
 		double* rpstr = static_cast<double*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] + rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] + rpstr[r2]);
 
 		break;
 	}
@@ -721,7 +721,7 @@ bool execPlusOperator(ReservedWord& assignmentType, std::string& lhs, std::strin
 	{
 		if (createdLhs == true)
 		{
-			std::string* pstr = static_cast<std::string*>(lhsVar->data);
+			std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
 			pstr[r1] = lhs.substr(1, lhs.length() - 2);
 
 			findAndReplaceNewline(pstr[r1]);
@@ -730,15 +730,15 @@ bool execPlusOperator(ReservedWord& assignmentType, std::string& lhs, std::strin
 
 		if (createdRhs == true)
 		{
-			std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+			std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 			rpstr[r2] = rhs.substr(1, rhs.length() - 2);
 
 			findAndReplaceNewline(rpstr[r2]);
 			findAndReplaceQuoteEscape(rpstr[r2]);
 		}
 
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 		lhs = pstr[r1] + rpstr[r2];
 
 		break;
@@ -758,7 +758,7 @@ bool execPlusOperator(ReservedWord& assignmentType, std::string& lhs, std::strin
 	return false;
 }
 
-bool execMinusOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs)
+bool execMinusOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
@@ -785,7 +785,7 @@ bool execMinusOperator(ReservedWord& assignmentType, std::string& lhs, std::stri
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] - rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] - rpstr[r2]);
 
 		break;
 	}
@@ -805,7 +805,7 @@ bool execMinusOperator(ReservedWord& assignmentType, std::string& lhs, std::stri
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] - rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] - rpstr[r2]);
 
 		break;
 	}
@@ -825,7 +825,7 @@ bool execMinusOperator(ReservedWord& assignmentType, std::string& lhs, std::stri
 
 		double* pstr = static_cast<double*>(lhsVar->data);
 		double* rpstr = static_cast<double*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] - rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] - rpstr[r2]);
 
 		break;
 	}
@@ -844,7 +844,7 @@ bool execMinusOperator(ReservedWord& assignmentType, std::string& lhs, std::stri
 	return false;
 }
 
-bool execLeftShiftOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs)
+bool execLeftShiftOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
@@ -871,7 +871,7 @@ bool execLeftShiftOperator(ReservedWord& assignmentType, std::string& lhs, std::
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] << rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] << rpstr[r2]);
 
 		break;
 	}
@@ -891,7 +891,7 @@ bool execLeftShiftOperator(ReservedWord& assignmentType, std::string& lhs, std::
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] << rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] << rpstr[r2]);
 
 		break;
 	}
@@ -910,7 +910,7 @@ bool execLeftShiftOperator(ReservedWord& assignmentType, std::string& lhs, std::
 	return false;
 }
 
-bool execRightShiftOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs)
+bool execRightShiftOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
@@ -937,7 +937,7 @@ bool execRightShiftOperator(ReservedWord& assignmentType, std::string& lhs, std:
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] >> rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] >> rpstr[r2]);
 
 		break;
 	}
@@ -957,7 +957,7 @@ bool execRightShiftOperator(ReservedWord& assignmentType, std::string& lhs, std:
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] >> rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] >> rpstr[r2]);
 
 		break;
 	}
@@ -976,7 +976,7 @@ bool execRightShiftOperator(ReservedWord& assignmentType, std::string& lhs, std:
 	return false;
 }
 
-bool execMultiplyOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs)
+bool execMultiplyOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
@@ -1003,7 +1003,7 @@ bool execMultiplyOperator(ReservedWord& assignmentType, std::string& lhs, std::s
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] * rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] * rpstr[r2]);
 
 		break;
 	}
@@ -1023,7 +1023,7 @@ bool execMultiplyOperator(ReservedWord& assignmentType, std::string& lhs, std::s
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] * rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] * rpstr[r2]);
 
 		break;
 	}
@@ -1043,7 +1043,7 @@ bool execMultiplyOperator(ReservedWord& assignmentType, std::string& lhs, std::s
 
 		double* pstr = static_cast<double*>(lhsVar->data);
 		double* rpstr = static_cast<double*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] * rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] * rpstr[r2]);
 
 		break;
 	}
@@ -1062,7 +1062,7 @@ bool execMultiplyOperator(ReservedWord& assignmentType, std::string& lhs, std::s
 	return false;
 }
 
-bool execDivideOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs)
+bool execDivideOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
@@ -1089,7 +1089,7 @@ bool execDivideOperator(ReservedWord& assignmentType, std::string& lhs, std::str
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] / rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] / rpstr[r2]);
 
 		break;
 	}
@@ -1109,7 +1109,7 @@ bool execDivideOperator(ReservedWord& assignmentType, std::string& lhs, std::str
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] / rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] / rpstr[r2]);
 
 		break;
 	}
@@ -1129,7 +1129,7 @@ bool execDivideOperator(ReservedWord& assignmentType, std::string& lhs, std::str
 
 		double* pstr = static_cast<double*>(lhsVar->data);
 		double* rpstr = static_cast<double*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] / rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] / rpstr[r2]);
 
 		break;
 	}
@@ -1138,7 +1138,7 @@ bool execDivideOperator(ReservedWord& assignmentType, std::string& lhs, std::str
 	return false;
 }
 
-bool execModuloOperator(ReservedWord& assignmentType, std::string& lhs, std::string rhs)
+bool execModuloOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstring rhs)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
@@ -1165,7 +1165,7 @@ bool execModuloOperator(ReservedWord& assignmentType, std::string& lhs, std::str
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] % rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] % rpstr[r2]);
 
 		break;
 	}
@@ -1185,7 +1185,7 @@ bool execModuloOperator(ReservedWord& assignmentType, std::string& lhs, std::str
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		lhs = std::to_string(pstr[r1] % rpstr[r2]);
+		lhs = std::to_wstring(pstr[r1] % rpstr[r2]);
 
 		break;
 	}
@@ -1194,11 +1194,11 @@ bool execModuloOperator(ReservedWord& assignmentType, std::string& lhs, std::str
 	return false;
 }
 
-bool execXorOperator(ReservedWord& assignmentType, std::string& l, std::string r)
+bool execXorOperator(ReservedWord& assignmentType, std::wstring& l, std::wstring r)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
-	std::string lhs = l, rhs = r;
+	std::wstring lhs = l, rhs = r;
 	Var* lhsVar = getVar(lhs, assignmentType, r1, createdLhs);
 	Var* rhsVar = getVar(rhs, assignmentType, r2, createdRhs);
 
@@ -1222,7 +1222,7 @@ bool execXorOperator(ReservedWord& assignmentType, std::string& l, std::string r
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		l = std::to_string(pstr[r1] ^ rpstr[r2]);
+		l = std::to_wstring(pstr[r1] ^ rpstr[r2]);
 
 		break;
 	}
@@ -1242,7 +1242,7 @@ bool execXorOperator(ReservedWord& assignmentType, std::string& l, std::string r
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		l = std::to_string(pstr[r1] ^ rpstr[r2]);
+		l = std::to_wstring(pstr[r1] ^ rpstr[r2]);
 
 		break;
 	}
@@ -1261,11 +1261,11 @@ bool execXorOperator(ReservedWord& assignmentType, std::string& l, std::string r
 	return false;
 }
 
-bool execUnsignedRightShiftOperator(ReservedWord& assignmentType, std::string& l, std::string r)
+bool execUnsignedRightShiftOperator(ReservedWord& assignmentType, std::wstring& l, std::wstring r)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
-	std::string lhs = l, rhs = r;
+	std::wstring lhs = l, rhs = r;
 	Var* lhsVar = getVar(lhs, assignmentType, r1, createdLhs);
 	Var* rhsVar = getVar(rhs, assignmentType, r2, createdRhs);
 
@@ -1292,7 +1292,7 @@ bool execUnsignedRightShiftOperator(ReservedWord& assignmentType, std::string& l
 		
 		unsigned int lhs = pstr[r1];
 		unsigned int result = lhs >> rpstr[r2];
-		l = std::to_string(result);
+		l = std::to_wstring(result);
 
 		break;
 	}
@@ -1315,7 +1315,7 @@ bool execUnsignedRightShiftOperator(ReservedWord& assignmentType, std::string& l
 		
 		unsigned long long int lhs = pstr[r1];
 		unsigned long long int result = lhs >> rpstr[r2];
-		l = std::to_string(result);
+		l = std::to_wstring(result);
 
 		break;
 	}
@@ -1334,11 +1334,11 @@ bool execUnsignedRightShiftOperator(ReservedWord& assignmentType, std::string& l
 	return false;
 }
 
-bool execBitwiseComplementOperator(ReservedWord& assignmentType, std::string& l, std::string r)
+bool execBitwiseComplementOperator(ReservedWord& assignmentType, std::wstring& l, std::wstring r)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
-	std::string lhs = l, rhs = r;
+	std::wstring lhs = l, rhs = r;
 	Var* lhsVar = getVar(lhs, assignmentType, r1, createdLhs);
 	Var* rhsVar = getVar(rhs, assignmentType, r2, createdRhs);
 
@@ -1363,7 +1363,7 @@ bool execBitwiseComplementOperator(ReservedWord& assignmentType, std::string& l,
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
 		pstr[r1] = ~rpstr[r2];
-		l = std::to_string(pstr[r1]);
+		l = std::to_wstring(pstr[r1]);
 
 		break;
 	}
@@ -1384,7 +1384,7 @@ bool execBitwiseComplementOperator(ReservedWord& assignmentType, std::string& l,
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
 		pstr[r1] = ~rpstr[r2];
-		l = std::to_string(pstr[r1]);
+		l = std::to_wstring(pstr[r1]);
 
 		break;
 	}
@@ -1403,11 +1403,11 @@ bool execBitwiseComplementOperator(ReservedWord& assignmentType, std::string& l,
 	return false;
 }
 
-bool execAndOperator(ReservedWord& assignmentType, std::string& l, std::string r)
+bool execAndOperator(ReservedWord& assignmentType, std::wstring& l, std::wstring r)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
-	std::string lhs = l, rhs = r;
+	std::wstring lhs = l, rhs = r;
 	Var* lhsVar = getVar(lhs, assignmentType, r1, createdLhs);
 	Var* rhsVar = getVar(rhs, assignmentType, r2, createdRhs);
 
@@ -1431,7 +1431,7 @@ bool execAndOperator(ReservedWord& assignmentType, std::string& l, std::string r
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		l = std::to_string(pstr[r1] & rpstr[r2]);
+		l = std::to_wstring(pstr[r1] & rpstr[r2]);
 
 		break;
 	}
@@ -1451,7 +1451,7 @@ bool execAndOperator(ReservedWord& assignmentType, std::string& l, std::string r
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		l = std::to_string(pstr[r1] & rpstr[r2]);
+		l = std::to_wstring(pstr[r1] & rpstr[r2]);
 
 		break;
 	}
@@ -1470,11 +1470,11 @@ bool execAndOperator(ReservedWord& assignmentType, std::string& l, std::string r
 	return false;
 }
 
-bool execOrOperator(ReservedWord& assignmentType, std::string& l, std::string r)
+bool execOrOperator(ReservedWord& assignmentType, std::wstring& l, std::wstring r)
 {
 	int r1, r2;
 	bool createdLhs, createdRhs;
-	std::string lhs = l, rhs = r;
+	std::wstring lhs = l, rhs = r;
 	Var* lhsVar = getVar(lhs, assignmentType, r1, createdLhs);
 	Var* rhsVar = getVar(rhs, assignmentType, r2, createdRhs);
 
@@ -1498,7 +1498,7 @@ bool execOrOperator(ReservedWord& assignmentType, std::string& l, std::string r)
 
 		int* pstr = static_cast<int*>(lhsVar->data);
 		int* rpstr = static_cast<int*>(rhsVar->data);
-		l = std::to_string(pstr[r1] | rpstr[r2]);
+		l = std::to_wstring(pstr[r1] | rpstr[r2]);
 
 		break;
 	}
@@ -1518,7 +1518,7 @@ bool execOrOperator(ReservedWord& assignmentType, std::string& l, std::string r)
 
 		long long int* pstr = static_cast<long long int*>(lhsVar->data);
 		long long int* rpstr = static_cast<long long int*>(rhsVar->data);
-		l = std::to_string(pstr[r1] | rpstr[r2]);
+		l = std::to_wstring(pstr[r1] | rpstr[r2]);
 
 		break;
 	}
@@ -1563,8 +1563,8 @@ bool execGreaterThanOrEqualsOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 		return pstr[r1] >= rpstr[r2];
 	}
 	}
@@ -1598,8 +1598,8 @@ bool execGreaterThanOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 		return pstr[r1] > rpstr[r2];
 	}
 	}
@@ -1633,8 +1633,8 @@ bool execLessThanOrEqualsOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 		return pstr[r1] <= rpstr[r2];
 	}
 	}
@@ -1668,8 +1668,8 @@ bool execLessThanOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 		return pstr[r1] < rpstr[r2];
 	}
 	}
@@ -1703,8 +1703,8 @@ bool execNotEqualsOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 		return pstr[r1] != rpstr[r2];
 	}
 	}
@@ -1738,8 +1738,8 @@ bool execEqualsOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 		return pstr[r1] == rpstr[r2];
 	}
 	}
@@ -1777,9 +1777,10 @@ void execAssignOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
-		pstr[r1] = rpstr[r2];
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
+
+		pstr[r1] = std::wstring(rpstr[r2]);
 
 		break;
 	}
@@ -1808,7 +1809,7 @@ void execAssignOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 			ObjectStore* obj1 = objStore1[i];
 			ObjectStore* obj2 = objStore2[i];
 
-			std::vector<std::string> keys = obj2->getKeys();
+			std::vector<std::wstring> keys = obj2->getKeys();
 			for (int i = 0; i < keys.size(); ++i)
 			{
 				int toCopyIndex;
@@ -1864,11 +1865,11 @@ void execAssignOperator(Var* lhsVar, Var* rhsVar)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
-		std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+		std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 
 		for (int i = 0; i < lhsVar->size; ++i)
-			pstr[i] = rpstr[i];
+			pstr[i] = std::wstring(rpstr[i]);
 
 		break;
 	}
@@ -1897,7 +1898,7 @@ void execAssignOperator(Var* lhsVar, Var* rhsVar)
 			ObjectStore* obj1 = objStore1[i];
 			ObjectStore* obj2 = objStore2[i];
 
-			std::vector<std::string> keys = obj2->getKeys();
+			std::vector<std::wstring> keys = obj2->getKeys();
 			for (int i = 0; i < keys.size(); ++i)
 			{
 				int toCopyIndex;
@@ -1915,7 +1916,7 @@ void execAssignOperator(Var* lhsVar, Var* rhsVar)
 	}
 }
 
-void execAssignOperator(const std::string& lhs, const std::string& rhs)
+void execAssignOperator(const std::wstring& lhs, const std::wstring& rhs)
 {
 	int r1, r2;
 	Var* lhsVar = getVar(lhs, r1);
@@ -1975,21 +1976,21 @@ void execAssignOperator(const std::string& lhs, const std::string& rhs)
 	{
 		if (rhsVar == nullptr)
 		{
-			std::string temp = rhs.substr(1);
+			std::wstring temp = rhs.substr(1);
 			temp = temp.substr(0, temp.length() - 1);
 
 			findAndReplaceNewline(temp);
 			findAndReplaceQuoteEscape(temp);
 
-			std::string* pstr = static_cast<std::string*>(lhsVar->data);
-			//std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+			std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+			//std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 			pstr[r1] = temp;
 		}
 		else
 		{
-			std::string* pstr = static_cast<std::string*>(lhsVar->data);
-			std::string* rpstr = static_cast<std::string*>(rhsVar->data);
-			pstr[r1] = rpstr[r2];
+			std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+			std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
+			pstr[r1] = std::wstring(rpstr[r2]);
 		}
 
 		break;
@@ -1997,7 +1998,7 @@ void execAssignOperator(const std::string& lhs, const std::string& rhs)
 	}
 }
 
-void execAssignOperator(const std::string& lhs, int r1, const std::string& rhs)
+void execAssignOperator(const std::wstring& lhs, int r1, const std::wstring& rhs)
 {
 	int r2;
 	int r1Temp;
@@ -2060,20 +2061,20 @@ void execAssignOperator(const std::string& lhs, int r1, const std::string& rhs)
 	{
 		if (rhsVar == nullptr)
 		{
-			std::string temp = rhs.substr(1);
+			std::wstring temp = rhs.substr(1);
 			temp = temp.substr(0, temp.length() - 1);
 
 			findAndReplaceNewline(temp);
 			findAndReplaceQuoteEscape(temp);
 
-			std::string* pstr = static_cast<std::string*>(lhsVar->data);
-			//std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+			std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+			//std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 			pstr[r1] = temp;
 		}
 		else
 		{
-			std::string* pstr = static_cast<std::string*>(lhsVar->data);
-			std::string* rpstr = static_cast<std::string*>(rhsVar->data);
+			std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
+			std::wstring* rpstr = static_cast<std::wstring*>(rhsVar->data);
 			pstr[r1] = rpstr[r2];
 		}
 

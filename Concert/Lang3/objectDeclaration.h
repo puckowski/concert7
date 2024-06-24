@@ -17,29 +17,29 @@ const int DECLARE_OBJECT_ARRAY    = 3;
 
 const int OBJECT_VARIABLE_SIZE = 1;
 
-void declareObjectVariable(const int& tokensSize, std::vector<std::string>& tokens)
+void declareObjectVariable(const int& tokensSize, std::vector<std::wstring>& tokens)
 {
 	if (tokensSize == DECLARE_OBJECT_VARIABLE)
 	{
-		std::string name = tokens[OBJECT_NAME_INDEX];
-		std::string::size_type accessorIndex = name.find_last_of(".");
+		std::wstring name = tokens[OBJECT_NAME_INDEX];
+		std::wstring::size_type accessorIndex = name.find_last_of(L".");
 
-		if (accessorIndex == std::string::npos)
+		if (accessorIndex == std::wstring::npos)
 		{
 			gWorkspaceStore->getStore()->addVar(new Var(tokens[OBJECT_NAME_INDEX], TYPE_OBJECT, OBJECT_VARIABLE_SIZE));
 		}
 		else
 		{
-			std::string storeName = name.substr(0, accessorIndex);
-			std::string varName = name.substr(accessorIndex + 1, name.length());
-			std::string::size_type indexQuote = varName.find("'");
+			std::wstring storeName = name.substr(0, accessorIndex);
+			std::wstring varName = name.substr(accessorIndex + 1, name.length());
+			std::wstring::size_type indexQuote = varName.find(L"'");
 
-			if (indexQuote != std::string::npos)
+			if (indexQuote != std::wstring::npos)
 			{
-				varName = varName.substr(indexQuote + 1, varName.find("'", indexQuote + 1) - 1);
+				varName = varName.substr(indexQuote + 1, varName.find(L"'", indexQuote + 1) - 1);
 				int r1;
 				Var* v = getVar(varName, r1);
-				std::string* pstr = static_cast<std::string*>(v->data);
+				std::wstring* pstr = static_cast<std::wstring*>(v->data);
 				varName = pstr[r1];
 			}
 
@@ -60,25 +60,25 @@ void declareObjectVariable(const int& tokensSize, std::vector<std::string>& toke
 		Var* var = getVar(tokens[OBJECT_SIZE_INDEX], index, createdVar);
 		int* sizeArray = static_cast<int*>(var->data);
 
-		std::string name = tokens[OBJECT_NAME_INDEX];
-		std::string::size_type accessorIndex = name.find_last_of(".");
+		std::wstring name = tokens[OBJECT_NAME_INDEX];
+		std::wstring::size_type accessorIndex = name.find_last_of(L".");
 
-		if (accessorIndex == std::string::npos)
+		if (accessorIndex == std::wstring::npos)
 		{
 			gWorkspaceStore->getStore()->addVar(new Var(tokens[OBJECT_NAME_INDEX], TYPE_OBJECT, sizeArray[index]));
 		}
 		else
 		{
-			std::string storeName = name.substr(0, accessorIndex);
-			std::string varName = name.substr(accessorIndex + 1, name.length());
-			std::string::size_type indexQuote = varName.find("'");
+			std::wstring storeName = name.substr(0, accessorIndex);
+			std::wstring varName = name.substr(accessorIndex + 1, name.length());
+			std::wstring::size_type indexQuote = varName.find(L"'");
 
-			if (indexQuote != std::string::npos)
+			if (indexQuote != std::wstring::npos)
 			{
-				varName = varName.substr(indexQuote + 1, varName.find("'", indexQuote + 1) - 1);
+				varName = varName.substr(indexQuote + 1, varName.find(L"'", indexQuote + 1) - 1);
 				int r1;
 				Var* v = getVar(varName, r1);
-				std::string* pstr = static_cast<std::string*>(v->data);
+				std::wstring* pstr = static_cast<std::wstring*>(v->data);
 				varName = pstr[r1];
 			}
 

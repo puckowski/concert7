@@ -8,7 +8,7 @@
 #include "sourceFunctions.h"
 #include "mutexFunctions.h"
 
-void executeKeywordUnlock(std::vector<std::string> &tokens)
+void executeKeywordUnlock(std::vector<std::wstring> &tokens)
 {
 	std::mutex* mtx = getMutex(tokens[1]);
 

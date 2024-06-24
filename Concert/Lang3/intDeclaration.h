@@ -17,21 +17,21 @@ const int DECLARE_INT_ARRAY    = 3;
 
 const int INT_VARIABLE_SIZE    = 1;
 
-void declareIntVariable(const int &tokensSize, std::vector<std::string> &tokens)
+void declareIntVariable(const int &tokensSize, std::vector<std::wstring> &tokens)
 {
 	if (tokensSize == DECLARE_INT_VARIABLE)
 	{
-		std::string name = tokens[1];
-		std::string::size_type accessorIndex = name.find_last_of(".");
+		std::wstring name = tokens[1];
+		std::wstring::size_type accessorIndex = name.find_last_of(L".");
 
-		if (accessorIndex == std::string::npos)
+		if (accessorIndex == std::wstring::npos)
 		{
 			gWorkspaceStore->getStore()->addVar(new Var(tokens[INT_NAME_INDEX], TYPE_INT, INT_VARIABLE_SIZE));
 		} 
 		else 
 		{
-			std::string storeName = name.substr(0, accessorIndex);
-			std::string varName = name.substr(accessorIndex + 1, name.length());
+			std::wstring storeName = name.substr(0, accessorIndex);
+			std::wstring varName = name.substr(accessorIndex + 1, name.length());
 			int intValue = 0;
 
 			ObjectStore** var = static_cast<ObjectStore**>(gWorkspaceStore->getStore()->getVar(storeName, intValue)->data);
@@ -41,8 +41,8 @@ void declareIntVariable(const int &tokensSize, std::vector<std::string> &tokens)
 	}
 	else if(tokensSize == DECLARE_INT_ARRAY)
 	{
-		std::string name = tokens[1];
-		std::string::size_type accessorIndex = name.find_last_of(".");
+		std::wstring name = tokens[1];
+		std::wstring::size_type accessorIndex = name.find_last_of(L".");
 
 		int index;
 		bool createdVar = false;
@@ -50,14 +50,14 @@ void declareIntVariable(const int &tokensSize, std::vector<std::string> &tokens)
 		Var* var = getVar(tokens[INT_SIZE_INDEX], index, createdVar);
 		int* sizeArray = static_cast<int*>(var->data);
 
-		if (accessorIndex == std::string::npos)
+		if (accessorIndex == std::wstring::npos)
 		{
 			gWorkspaceStore->getStore()->addVar(new Var(tokens[INT_NAME_INDEX], TYPE_INT, sizeArray[index]));
 		}
 		else
 		{
-			std::string storeName = name.substr(0, accessorIndex);
-			std::string varName = name.substr(accessorIndex + 1, name.length());
+			std::wstring storeName = name.substr(0, accessorIndex);
+			std::wstring varName = name.substr(accessorIndex + 1, name.length());
 			int intValue = 0;
 
 			ObjectStore** var = static_cast<ObjectStore**>(gWorkspaceStore->getStore()->getVar(storeName, intValue)->data);
@@ -72,13 +72,13 @@ void declareIntVariable(const int &tokensSize, std::vector<std::string> &tokens)
 	}
 	else if (tokensSize >= INITIALIZE_TOKEN_COUNT_MINIMUM)
 	{
-		if (tokens[CHECK_VARIABLE_INITIALIZATION_INDEX] == "=")
+		if (tokens[CHECK_VARIABLE_INITIALIZATION_INDEX] == L"=")
 		{
 			gWorkspaceStore->getStore()->addVar(new Var(tokens[INT_NAME_INDEX], TYPE_INT, INT_VARIABLE_SIZE));
 
 			executeInitialization(INITIALIZE_VARIABLE_START_INDEX, tokens);
 		}
-		else //if (tokens[CHECK_ARRAY_INITIALIZATION_INDEX] == "=")
+		else //if (tokens[CHECK_ARRAY_INITIALIZATION_INDEX] == L"=")
 		{
 			int index;
 			bool createdVar = false;

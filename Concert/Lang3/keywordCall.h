@@ -16,7 +16,7 @@
 #include "regexLibrary.h"
 #include "threadLibrary.h"
 
-void executeKeywordCall(const int &tokensSize, std::vector<std::string> &tokens)
+void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens)
 {
 	int currentLineCopy = currentLine;
 
@@ -25,16 +25,16 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::string> &tokens)
 	if (debugEnabled == true)
 	{
 		callNameMutex.lock();
-		std::ostringstream ss;
+		std::wostringstream ss;
 		ss << std::this_thread::get_id();
-		std::string idstr = ss.str();
-		callNameStack.push_back(idstr + "_" + tokens[1]);
+		std::wstring idstr = ss.str();
+		callNameStack.push_back(idstr + L"_" + tokens[1]);
 		callNameMutex.unlock();
 	}
 
 	if (currentLine != -1)
 	{
-		std::string origWs = workspaceStack.back();
+		std::wstring origWs = workspaceStack.back();
 
 		////
 		lastWorkspace = gWorkspaceStore->getStore();
@@ -46,7 +46,7 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::string> &tokens)
 
 		for (int i = 2; i < tokensSize; ++i)
 		{
-			if (tokens[i] == "->") 
+			if (tokens[i] == L"->") 
 			{
 				hasReturn = true;
 
@@ -343,10 +343,10 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::string> &tokens)
 	if (debugEnabled == true)
 	{
 		callNameMutex.lock();
-		std::ostringstream ss;
+		std::wostringstream ss;
 		ss << std::this_thread::get_id();
-		std::string idstr = ss.str();
-		std::string currId;
+		std::wstring idstr = ss.str();
+		std::wstring currId;
 
 		for (auto it = callNameStack.rbegin(); it != callNameStack.rend(); ++it)
 		{

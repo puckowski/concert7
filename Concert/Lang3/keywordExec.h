@@ -8,17 +8,17 @@
 #include "interpreter.h"
 #include "sourceFunctions.h"
 
-void executeKeywordExec(std::vector<std::string> &tokens)
+void executeKeywordExec(std::vector<std::wstring> &tokens)
 {
 	bool created = false;
 	int r1;
 	Var* v = getVar(tokens[1], r1, created);
 
-	std::string code;
+	std::wstring code;
 
 	if (v != nullptr)
 	{
-		std::string* pstr = static_cast<std::string*>(v->data);
+		std::wstring* pstr = static_cast<std::wstring*>(v->data);
 		code = pstr[r1].c_str();
 	}
 	else
@@ -28,7 +28,7 @@ void executeKeywordExec(std::vector<std::string> &tokens)
 
 	int jumpToLine = codeStore->gStatements.size();
 
-	std::vector<std::string> tokens2;
+	std::vector<std::wstring> tokens2;
 	tokenizeStatement3(code, tokens2, codeStore);
 
 	int oldCurrentLine = currentLine;

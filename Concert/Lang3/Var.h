@@ -11,24 +11,26 @@ class Var
 {
 public:
 	void* data;
-	std::string name;
+	std::wstring name;
 	ReservedWord type;
 	int size;
+	int reassignCount;
+	int reassignTargetCount;
 
-	Var(const std::string &n, const ReservedWord &t);
+	Var(const std::wstring &n, const ReservedWord &t);
 
-	Var(const std::string &n, const ReservedWord &t, const int &s);
+	Var(const std::wstring &n, const ReservedWord &t, const int &s);
 
 	Var(int value);
 
 	Var(long long int value);
 	Var(double value);
 
-	Var(std::string value);
+	Var(std::wstring value);
 
 	Var(ObjectStore* value);
 
-	Var(const std::string& n, const ReservedWord& t, const int& s, Var* aliasVar);
+	Var(const std::wstring& n, const ReservedWord& t, const int& s, Var* aliasVar);
 
 	~Var();
 	void deleteData();

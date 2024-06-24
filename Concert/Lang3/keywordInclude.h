@@ -9,7 +9,7 @@
 #include "CodeStore.h"
 #include "sourceFunctions.h"
 
-void executeKeywordInclude(std::vector<std::string> &tokens, int &currentLine)
+void executeKeywordInclude(std::vector<std::wstring> &tokens, int &currentLine)
 {
 	int oldCurrentLine = currentLine;
 	int endOfCode = codeStore->gStatements.size();

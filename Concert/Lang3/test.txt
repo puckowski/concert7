@@ -8,10 +8,10 @@ int count = 0;
 mutex m;
 
 function c2 : using count;
-	while count < 1000000;
+	while count < 100000;
 		lock m;
 		
-		if count < 1000000;
+		if count < 100000;
 			count += 1;
 		end;
 		
@@ -26,7 +26,7 @@ function c3 : using count;
 	detach c2 : count;
 	detach c2 : count;
 
-	while count < 1000000;
+	while count < 100000;
 	#	println "wait ", count;
 	end;
 return;
@@ -378,3 +378,7 @@ call get_thread_id -> threadName;
 println "thread name: ", threadName;
 
 println "test print, with comma", threadName;
+
+string nonLatin = "读写汉字 - 学中文";
+
+println nonLatin;

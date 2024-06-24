@@ -40,10 +40,10 @@ void println(Var* v)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(v->data);
+		std::wstring* pstr = static_cast<std::wstring*>(v->data);
 
 		for (int i = 0; i < v->size; ++i)
-			std::cout << pstr[i] << " ";
+			std::wcout << pstr[i] << " ";
 
 		break;
 	}
@@ -83,10 +83,10 @@ void print(Var* v)
 	}
 	case TYPE_STRING:
 	{
-		std::string* pstr = static_cast<std::string*>(v->data);
+		std::wstring* pstr = static_cast<std::wstring*>(v->data);
 			
 		for (int i = 0; i < v->size; ++i)
-			std::cout << pstr[i] << " ";
+			std::wcout << pstr[i] << " ";
 
 		break;
 	}

@@ -9,14 +9,14 @@
 
 class WorkspaceStore;
 
-extern thread_local std::vector<std::string> workspaceStack;
+extern thread_local std::vector<std::wstring> workspaceStack;
 
 #include "VarStore.h"
 
 class WorkspaceStore
 {
-	std::list < std::pair<const std::string, VarStore*>, std::allocator<std::pair<const std::string, VarStore*>>>::iterator mBackIterator;
-	std::unordered_map<std::string, VarStore*> mVars;
+	std::list < std::pair<const std::wstring, VarStore*>, std::allocator<std::pair<const std::wstring, VarStore*>>>::iterator mBackIterator;
+	std::unordered_map<std::wstring, VarStore*> mVars;
 	VarStore* mBack;
 	std::set<long long> deletedDataSet;
 
@@ -29,9 +29,9 @@ public:
 	std::set<long long>& getDeletedDataSet();
 	void setDeletedDataSet(std::set<long long>& set);
 
-	VarStore* getStore(const std::string &name);
+	VarStore* getStore(const std::wstring &name);
 
-	void addStore(const std::string &name, VarStore* varStore);
+	void addStore(const std::wstring &name, VarStore* varStore);
 
 	void addGlobalStore(VarStore* varStore);
 
@@ -44,10 +44,11 @@ public:
 	void setBack();
 
 	int count();
-	std::pair<std::string, VarStore*> removeStoreAndReturn();
-	void addStoreSimple(const std::string &name, VarStore* varStore);
-	void removeStore(const std::string &name);
-	bool hasStore(const std::string &name);
+	std::pair<std::wstring, VarStore*> removeStoreAndReturn();
+	void addStoreSimple(const std::wstring &name, VarStore* varStore);
+	void removeStore(const std::wstring &name);
+	bool hasStore(const std::wstring &name);
+	void reassignVar(Var* toReassign, Var* newVar);
 };
 
 #endif

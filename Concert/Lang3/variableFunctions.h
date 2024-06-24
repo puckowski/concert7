@@ -23,7 +23,7 @@ const int CHECK_ARRAY_INITIALIZATION_INDEX    = 3;
 const int INITIALIZE_VARIABLE_START_INDEX = 3;
 const int INITIALIZE_ARRAY_START_INDEX    = 4;
 
-Var* getVarFromLastWorkspace(const std::string &name, int &val, bool &created)
+Var* getVarFromLastWorkspace(const std::wstring &name, int &val, bool &created)
 {
 	created = false;
 
@@ -32,16 +32,16 @@ Var* getVarFromLastWorkspace(const std::string &name, int &val, bool &created)
 
 	if (var == nullptr)
 	{
-		if (name.find("\"") != std::string::npos)
+		if (name.find(L"\"") != std::wstring::npos)
 		{
-			std::string temp = name.substr(1);
+			std::wstring temp = name.substr(1);
 			temp = temp.substr(0, temp.length() - 1);
 
 			var = new Var(temp);
 
 			created = true;
 		}
-		else if (name.find(".") != std::string::npos)
+		else if (name.find(L".") != std::wstring::npos)
 		{
 			var = new Var(std::stod(name));
 
@@ -68,7 +68,7 @@ Var* getVarFromLastWorkspace(const std::string &name, int &val, bool &created)
 	return var;
 }
 
-Var* getVarFromLastWorkspace(const std::string &name, const ReservedWord lhsVarType, int &val, bool &created)
+Var* getVarFromLastWorkspace(const std::wstring &name, const ReservedWord lhsVarType, int &val, bool &created)
 {
 	created = false;
 
@@ -102,7 +102,7 @@ Var* getVarFromLastWorkspace(const std::string &name, const ReservedWord lhsVarT
 		}
 		case TYPE_STRING:
 		{
-			std::string temp = name.substr(1);
+			std::wstring temp = name.substr(1);
 			temp = temp.substr(0, temp.length() - 1);
 
 			var = new Var(temp);
@@ -116,7 +116,7 @@ Var* getVarFromLastWorkspace(const std::string &name, const ReservedWord lhsVarT
 	return var;
 }
 
-Var* getVar(const std::string &name, ReservedWord &lhsVarType, int &val, bool &created)
+Var* getVar(const std::wstring &name, ReservedWord &lhsVarType, int &val, bool &created)
 {
 	created = false;
 
@@ -150,9 +150,9 @@ Var* getVar(const std::string &name, ReservedWord &lhsVarType, int &val, bool &c
 		}
 		case TYPE_STRING:
 		{
-			std::string temp = name;
+			std::wstring temp = name;
 			
-			if (name.find("\"") != std::string::npos)
+			if (name.find(L"\"") != std::wstring::npos)
 			{
 				temp = name.substr(1);
 				temp = temp.substr(0, temp.length() - 1);
@@ -169,7 +169,7 @@ Var* getVar(const std::string &name, ReservedWord &lhsVarType, int &val, bool &c
 	return var;
 }
 
-Var* getVar(const std::string &name, int &val, bool &created)
+Var* getVar(const std::wstring &name, int &val, bool &created)
 {
 	created = false;
 
@@ -178,15 +178,15 @@ Var* getVar(const std::string &name, int &val, bool &created)
 
 	if (var == nullptr)
 	{
-		if (name.find("\"") != std::string::npos)
+		if (name.find(L"\"") != std::wstring::npos)
 		{
-			std::string temp = name.substr(1);
+			std::wstring temp = name.substr(1);
 			temp = temp.substr(0, temp.length() - 1);
 
 			var = new Var(temp);
 			created = true;
 		}
-		else if (name.find(".") != std::string::npos)
+		else if (name.find(L".") != std::wstring::npos)
 		{
 			var = new Var(std::stod(name));
 			created = true;
@@ -201,7 +201,7 @@ Var* getVar(const std::string &name, int &val, bool &created)
 	return var;
 }
 
-Var* getVar(const std::string &name, int &val)
+Var* getVar(const std::wstring &name, int &val)
 {
 	VarStore* vs = gWorkspaceStore->getStore();
 	Var* var = vs->getVar(name, val);

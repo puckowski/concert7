@@ -4,31 +4,31 @@
 
 #include <string>
 
-const std::string NEWLINE_STRING = std::string("\n");
+const std::wstring NEWLINE_STRING = std::wstring(L"\n");
 
-void findAndReplace(std::string& source, std::string const& find, std::string const& replace)
+void findAndReplace(std::wstring& source, std::wstring const& find, std::wstring const& replace)
 {
-	for (std::string::size_type i = 0; (i = source.find(find, i)) != std::string::npos;)
+	for (std::wstring::size_type i = 0; (i = source.find(find, i)) != std::wstring::npos;)
 	{
 		source.replace(i, find.length(), replace);
 		i += replace.length();
 	}
 }
 
-void findAndReplaceNewline(std::string& source)
+void findAndReplaceNewline(std::wstring& source)
 {
-	for (std::string::size_type i = 0; (i = source.find("\\n", i)) != std::string::npos;)
+	for (std::wstring::size_type i = 0; (i = source.find(L"\\n", i)) != std::wstring::npos;)
 	{
 		source.replace(i, 2, NEWLINE_STRING);
 		i += 2;
 	}
 }
 
-void findAndReplaceQuoteEscape(std::string& source)
+void findAndReplaceQuoteEscape(std::wstring& source)
 {
-	for (std::string::size_type i = 0; (i = source.find("\\\"", i)) != std::string::npos;)
+	for (std::wstring::size_type i = 0; (i = source.find(L"\\\"", i)) != std::wstring::npos;)
 	{
-		source.replace(i, 2, "\"");
+		source.replace(i, 2, L"\"");
 		i += 2;
 	}
 }

@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <locale>
 
-void libraryStringCharAt(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringCharAt(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1, r2;
 	bool createdString, createdIndex;
@@ -16,12 +16,12 @@ void libraryStringCharAt(std::vector<std::string> &arguments, const int &argumen
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt , createdRetVar);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* indexData = static_cast<int*>(indexVar->data);
-	std::string* returnData = static_cast<std::string*>(v->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
 
 	char c = pstr[r1][indexData[0]];
-	returnData[returnVarInt] = std::string(1, c);
+	returnData[returnVarInt] = std::wstring(1, c);
 
 	if (createdString)
 		delete stringVar;
@@ -30,7 +30,7 @@ void libraryStringCharAt(std::vector<std::string> &arguments, const int &argumen
 		delete indexVar;
 }
 
-void libraryCharToString(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryCharToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -39,15 +39,15 @@ void libraryCharToString(std::vector<std::string> &arguments, const int &argumen
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
 	int* pstr = static_cast<int*>(stringVar->data);
-	std::string* returnData = static_cast<std::string*>(v->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
 
-	returnData[returnVarInt] = std::string(1, pstr[r1]);
+	returnData[returnVarInt] = std::wstring(1, pstr[r1]);
 
 	if (createdString)
 		delete stringVar;
 }
 
-void libraryIntToString(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryIntToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -56,15 +56,15 @@ void libraryIntToString(std::vector<std::string> &arguments, const int &argument
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
 	int* pstr = static_cast<int*>(stringVar->data);
-	std::string* returnData = static_cast<std::string*>(v->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
 
-	returnData[returnVarInt] = std::to_string(pstr[r1]);
+	returnData[returnVarInt] = std::to_wstring(pstr[r1]);
 
 	if (createdString)
 		delete stringVar;
 }
 
-void libraryDoubleToString(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryDoubleToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -73,15 +73,15 @@ void libraryDoubleToString(std::vector<std::string> &arguments, const int &argum
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
 	double* pstr = static_cast<double*>(stringVar->data);
-	std::string* returnData = static_cast<std::string*>(v->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
 
-	returnData[returnVarInt] = std::to_string(pstr[r1]);
+	returnData[returnVarInt] = std::to_wstring(pstr[r1]);
 
 	if (createdString)
 		delete stringVar;
 }
 
-void libraryStringToDouble(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringToDouble(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -89,7 +89,7 @@ void libraryStringToDouble(std::vector<std::string> &arguments, const int &argum
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar); 
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	double* returnData = static_cast<double*>(v->data);
 
 	returnData[returnVarInt] = std::stod(pstr[r1]);
@@ -98,7 +98,7 @@ void libraryStringToDouble(std::vector<std::string> &arguments, const int &argum
 		delete stringVar;
 }
 
-void libraryCharToInt(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryCharToInt(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -106,7 +106,7 @@ void libraryCharToInt(std::vector<std::string> &arguments, const int &argumentsS
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = pstr[r1][0];
@@ -115,7 +115,7 @@ void libraryCharToInt(std::vector<std::string> &arguments, const int &argumentsS
 		delete stringVar;
 }
 
-void libraryStringToInt(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringToInt(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -123,7 +123,7 @@ void libraryStringToInt(std::vector<std::string> &arguments, const int &argument
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar); 
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = std::stoi(pstr[r1]);
@@ -132,7 +132,7 @@ void libraryStringToInt(std::vector<std::string> &arguments, const int &argument
 		delete stringVar;
 }
 
-void libraryStringLength(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringLength(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -140,7 +140,7 @@ void libraryStringLength(std::vector<std::string> &arguments, const int &argumen
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar); 
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = pstr[r1].length();
@@ -149,7 +149,7 @@ void libraryStringLength(std::vector<std::string> &arguments, const int &argumen
 		delete stringVar;
 }
 
-void libraryStringContains(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringContains(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1, r2;
 	bool createdString, createdSubstr;
@@ -158,11 +158,11 @@ void libraryStringContains(std::vector<std::string> &arguments, const int &argum
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt); 
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
-	std::string* substrData = static_cast<std::string*>(substrVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+	std::wstring* substrData = static_cast<std::wstring*>(substrVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
-	returnData[returnVarInt] = (pstr[r1].find(substrData[r2]) != std::string::npos);
+	returnData[returnVarInt] = (pstr[r1].find(substrData[r2]) != std::wstring::npos);
 
 	if (createdString)
 		delete stringVar;
@@ -171,7 +171,7 @@ void libraryStringContains(std::vector<std::string> &arguments, const int &argum
 		delete substrVar;
 }
 
-void libraryStringIndexOf(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringIndexOf(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1, r2;
 	bool createdString, createdIndex;
@@ -180,7 +180,7 @@ void libraryStringIndexOf(std::vector<std::string> &arguments, const int &argume
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar); 
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* indexData = static_cast<int*>(indexVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
@@ -193,7 +193,7 @@ void libraryStringIndexOf(std::vector<std::string> &arguments, const int &argume
 		delete indexVar;
 }
 
-void libraryStringSubstring(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringSubstring(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1, r2, r3;
 	bool createdString, createdStartIndex, createdStopIndex;
@@ -201,12 +201,12 @@ void libraryStringSubstring(std::vector<std::string> &arguments, const int &argu
 	Var* startIndexVar = getVar(arguments[3], r2, createdStartIndex);
 	Var* stopIndexVar = getVar(arguments[4], r3, createdStopIndex);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* startIndexData = static_cast<int*>(startIndexVar->data);
 	int* stopIndexData = static_cast<int*>(stopIndexVar->data);
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
-	std::string* returnData = static_cast<std::string*>(v->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
 
 	returnData[returnVarInt] = pstr[r1].substr(startIndexData[r2], stopIndexData[r3]);
 
@@ -220,16 +220,16 @@ void libraryStringSubstring(std::vector<std::string> &arguments, const int &argu
 		delete stopIndexVar;
 }
 
-void libraryStringLowerCase(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringLowerCase(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
 	Var* stringVar = getVar(arguments[2], r1, createdString);
 	
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
-	std::string* returnData = static_cast<std::string*>(v->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
 
 	returnData[returnVarInt] = pstr[r1];
 
@@ -239,16 +239,16 @@ void libraryStringLowerCase(std::vector<std::string> &arguments, const int &argu
 		delete stringVar;
 }
 
-void libraryStringUpperCase(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryStringUpperCase(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
 	Var* stringVar = getVar(arguments[2], r1, createdString);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
-	std::string* returnData = static_cast<std::string*>(v->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
 
 	returnData[returnVarInt] = pstr[r1];
 

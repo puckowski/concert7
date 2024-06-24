@@ -58,15 +58,15 @@ void exec(int &line, bool detached, CodeStore* myCodeStore, WorkspaceStore* myWo
 		currentLine = 0;
 
 		gWorkspaceStore = myWorkspaceStore;
-		workspaceStack.push_back("global");
+		workspaceStack.push_back(L"global");
 
 		if (debugEnabled == true)
 		{
 			callNameMutex.lock();
-			std::ostringstream ss;
+			std::wostringstream ss;
 			ss << std::this_thread::get_id();
-			std::string idstr = ss.str();
-			callNameStack.push_back(idstr + "_main");
+			std::wstring idstr = ss.str();
+			callNameStack.push_back(idstr + L"_main");
 			callNameMutex.unlock();
 		}
 	}
@@ -75,12 +75,12 @@ void exec(int &line, bool detached, CodeStore* myCodeStore, WorkspaceStore* myWo
 		currentLine = line;
 	}
 
-	std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string, const ReservedWord>>>> reservedWordCheck;
+	std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const ReservedWord>>>> reservedWordCheck;
 	ReservedWord reservedWord;
 	int tokensSize;
 
 	statementCount = codeStore->gStatements.size();
-	std::vector<std::string> tokens;
+	std::vector<std::wstring> tokens;
 
 	try 
 	{
@@ -92,7 +92,7 @@ void exec(int &line, bool detached, CodeStore* myCodeStore, WorkspaceStore* myWo
 
 			//std::cout << "\t\t\t\t";
 			//for (auto s : tokens)
-			//	std::cout << "TOK: '" << s << "', ";
+			//	std::wcout << s << " ";
 			//std::cout << std::endl;
 			reservedWordCheck = RESERVED_WORD_MAP.find(tokens[0]);
 
@@ -337,9 +337,9 @@ void exec(int &line, bool detached, CodeStore* myCodeStore, WorkspaceStore* myWo
 			std::cout << std::endl;
 			std::cout << "unknown exception occurred" << std::endl;
 			std::cout << "current line: " << (currentLine + 1) << std::endl;
-			for (std::string tok : tokens)
+			for (std::wstring tok : tokens)
 			{
-				std::cout << tok << " ";
+				std::wcout << tok << " ";
 			}
 			std::cout << std::endl;
 			std::cout << "current thread id: " << std::this_thread::get_id() << std::endl;
@@ -347,7 +347,7 @@ void exec(int &line, bool detached, CodeStore* myCodeStore, WorkspaceStore* myWo
 			std::cout << "call stack: " << std::endl;
 			for (auto it = callNameStack.rbegin(); it != callNameStack.rend(); ++it)
 			{
-				std::cout << *it << std::endl;
+				std::wcout << *it << std::endl;
 			}
 		}
 	}

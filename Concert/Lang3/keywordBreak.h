@@ -7,7 +7,7 @@
 
 #include "sourceFunctions.h"
 
-void executeKeywordBreak(int &currentLine, std::vector<std::string> &tokens)
+void executeKeywordBreak(int &currentLine, std::vector<std::wstring> &tokens)
 {
 	int blockCount = 0;
 
@@ -24,19 +24,19 @@ void executeKeywordBreak(int &currentLine, std::vector<std::string> &tokens)
 
 		tokens = codeStore->gStatements[currentLine];
 
-		if (tokens[0] == "end" && blockCount == 0) {
+		if (tokens[0] == L"end" && blockCount == 0) {
 			//currentLine--;
 			conditionalStack.pop();
 
 			break;
 		}
-		else if (tokens[0] == "end")
+		else if (tokens[0] == L"end")
 			blockCount--;
-		else if (tokens[0] == "if")
+		else if (tokens[0] == L"if")
 			blockCount++;
-		else if (tokens[0] == "try")
+		else if (tokens[0] == L"try")
 			blockCount++;
-		else if (tokens[0] == "while")
+		else if (tokens[0] == L"while")
 			blockCount++;
 	} while (true);
 }

@@ -9,7 +9,7 @@
 #include "variableFunctions.h"
 #include "operatorFunctions.h"
 
-void executeKeywordReturn(const int &tokensSize, std::vector<std::string> &tokens)
+void executeKeywordReturn(const int &tokensSize, std::vector<std::wstring> &tokens)
 {
 	if (tokensSize == 2)
 	{

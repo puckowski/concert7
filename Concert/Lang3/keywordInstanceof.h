@@ -9,7 +9,7 @@
 #include "variableFunctions.h"
 #include "mutexFunctions.h"
 
-void executeKeywordInstanceof(std::vector<std::string> &tokens)
+void executeKeywordInstanceof(std::vector<std::wstring> &tokens)
 {
 	std::mutex* mtx = getMutex(tokens[1]);
 
@@ -19,7 +19,7 @@ void executeKeywordInstanceof(std::vector<std::string> &tokens)
 		Var* lhsVar = getVar(tokens[1], r1);
 
 		Var* rhsVar = getVar(tokens[2], r2);
-		std::string* rhsData = static_cast<std::string*>(rhsVar->data);
+		std::wstring* rhsData = static_cast<std::wstring*>(rhsVar->data);
 		
 		int type = lhsVar->type;
 
@@ -27,31 +27,31 @@ void executeKeywordInstanceof(std::vector<std::string> &tokens)
 		{
 		case 0:
 		{
-			rhsData[r2] = "int";
+			rhsData[r2] = L"int";
 
 			break;
 		}
 		case 1:
 		{
-			rhsData[r2] = "double";
+			rhsData[r2] = L"double";
 
 			break;
 		}
 		case 2:
 		{
-			rhsData[r2] = "string";
+			rhsData[r2] = L"string";
 
 			break;
 		}
 		case 3:
 		{
-			rhsData[r2] = "long";
+			rhsData[r2] = L"long";
 
 			break;
 		}
 		case 41:
 		{
-			rhsData[r2] = "object";
+			rhsData[r2] = L"object";
 
 			break;
 		}
@@ -61,8 +61,8 @@ void executeKeywordInstanceof(std::vector<std::string> &tokens)
 	{
 		int r2;
 		Var* rhsVar = getVar(tokens[2], r2);
-		std::string* rhsData = static_cast<std::string*>(rhsVar->data);
-		rhsData[r2] = "mutex";
+		std::wstring* rhsData = static_cast<std::wstring*>(rhsVar->data);
+		rhsData[r2] = L"mutex";
 	}
 }
 

@@ -29,7 +29,7 @@ void ConcertHandleEnvironment::HandleStore::clearStore() {
 	}
 }
 
-std::fstream* ConcertHandleEnvironment::HandleStore::getHandle(const std::string &name)
+std::wfstream* ConcertHandleEnvironment::HandleStore::getHandle(const std::wstring &name)
 {
 	auto search = mHandleMap.find(name);
 
@@ -41,39 +41,39 @@ std::fstream* ConcertHandleEnvironment::HandleStore::getHandle(const std::string
 	return nullptr;
 }
 
-int ConcertHandleEnvironment::HandleStore::createDirectory(const std::string &name)
+int ConcertHandleEnvironment::HandleStore::createDirectory(const std::wstring &name)
 {
 	return std::filesystem::create_directory(name);
 }
 
-std::ifstream::pos_type ConcertHandleEnvironment::HandleStore::getFileSize(const std::string &name)
+std::ifstream::pos_type ConcertHandleEnvironment::HandleStore::getFileSize(const std::wstring &name)
 {
 	std::ifstream in(name, std::ifstream::ate | std::ifstream::binary);
 
 	return in.tellg();
 }
 
-bool ConcertHandleEnvironment::HandleStore::isFileExist(const std::string &name)
+bool ConcertHandleEnvironment::HandleStore::isFileExist(const std::wstring &name)
 {
 	std::ifstream infile(name);
 
 	return infile.good();
 }
 
-void ConcertHandleEnvironment::HandleStore::createFile(const std::string &name)
+void ConcertHandleEnvironment::HandleStore::createFile(const std::wstring &name)
 {
 	std::fstream* fileStream = new std::fstream();
 	fileStream->open(name, std::ios::out);
 	fileStream->close();
 }
 
-void ConcertHandleEnvironment::HandleStore::openFile(const std::string &name, int &openFileFlag)
+void ConcertHandleEnvironment::HandleStore::openFile(const std::wstring &name, int &openFileFlag)
 {
-	std::fstream* fileStream = getHandle(name);
+	std::wfstream* fileStream = getHandle(name);
 
 	if (fileStream == nullptr)
 	{
-		fileStream = new std::fstream();
+		fileStream = new std::wfstream();
 	}
 
 	if (openFileFlag == 0)
@@ -88,9 +88,9 @@ void ConcertHandleEnvironment::HandleStore::openFile(const std::string &name, in
 	mHandleMap.insert({ name, fileStream });
 }
 
-void ConcertHandleEnvironment::HandleStore::closeFile(const std::string &name)
+void ConcertHandleEnvironment::HandleStore::closeFile(const std::wstring &name)
 {
-	std::fstream* fileStream = getHandle(name);
+	std::wfstream* fileStream = getHandle(name);
 
 	if (fileStream == nullptr)
 	{
@@ -103,70 +103,70 @@ void ConcertHandleEnvironment::HandleStore::closeFile(const std::string &name)
 	mHandleMap.erase(name);
 }
 
-void ConcertHandleEnvironment::HandleStore::writeStringToFile(const std::string &name, const std::string &text)
+void ConcertHandleEnvironment::HandleStore::writeStringToFile(const std::wstring &name, const std::wstring &text)
 {
-	std::fstream* handle = getHandle(name);
+	std::wfstream* handle = getHandle(name);
 
 	*handle << text;
 }
 
-std::string ConcertHandleEnvironment::HandleStore::getLineFromFile(const std::string &name)
+std::wstring ConcertHandleEnvironment::HandleStore::getLineFromFile(const std::wstring &name)
 {
-	std::string line;
+	std::wstring line;
 	std::getline(*getHandle(name), line);
 
 	return line;
 }
 
-bool ConcertHandleEnvironment::HandleStore::isOpen(const std::string &name)
+bool ConcertHandleEnvironment::HandleStore::isOpen(const std::wstring &name)
 {
 	return getHandle(name)->is_open();
 }
 
-bool ConcertHandleEnvironment::HandleStore::isAtEndOfFile(const std::string &name)
+bool ConcertHandleEnvironment::HandleStore::isAtEndOfFile(const std::wstring &name)
 {
 	return getHandle(name)->eof();
 }
 
-int ConcertHandleEnvironment::HandleStore::removeFile(const std::string &name)
+int ConcertHandleEnvironment::HandleStore::removeFile(const std::wstring &name)
 {
-	int result = std::remove(name.c_str());
+	int result = std::remove(wstring_to_utf8(name).c_str());
 	mHandleMap.erase(name);
 
 	return result;
 }
 
-int ConcertHandleEnvironment::HandleStore::renameFile(const std::string &name, std::string &newName)
+int ConcertHandleEnvironment::HandleStore::renameFile(const std::wstring &name, std::wstring &newName)
 {
-	int result = std::rename(name.c_str(), newName.c_str());
+	int result = std::rename(wstring_to_utf8(name).c_str(), wstring_to_utf8(newName).c_str());
 
 	return result;
 }
 
-void ConcertHandleEnvironment::HandleStore::seekg(const std::string &name, int &position)
+void ConcertHandleEnvironment::HandleStore::seekg(const std::wstring &name, int &position)
 {
 	getHandle(name)->seekg(position);
 
 	getHandle(name)->seekp(position);
 }
 
-int ConcertHandleEnvironment::HandleStore::tellg(const std::string &name)
+int ConcertHandleEnvironment::HandleStore::tellg(const std::wstring &name)
 {
 	return getHandle(name)->tellg();
 }
 
-int ConcertHandleEnvironment::HandleStore::read(const std::string &name)
+int ConcertHandleEnvironment::HandleStore::read(const std::wstring &name)
 {
-	char data;
+	wchar_t data;
 	getHandle(name)->read(&data, 1);
 	int returnValue = data;
 
 	return returnValue;
 }
 
-void ConcertHandleEnvironment::HandleStore::write(const std::string &name, char &data)
+void ConcertHandleEnvironment::HandleStore::write(const std::wstring &name, wchar_t &data)
 {
-	getHandle(name)->write(reinterpret_cast<const char*>(&data), sizeof(char));
+	getHandle(name)->write(reinterpret_cast<const wchar_t*>(&data), sizeof(char));
 }
 
 #endif

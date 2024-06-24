@@ -8,7 +8,7 @@
 #include "Var.h"
 #include "variableFunctions.h"
 
-void executeKeywordSizeof(const int& tokensSize, std::vector<std::string> &tokens)
+void executeKeywordSizeof(const int& tokensSize, std::vector<std::wstring> &tokens)
 {
 	if (tokensSize == 3)
 	{
@@ -21,7 +21,7 @@ void executeKeywordSizeof(const int& tokensSize, std::vector<std::string> &token
 	}
 	else
 	{
-		std::string byteFlag = tokens[3];
+		std::wstring byteFlag = tokens[3];
 		int byteFlagInt = std::stod(byteFlag);
 
 		if (byteFlagInt == 1)

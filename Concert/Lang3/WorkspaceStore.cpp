@@ -11,29 +11,31 @@ WorkspaceStore::WorkspaceStore()
 WorkspaceStore::~WorkspaceStore()
 {
 	for (auto it = mVars.begin(); it != mVars.end(); ) {
+		const VarStore* vs = it->second;
 		it = mVars.erase(it);
+		delete vs;
 	}
 }
 
 void WorkspaceStore::print() {
 	for (auto it = mVars.begin(); it != mVars.end(); ++it) {
-		std::cout << "Store: " << it->first << std::endl;
+		std::wcout << L"Store: " << it->first << std::endl;
 		it->second->print();
 		std::cout << std::endl;
 	}
 }
 
-VarStore* WorkspaceStore::getStore(const std::string &name)
+VarStore* WorkspaceStore::getStore(const std::wstring &name)
 {
 	return mVars.find(name)->second;
 }
 
-void WorkspaceStore::addStoreSimple(const std::string &name, VarStore* varStore)
+void WorkspaceStore::addStoreSimple(const std::wstring &name, VarStore* varStore)
 {
 	mVars.insert({ name, varStore });
 }
 
-void WorkspaceStore::addStore(const std::string &name, VarStore* varStore)
+void WorkspaceStore::addStore(const std::wstring &name, VarStore* varStore)
 {
 	mVars.insert({ name, varStore });
 
@@ -42,15 +44,15 @@ void WorkspaceStore::addStore(const std::string &name, VarStore* varStore)
 
 void WorkspaceStore::addGlobalStore(VarStore* varStore)
 {
-	workspaceStack.push_back("global");
-	mVars.insert({ "global", varStore });
+	workspaceStack.push_back(L"global");
+	mVars.insert({ L"global", varStore });
 
 	mBack = varStore;
 }
 
 void WorkspaceStore::addGlobalStoreWithoutStackEntry(VarStore* varStore)
 {
-	mVars.insert({ "global", varStore });
+	mVars.insert({ L"global", varStore });
 
 	mBack = varStore;
 }
@@ -60,24 +62,34 @@ VarStore* WorkspaceStore::getStore()
 	return mBack;
 }
 
-void WorkspaceStore::removeStore()
+void WorkspaceStore::reassignVar(Var* toReassign, Var* newVar)
 {
-	mVars.erase(workspaceStack.back());
+	for (auto it = mVars.begin(); it != mVars.end();) 
+	{
+		it->second->reassignAllVar(toReassign, newVar);
+	}
 }
 
-void WorkspaceStore::removeStore(const std::string &name)
+void WorkspaceStore::removeStore()
+{
+	VarStore* vs = getStore(workspaceStack.back());
+	mVars.erase(workspaceStack.back());
+	delete vs;
+}
+
+void WorkspaceStore::removeStore(const std::wstring &name)
 {
 	mVars.erase(name);
 }
 
-bool WorkspaceStore::hasStore(const std::string &name)
+bool WorkspaceStore::hasStore(const std::wstring &name)
 {
 	return mVars.find(name) != mVars.end();
 }
 
-std::pair<std::string, VarStore*> WorkspaceStore::removeStoreAndReturn()
+std::pair<std::wstring, VarStore*> WorkspaceStore::removeStoreAndReturn()
 {
-	std::pair<std::string, VarStore*> lastStore;
+	std::pair<std::wstring, VarStore*> lastStore;
 
 	lastStore = std::make_pair(workspaceStack.back(), mVars.find(workspaceStack.back())->second);
 

@@ -12,17 +12,22 @@
 #include <unordered_map>
 #include <mutex>
 #include <locale>
+#include <boost/locale.hpp>
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <locale>
+#include <codecvt>
 
 #include "header.h"
 
 extern void exec(int &line, bool detached = false, CodeStore* myCodeStore = nullptr, WorkspaceStore* myWorkspaceStore = nullptr, int jumpBackTo = 0);
 
-void addFunctionToMap(const std::string &name, int line)
+void addFunctionToMap(const std::wstring &name, int line)
 {
 	mFunctionMap.insert({ name, line });
 }
 
-int getFunctionLineFromMap(const std::string &name)
+int getFunctionLineFromMap(const std::wstring &name)
 {
 	auto search = mFunctionMap.find(name);
 
@@ -34,27 +39,27 @@ int getFunctionLineFromMap(const std::string &name)
 	return -1;
 }
 
-void addToken(std::vector<std::string> &tokens, std::string &token)
+void addToken(std::vector<std::wstring> &tokens, std::wstring &token)
 {
 	if (token.empty() == false)
 	{
 		tokens.push_back(token);
 	}
 
-	token = "";
+	token = L"";
 }
 
-void addTokenUnchecked(std::vector<std::string> &tokens, std::string token)
+void addTokenUnchecked(std::vector<std::wstring> &tokens, std::wstring token)
 {
 	tokens.push_back(token);
 }
 
-void addTokenUncheckedByReference(std::vector<std::string> &tokens, std::string &token)
+void addTokenUncheckedByReference(std::vector<std::wstring> &tokens, std::wstring &token)
 {
 	tokens.push_back(token);
 }
 
-bool peek(const std::string &statement, const int &statementLength, const int index, const char compare)
+bool peek(const std::wstring &statement, const int &statementLength, const int index, const wchar_t compare)
 {
 	int peekIndex = index + 1;
 
@@ -69,13 +74,13 @@ bool peek(const std::string &statement, const int &statementLength, const int in
 	return false;
 }
 
-void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens)
+void tokenizeStatement3(std::wstring &statement, std::vector<std::wstring> &tokens)
 {
-	std::string token = "";
+	std::wstring token = L"";
 	int statementLength = statement.length();
 	bool isAssignment = false;
 	bool isComparison = false;
-	char c;
+	wchar_t c;
 
 	for (int i = 0; i < statementLength; ++i)
 	{
@@ -83,25 +88,25 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 
 		switch (c)
 		{
-		case '\n':
+		case L'\n':
 		{
 			break;
 		}
-		case '\t':
+		case L'\t':
 		{
 			break;
 		}
-		case '#':
+		case L'#':
 		{
 			return;
 		}
-		case ' ':
+		case L' ':
 		{
 			addToken(tokens, token);
 
 			break;
 		}
-		case '"':
+		case L'"':
 		{
 			do
 			{
@@ -124,7 +129,7 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 
 						if (c == '"')
 						{
-							token += "\"";
+							token += L"\"";
 
 							break;
 						}
@@ -132,7 +137,7 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 					else
 					{
 						token += c;
-						token += "\"";
+						token += L"\"";
 						++i;
 
 						break;
@@ -144,75 +149,75 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 
 			break;
 		}
-		case '&':
+		case L'&':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, "&");
+			addTokenUnchecked(tokens, L"&");
 
 			break;
 		}
-		case '(':
+		case L'(':
 		{
 			addToken(tokens, token);
-		    addTokenUnchecked(tokens, "(");
+		    addTokenUnchecked(tokens, L"(");
 
 			break;
 		}
-		case '|':
+		case L'|':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, "|");
+			addTokenUnchecked(tokens, L"|");
 
 			break;
 		}
-		case '~':
+		case L'~':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "~=");
+				addTokenUnchecked(tokens, L"~=");
 				++i;
 			}
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "~");
+				addTokenUnchecked(tokens, L"~");
 			}
 
 			break;
 		}
-		case '%':
+		case L'%':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, "%");
+			addTokenUnchecked(tokens, L"%");
 
 			break;
 		}
-		case ')':
+		case L')':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, ")");
+			addTokenUnchecked(tokens, L")");
 
 			break;
 		}
-		case ',':
-		{
-			addToken(tokens, token);
-
-			break;
-		}
-		case ':':
+		case L',':
 		{
 			addToken(tokens, token);
 
 			break;
 		}
-		case '<':
+		case L':':
+		{
+			addToken(tokens, token);
+
+			break;
+		}
+		case L'<':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "<=");
+				addTokenUnchecked(tokens, L"<=");
 				++i;
 
 				isComparison = true;
@@ -220,25 +225,25 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else if (peek(statement, statementLength, i, '<') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "<<");
+				addTokenUnchecked(tokens, L"<<");
 				++i;
 			}
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "<");
+				addTokenUnchecked(tokens, L"<");
 
 				isComparison = true;
 			}
 
 			break;
 		}
-		case '>':
+		case L'>':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, ">=");
+				addTokenUnchecked(tokens, L">=");
 				++i;
 
 				isComparison = true;
@@ -248,32 +253,32 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 				if (peek(statement, statementLength, i + 1, '>') == true)
 				{
 					addToken(tokens, token);
-					addTokenUnchecked(tokens, ">>>");
+					addTokenUnchecked(tokens, L">>>");
 					i += 2;
 				}
 				else
 				{
 					addToken(tokens, token);
-					addTokenUnchecked(tokens, ">>");
+					addTokenUnchecked(tokens, L">>");
 					++i;
 				}
 			}
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, ">");
+				addTokenUnchecked(tokens, L">");
 
 				isComparison = true;
 			}
 
 			break;
 		}
-		case '+':
+		case L'+':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "+=");
+				addTokenUnchecked(tokens, L"+=");
 				++i;
 
 				isAssignment = true;
@@ -281,17 +286,17 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "+");
+				addTokenUnchecked(tokens, L"+");
 			}
 
 			break;
 		}
-		case '*':
+		case L'*':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "*=");
+				addTokenUnchecked(tokens, L"*=");
 				++i;
 
 				isAssignment = true;
@@ -299,17 +304,17 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "*");
+				addTokenUnchecked(tokens, L"*");
 			}
 
 			break;
 		}
-		case '/':
+		case L'/':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "/=");
+				addTokenUnchecked(tokens, L"/=");
 				++i;
 
 				isAssignment = true;
@@ -317,17 +322,17 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "/");
+				addTokenUnchecked(tokens, L"/");
 			}
 
 			break;
 		}
-		case '^':
+		case L'^':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "^=");
+				addTokenUnchecked(tokens, L"^=");
 				++i;
 
 				isAssignment = true;
@@ -335,23 +340,23 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "^");
+				addTokenUnchecked(tokens, L"^");
 			}
 
 			break;
 		}
-		case '-':
+		case L'-':
 		{
 			if (peek(statement, statementLength, i, '>') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "->");
+				addTokenUnchecked(tokens, L"->");
 				++i;
 			}
 			else if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "-=");
+				addTokenUnchecked(tokens, L"-=");
 				++i;
 
 				isAssignment = true;
@@ -369,17 +374,17 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "-");
+				addTokenUnchecked(tokens, L"-");
 			}
 
 			break;
 		}
-		case '=':
+		case L'=':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "==");
+				addTokenUnchecked(tokens, L"==");
 				++i;
 
 				isComparison = true;
@@ -387,19 +392,19 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "=");
+				addTokenUnchecked(tokens, L"=");
 
 				isAssignment = true;
 			}
 
 			break;
 		}
-		case '!':
+		case L'!':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "!=");
+				addTokenUnchecked(tokens, L"!=");
 				++i;
 
 				isComparison = true;
@@ -407,12 +412,12 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "!");
+				addTokenUnchecked(tokens, L"!");
 			}
 
 			break;
 		}
-		case ';':
+		case L';':
 		{
 			addToken(tokens, token);
 
@@ -434,12 +439,12 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 	}
 }
 
-void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens, CodeStore* newCodeStore)
+void tokenizeStatement3(std::wstring &statement, std::vector<std::wstring> &tokens, CodeStore* newCodeStore)
 {
-	std::string token = "";
+	std::wstring token = L"";
 	int statementLength = statement.length();
 	bool isAssignment = false;
-	char c;
+	wchar_t c;
 
 	for (int i = 0; i < statementLength; ++i)
 	{
@@ -447,25 +452,25 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 
 		switch (c)
 		{
-		case '\n':
+		case L'\n':
 		{
 			break;
 		}
-		case '\t':
+		case L'\t':
 		{
 			break;
 		}
-		case '#':
+		case L'#':
 		{
 			return;
 		}
-		case ' ':
+		case L' ':
 		{
 			addToken(tokens, token);
 
 			break;
 		}
-		case '"':
+		case L'"':
 		{
 			do
 			{
@@ -488,7 +493,7 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 
 						if (c == '"')
 						{
-							token += "\"";
+							token += L"\"";
 
 							break;
 						}
@@ -496,7 +501,7 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 					else
 					{
 						token += c;
-						token += "\"";
+						token += L"\"";
 						++i;
 
 						break;
@@ -508,119 +513,119 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 
 			break;
 		}
-		case '&':
+		case L'&':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, "&");
+			addTokenUnchecked(tokens, L"&");
 
 			break;
 		}
-		case '(':
+		case L'(':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, "(");
+			addTokenUnchecked(tokens, L"(");
 
 			break;
 		}
-		case '|':
+		case L'|':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, "|");
+			addTokenUnchecked(tokens, L"|");
 
 			break;
 		}
-		case '~':
+		case L'~':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "~=");
+				addTokenUnchecked(tokens, L"~=");
 				++i;
 			}
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "~");
+				addTokenUnchecked(tokens, L"~");
 			}
 
 			break;
 		}
-		case '%':
+		case L'%':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, "%");
+			addTokenUnchecked(tokens, L"%");
 
 			break;
 		}
-		case ')':
+		case L')':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, ")");
+			addTokenUnchecked(tokens, L")");
 
 			break;
 		}
-		case ',':
-		{
-			addToken(tokens, token);
-
-			break;
-		}
-		case ':':
+		case L',':
 		{
 			addToken(tokens, token);
 
 			break;
 		}
-		case '<':
+		case L':':
+		{
+			addToken(tokens, token);
+
+			break;
+		}
+		case L'<':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "<=");
+				addTokenUnchecked(tokens, L"<=");
 				++i;
 			}
 			else if (peek(statement, statementLength, i, '<') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "<<");
+				addTokenUnchecked(tokens, L"<<");
 				++i;
 			}
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "<");
+				addTokenUnchecked(tokens, L"<");
 			}
 
 			break;
 		}
-		case '>':
+		case L'>':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, ">=");
+				addTokenUnchecked(tokens, L">=");
 				++i;
 			}
 			else if (peek(statement, statementLength, i, '>') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, ">>");
+				addTokenUnchecked(tokens, L">>");
 				++i;
 			}
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, ">");
+				addTokenUnchecked(tokens, L">");
 			}
 
 			break;
 		}
-		case '+':
+		case L'+':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "+=");
+				addTokenUnchecked(tokens, L"+=");
 				++i;
 
 				isAssignment = true;
@@ -628,17 +633,17 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "+");
+				addTokenUnchecked(tokens, L"+");
 			}
 
 			break;
 		}
-		case '*':
+		case L'*':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "*=");
+				addTokenUnchecked(tokens, L"*=");
 				++i;
 
 				isAssignment = true;
@@ -646,17 +651,17 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "*");
+				addTokenUnchecked(tokens, L"*");
 			}
 
 			break;
 		}
-		case '/':
+		case L'/':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "/=");
+				addTokenUnchecked(tokens, L"/=");
 				++i;
 
 				isAssignment = true;
@@ -664,30 +669,30 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "/");
+				addTokenUnchecked(tokens, L"/");
 			}
 
 			break;
 		}
-		case '^':
+		case L'^':
 		{
 			addToken(tokens, token);
-			addTokenUnchecked(tokens, "^");
+			addTokenUnchecked(tokens, L"^");
 
 			break;
 		}
-		case '-':
+		case L'-':
 		{
 			if (peek(statement, statementLength, i, '>') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "->");
+				addTokenUnchecked(tokens, L"->");
 				++i;
 			}
 			else if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "-=");
+				addTokenUnchecked(tokens, L"-=");
 				++i;
 
 				isAssignment = true;
@@ -699,46 +704,46 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "-");
+				addTokenUnchecked(tokens, L"-");
 			}
 
 			break;
 		}
-		case '=':
+		case L'=':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "==");
+				addTokenUnchecked(tokens, L"==");
 				++i;
 			}
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "=");
+				addTokenUnchecked(tokens, L"=");
 
 				isAssignment = true;
 			}
 
 			break;
 		}
-		case '!':
+		case L'!':
 		{
 			if (peek(statement, statementLength, i, '=') == true)
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "!=");
+				addTokenUnchecked(tokens, L"!=");
 				++i;
 			}
 			else
 			{
 				addToken(tokens, token);
-				addTokenUnchecked(tokens, "!");
+				addTokenUnchecked(tokens, L"!");
 			}
 
 			break;
 		}
-		case ';':
+		case L';':
 		{
 			addToken(tokens, token);
 
@@ -759,14 +764,14 @@ void tokenizeStatement3(std::string &statement, std::vector<std::string> &tokens
 	}
 }
 
-void replaceAll(std::string &s, const std::string &search, const std::string &replace)
+void replaceAll(std::wstring &s, const std::wstring &search, const std::wstring &replace)
 {
 	for (size_t pos = 0; ; pos += replace.length()) 
 	{
 		// Locate the substring to replace
 		pos = s.find(search, pos);
 
-		if (pos == std::string::npos)
+		if (pos == std::wstring::npos)
 		{
 			break;
 		}
@@ -783,53 +788,79 @@ void addExitTokenVectorIfNeeded()
 		return;
 	}
 
-	const std::vector<std::string> lastTokens = codeStore->gStatements.back();
+	const std::vector<std::wstring> lastTokens = codeStore->gStatements.back();
 
 	if (lastTokens.size() != 1) {
 		if (lastTokens.size() == 0) {
-			const std::vector<std::string> exitVector = { "exit" };
+			const std::vector<std::wstring> exitVector = { L"exit" };
 			codeStore->gStatements.push_back(exitVector);
 		}
 		else {
-			const std::string firstToken = lastTokens.at(0);
+			const std::wstring firstToken = lastTokens.at(0);
 			std::locale loc;
 
-			std::string tokenLowercase = "";
-			for (std::string::size_type i = 0; i < firstToken.length(); ++i)
+			std::wstring tokenLowercase = L"";
+			for (std::wstring::size_type i = 0; i < firstToken.length(); ++i)
 			{
 				tokenLowercase += std::tolower(firstToken[i], loc);
 			}
 
-			if (tokenLowercase != "exit") {
-				const std::vector<std::string> exitVector = { "exit" };
+			if (tokenLowercase != L"exit") {
+				const std::vector<std::wstring> exitVector = { L"exit" };
 				codeStore->gStatements.push_back(exitVector);
 			}
 		}
 	}
 }
 
-void readStatementsFromFile(const std::string &filename)
+void readStatementsFromFile(const std::wstring& filename)
 {
-	std::ifstream file(filename);
-	std::string line;
+	// Set up the locale to handle UTF-8 using Boost.Locale
+	boost::locale::generator gen;
+	std::locale utf8_locale = gen("en_US.UTF-8");
 
-	std::string source = "";
-	std::vector<std::string> tokens;
+	// Imbue the global locale with the UTF-8 locale
+	std::locale::global(utf8_locale);
 
-	while (std::getline(file, line))
-	{
-		source = line;
-		tokenizeStatement3(source, tokens);
+	// Ensure wcout uses the UTF-8 locale
+	std::wcout.imbue(utf8_locale);
+
+	// Path to the UTF-8 encoded file
+	boost::filesystem::path file_path(filename);
+
+	// Open the file
+	boost::filesystem::ifstream file(file_path);
+
+	// Check if the file is open
+	if (!file.is_open()) {
+		std::wcerr << "Failed to open file: " << filename << std::endl;
+		return;
 	}
+
+	// Apply the UTF-8 locale to the file stream
+	file.imbue(utf8_locale);
+
+	std::string line;
+	std::vector<std::wstring> tokens;
+
+	while (std::getline(file, line)) {
+		// Convert to wstring
+		std::wstring wline = utf8_to_wstring(line);
+
+		tokenizeStatement3(wline, tokens);
+	}
+
+	// Close the file
+	file.close();
 
 	addExitTokenVectorIfNeeded();
 }
 
 bool readStatementsFromConsole()
 {
-	std::vector<std::string> lines;
-	std::string line;
-
+	std::vector<std::wstring> lines;
+	std::wstring line;
+	/*
 	do
 	{
 		std::cout << "> ";
@@ -839,7 +870,7 @@ bool readStatementsFromConsole()
 		{
 			break;
 		}
-		else if (line == "exit")
+		else if (line == L"exit")
 		{
 			return false;
 		}
@@ -849,31 +880,31 @@ bool readStatementsFromConsole()
 		}
 	} while (true);
 
-	for (std::vector<std::string>::iterator it = lines.begin(); it != lines.end(); ++it)
+	for (std::vector<std::wstring>::iterator it = lines.begin(); it != lines.end(); ++it)
 	{
 		line = *it;
 
-		std::vector<std::string> tokens;
+		std::vector<std::wstring> tokens;
 		tokenizeStatement3(line, tokens);
-	}
+	}*/
 
 	return true;
 }
 
-void readStatementsFromFile(const std::string &filename, CodeStore* codeStore)
+void readStatementsFromFile(const std::wstring &filename, CodeStore* codeStore)
 {
 	std::ifstream file(filename);
 	std::string line;
 
-	std::string source = "";
+	std::wstring source = L"";
 
 	while (std::getline(file, line))
 	{
-		source += line;
-		source += " ";
+		source += utf8_to_wstring(line);
+		source += L" ";
 	}
 
-	std::vector<std::string> tokens;
+	std::vector<std::wstring> tokens;
 	tokenizeStatement3(source, tokens);
 
 	addExitTokenVectorIfNeeded();
@@ -896,7 +927,7 @@ void readStatementsIntoNewCodeStore2(int currentLine, CodeStore* existingCodeSto
 			continue;
 		}
 
-		if (existingCodeStore->gStatements[l][0] == "function") 
+		if (existingCodeStore->gStatements[l][0] == L"function") 
 		{
 			inFunc = true;
 			finishedLastFunc = false;
@@ -906,12 +937,12 @@ void readStatementsIntoNewCodeStore2(int currentLine, CodeStore* existingCodeSto
 		{
 			codeStore->gStatements.push_back(existingCodeStore->gStatements[l]);
 		}
-		else if (existingCodeStore->gStatements[l][0] == "import")
+		else if (existingCodeStore->gStatements[l][0] == L"import")
 		{
 			codeStore->gStatements.push_back(existingCodeStore->gStatements[l]);
 		}
 
-		if (existingCodeStore->gStatements[l][0] == "return") 
+		if (existingCodeStore->gStatements[l][0] == L"return") 
 		{
 			inFunc = false;
 			finishedLastFunc = true;
@@ -922,7 +953,7 @@ void readStatementsIntoNewCodeStore2(int currentLine, CodeStore* existingCodeSto
 
 	if (finishedLastFunc == false)
 	{
-		while (codeStore->gStatements.back()[0] != "function")
+		while (codeStore->gStatements.back()[0] != L"function")
 		{
 			codeStore->gStatements.pop_back();
 		}

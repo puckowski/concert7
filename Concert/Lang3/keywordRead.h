@@ -9,13 +9,13 @@
 #include "Var.h"
 #include "variableFunctions.h"
 
-void executeKeywordRead(std::vector<std::string> &tokens)
+void executeKeywordRead(std::vector<std::wstring> &tokens)
 {
-	std::string line;
-	std::getline(std::cin, line);
+	std::wstring line;
+	std::getline(std::wcin, line);
 
-	std::string token;
-	std::stringstream ss(line);
+	std::wstring token;
+	std::wstringstream ss(line);
 
 	int i = 1;
 
@@ -23,7 +23,7 @@ void executeKeywordRead(std::vector<std::string> &tokens)
 	{
 		int r1;
 		Var* lhsVar = getVar(tokens[i], r1);
-		std::string* pstr = static_cast<std::string*>(lhsVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
 		pstr[r1] = token;
 
 		i++;

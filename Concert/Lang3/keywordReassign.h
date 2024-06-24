@@ -7,7 +7,7 @@
 
 #include "sourceFunctions.h"
 
-void executeKeywordReassign(std::vector<std::string>& tokens)
+void executeKeywordReassign(std::vector<std::wstring>& tokens)
 {
 	int index;
 	bool createdVar = false;
@@ -21,9 +21,19 @@ void executeKeywordReassign(std::vector<std::string>& tokens)
 
 	if (toReassignVar->data != nameVar->data) {
 		VarStore* vs = gWorkspaceStore->getStore();
-		std::set<long long> deletedDataSet = gWorkspaceStore->getDeletedDataSet();
-		vs->reassignVar(toReassignVar, nameVar, deletedDataSet);
-		gWorkspaceStore->setDeletedDataSet(deletedDataSet);
+		for (auto rit = workspaceStack.rbegin(); rit != workspaceStack.rend(); ++rit) {
+			VarStore* ss = gWorkspaceStore->getStore(*rit);
+
+			if (vs == ss)
+			{
+				continue;
+			}
+
+			ss->reassignAllVar(toReassignVar, nameVar);
+		}
+
+		vs->reassignVar(toReassignVar, nameVar);
+		nameVar->reassignTargetCount++;
 	}
 
 	if (createdVar)

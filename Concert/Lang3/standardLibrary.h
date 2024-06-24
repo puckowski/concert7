@@ -52,70 +52,70 @@ enum LibraryFunction
 	ABSOLUTE_VALUE = 46
 };
 
-std::vector<std::string>* stringLibraryFunctions = new std::vector<std::string>{ "substring" , "find", "contains", "length", "to_int", "to_double", "char_at", "char_to_string", 
-	"int_to_string", "double_to_string", "char_to_int", "to_lower_case", "to_upper_case" };
-std::vector<std::string>* fileLibraryFunctions = new std::vector<std::string>{ "open_file", "close_file", "write_string", "get_line", "is_open", "is_end",
-	"is_file_exist", "create_file", "get_file_size", "seek_file_pointer", "read_byte", "write_byte", "remove_file", "rename_file", "tell_file_pointer",
-	"create_directory" };
-std::vector<std::string>* mathLibraryFunctions = new std::vector<std::string>{ "seed_random", "get_random", "int_to_double", "double_to_int", "int_to_long", "long_to_int",
-	"long_to_double", "double_to_long", "absolute_value" };
-std::vector<std::string>* regexLibraryFunctions = new std::vector<std::string>{ "regex_search", "regex_match", "regex_replace" };
-std::vector<std::string>* threadLibraryFunctions = new std::vector<std::string>{ "get_thread_id" };
+std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"char_to_string", 
+	L"int_to_string", L"double_to_string", L"char_to_int", L"to_lower_case", L"to_upper_case" };
+std::vector<std::wstring>* fileLibraryFunctions = new std::vector<std::wstring>{ L"open_file", L"close_file", L"write_string", L"get_line", L"is_open", L"is_end",
+	L"is_file_exist", L"create_file", L"get_file_size", L"seek_file_pointer", L"read_byte", L"write_byte", L"remove_file", L"rename_file", L"tell_file_pointer",
+	L"create_directory" };
+std::vector<std::wstring>* mathLibraryFunctions = new std::vector<std::wstring>{ L"seed_random", L"get_random", L"int_to_double", L"double_to_int", L"int_to_long", L"long_to_int",
+	L"long_to_double", L"double_to_long", L"absolute_value" };
+std::vector<std::wstring>* regexLibraryFunctions = new std::vector<std::wstring>{ L"regex_search", L"regex_match", L"regex_replace" };
+std::vector<std::wstring>* threadLibraryFunctions = new std::vector<std::wstring>{ L"get_thread_id" };
 
-thread_local const std::map<const std::string, std::vector<std::string>*> LIBRARY_IMPORT_MAP =
+thread_local const std::map<const std::wstring, std::vector<std::wstring>*> LIBRARY_IMPORT_MAP =
 {
-	{ "string", stringLibraryFunctions },
-	{ "io", fileLibraryFunctions },
-	{ "math", mathLibraryFunctions },
-	{ "regex", regexLibraryFunctions },
-	{ "thread", threadLibraryFunctions }
+	{ L"string", stringLibraryFunctions },
+	{ L"io", fileLibraryFunctions },
+	{ L"math", mathLibraryFunctions },
+	{ L"regex", regexLibraryFunctions },
+	{ L"thread", threadLibraryFunctions }
 };
 
-const std::map<const std::string, const LibraryFunction> LIBRARY_FUNCTION_MAP =
+const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 {
-	{ "substring", STRING_SUBSTRING },
-	{ "find", STRING_FIND },
-	{ "contains", STRING_CONTAINS },
-	{ "length", STRING_LENGTH },
-	{ "to_int", STRING_TO_INT },
-	{ "to_double", STRING_TO_DOUBLE },
-	{ "open_file", FILE_OPEN_FILE },
-	{ "close_file", FILE_CLOSE_FILE },
-	{ "write_string", FILE_WRITE_STRING },
-	{ "get_line", FILE_GET_LINE },
-	{ "is_open", FILE_IS_OPEN },
-	{ "is_end", FILE_IS_EOF },
-	{ "is_file_exist", FILE_IS_EXIST },
-	{ "create_file", FILE_CREATE_FILE },
-	{ "get_file_size", FILE_GET_FILE_SIZE },
-	{ "char_at", STRING_CHAR_AT },
-	{ "seed_random", MATH_SRAND },
-	{ "get_random", MATH_RAND },
-	{ "seek_file_pointer", FILE_SEEK },
-	{ "read_byte", FILE_READ },
-	{ "write_byte", FILE_WRITE },
-	{ "remove_file", FILE_REMOVE },
-	{ "rename_file", FILE_RENAME },
-	{ "tell_file_pointer", FILE_TELLG },
-	{ "char_to_string", STRING_CHAR_TO_STRING },
-	{ "int_to_string", STRING_INT_TO_STRING },
-	{ "double_to_string", STRING_DOUBLE_TO_STRING },
-	{ "int_to_double", MATH_INT_TO_DOUBLE },
-	{ "double_to_int", MATH_DOUBLE_TO_INT },
-	{ "char_to_int", STRING_CHAR_TO_INT },
-	{ "int_to_long", MATH_INT_TO_LONG },
-	{ "to_lower_case", STRING_TO_LOWER_CASE },
-	{ "to_upper_case", STRING_TO_UPPER_CASE },
-	{ "create_directory", FILE_CREATE_DIRECTORY },
-	{ "long_to_int", MATH_LONG_TO_INT },
-	{ "long_to_double", MATH_LONG_TO_DOUBLE },
-	{ "double_to_long", MATH_DOUBLE_TO_LONG },
-	{ "regex_search", REGEX_SEARCH },
-	{ "regex_match", REGEX_MATCH },
-	{ "regex_replace", REGEX_REPLACE },
-	{ "get_thread_id", GET_THREAD_ID },
-	{ "absolute_value", ABSOLUTE_VALUE }
+	{ L"substring", STRING_SUBSTRING },
+	{ L"find", STRING_FIND },
+	{ L"contains", STRING_CONTAINS },
+	{ L"length", STRING_LENGTH },
+	{ L"to_int", STRING_TO_INT },
+	{ L"to_double", STRING_TO_DOUBLE },
+	{ L"open_file", FILE_OPEN_FILE },
+	{ L"close_file", FILE_CLOSE_FILE },
+	{ L"write_string", FILE_WRITE_STRING },
+	{ L"get_line", FILE_GET_LINE },
+	{ L"is_open", FILE_IS_OPEN },
+	{ L"is_end", FILE_IS_EOF },
+	{ L"is_file_exist", FILE_IS_EXIST },
+	{ L"create_file", FILE_CREATE_FILE },
+	{ L"get_file_size", FILE_GET_FILE_SIZE },
+	{ L"char_at", STRING_CHAR_AT },
+	{ L"seed_random", MATH_SRAND },
+	{ L"get_random", MATH_RAND },
+	{ L"seek_file_pointer", FILE_SEEK },
+	{ L"read_byte", FILE_READ },
+	{ L"write_byte", FILE_WRITE },
+	{ L"remove_file", FILE_REMOVE },
+	{ L"rename_file", FILE_RENAME },
+	{ L"tell_file_pointer", FILE_TELLG },
+	{ L"char_to_string", STRING_CHAR_TO_STRING },
+	{ L"int_to_string", STRING_INT_TO_STRING},
+	{ L"double_to_string", STRING_DOUBLE_TO_STRING },
+	{ L"int_to_double", MATH_INT_TO_DOUBLE },
+	{ L"double_to_int", MATH_DOUBLE_TO_INT },
+	{ L"char_to_int", STRING_CHAR_TO_INT },
+	{ L"int_to_long", MATH_INT_TO_LONG },
+	{ L"to_lower_case", STRING_TO_LOWER_CASE },
+	{ L"to_upper_case", STRING_TO_UPPER_CASE },
+	{ L"create_directory", FILE_CREATE_DIRECTORY },
+	{ L"long_to_int", MATH_LONG_TO_INT },
+	{ L"long_to_double", MATH_LONG_TO_DOUBLE },
+	{ L"double_to_long", MATH_DOUBLE_TO_LONG },
+	{ L"regex_search", REGEX_SEARCH },
+	{ L"regex_match", REGEX_MATCH },
+	{ L"regex_replace", REGEX_REPLACE },
+	{ L"get_thread_id", GET_THREAD_ID },
+	{ L"absolute_value", ABSOLUTE_VALUE }
 };
-const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string, const LibraryFunction>>>> LIBRARY_FUNCTION_MAP_END = LIBRARY_FUNCTION_MAP.end();
+const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const LibraryFunction>>>> LIBRARY_FUNCTION_MAP_END = LIBRARY_FUNCTION_MAP.end();
 
 #endif

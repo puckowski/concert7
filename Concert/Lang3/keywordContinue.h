@@ -7,7 +7,7 @@
 
 #include "sourceFunctions.h"
 
-void executeKeywordContinue(int &currentLine, std::vector<std::string> &tokens)
+void executeKeywordContinue(int &currentLine, std::vector<std::wstring> &tokens)
 {
 	int blockCount = 0;
 

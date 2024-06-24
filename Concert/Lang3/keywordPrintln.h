@@ -11,7 +11,7 @@
 #include "variableFunctions.h"
 #include "printFunctions.h"
 
-void executeKeywordPrintln(const int &tokensSize, std::vector<std::string> &tokens)
+void executeKeywordPrintln(const int &tokensSize, std::vector<std::wstring> &tokens)
 {
 	for (int i = 1; i < tokens.size(); ++i)
 	{
@@ -49,9 +49,9 @@ void executeKeywordPrintln(const int &tokensSize, std::vector<std::string> &toke
 		}
 		case TYPE_STRING:
 		{
-			std::string* pstr = static_cast<std::string*>(v->data);
-
-			std::cout << pstr[r1];
+			std::wstring* pstr = static_cast<std::wstring*>(v->data);
+			const char* charPtr = reinterpret_cast<const char*>(v->data);
+			std::wcout << pstr[r1];
 
 			break;
 		}

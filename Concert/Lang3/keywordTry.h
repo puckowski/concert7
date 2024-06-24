@@ -11,7 +11,7 @@
 
 #include "sourceFunctions.h"
 
-void executeKeywordTry(int &currentLine, std::vector<std::string> &tokens)
+void executeKeywordTry(int &currentLine, std::vector<std::wstring> &tokens)
 {
 	currentLine++;
 
@@ -33,11 +33,11 @@ void executeKeywordTry(int &currentLine, std::vector<std::string> &tokens)
 				continue;
 			}
 
-			if (tokens[0] == "catch" && blockCount == 0)
+			if (tokens[0] == L"catch" && blockCount == 0)
 				break;
-			else if (tokens[0] == "catch")
+			else if (tokens[0] == L"catch")
 				blockCount--;
-			else if (tokens[0] == "try")
+			else if (tokens[0] == L"try")
 				blockCount++;
 		} while (true);
 
@@ -56,15 +56,15 @@ void executeKeywordTry(int &currentLine, std::vector<std::string> &tokens)
 			continue;
 		}
 
-		if (tokens[0] == "end" && blockCount == 0)
+		if (tokens[0] == L"end" && blockCount == 0)
 			break;
-		else if (tokens[0] == "end")
+		else if (tokens[0] == L"end")
 			blockCount--;
-		else if (tokens[0] == "if")
+		else if (tokens[0] == L"if")
 			blockCount++;
-		else if (tokens[0] == "try")
+		else if (tokens[0] == L"try")
 			blockCount++;
-		else if (tokens[0] == "while")
+		else if (tokens[0] == L"while")
 			blockCount++;
 	} while (true);
 

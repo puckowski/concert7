@@ -9,14 +9,14 @@
 #include "Var.h"
 #include "variableFunctions.h"
 
-void executeKeywordReadln(std::vector<std::string> &tokens)
+void executeKeywordReadln(std::vector<std::wstring> &tokens)
 {
 	int r1;
 	Var* lhsVar = getVar(tokens[1], r1);
 
-	std::string* pstr = static_cast<std::string*>(lhsVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(lhsVar->data);
 
-	std::getline(std::cin, pstr[r1]);
+	std::getline(std::wcin, pstr[r1]);
 }
 
 #endif

@@ -7,15 +7,17 @@
 
 #include "sourceFunctions.h"
 
-void executeKeywordDelete(std::vector<std::string> &tokens)
+void executeKeywordDelete(std::vector<std::wstring> &tokens)
 {
 	bool created = false;
 	int r1;
 	Var* varName = getVar(tokens[1], r1, created);
 
-	std::string* pstr = static_cast<std::string*>(varName->data);
+	std::wstring* pstr = static_cast<std::wstring*>(varName->data);
 
-	gWorkspaceStore->getStore()->removeVar(pstr[r1]);
+	VarStore* vs = gWorkspaceStore->getStore();
+	std::wstring name = pstr[r1];
+	vs->removeVar(name);
 
 	if (created)
 	{

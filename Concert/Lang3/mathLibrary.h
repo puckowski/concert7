@@ -10,12 +10,12 @@
 #include "Var.h"
 #include "variableFunctions.h"
 
-void libraryMathSeedRand(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryMathSeedRand(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	srand(time(NULL));
 }
 
-void libraryMathRand(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryMathRand(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 	int* returnData = static_cast<int*>(v->data);
@@ -23,7 +23,7 @@ void libraryMathRand(std::vector<std::string> &arguments, const int &argumentsSi
 	returnData[returnVarInt] = rand();
 }
 
-void libraryMathIntToDouble(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryMathIntToDouble(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdInt;
@@ -40,7 +40,7 @@ void libraryMathIntToDouble(std::vector<std::string> &arguments, const int &argu
 		delete intVar;
 }
 
-void libraryMathAbsoluteValue(std::vector<std::string>& arguments, const int& argumentsSize)
+void libraryMathAbsoluteValue(std::vector<std::wstring>& arguments, const int& argumentsSize)
 {
 	int r1;
 	bool createdInt;
@@ -87,7 +87,7 @@ void libraryMathAbsoluteValue(std::vector<std::string>& arguments, const int& ar
 		delete intVar;
 }
 
-void libraryMathLongToDouble(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryMathLongToDouble(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdInt;
@@ -104,7 +104,7 @@ void libraryMathLongToDouble(std::vector<std::string> &arguments, const int &arg
 		delete intVar;
 }
 
-void libraryMathIntToLong(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryMathIntToLong(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdInt;
@@ -123,7 +123,7 @@ void libraryMathIntToLong(std::vector<std::string> &arguments, const int &argume
 		delete intVar;
 }
 
-void libraryMathLongToInt(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryMathLongToInt(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdInt;
@@ -140,7 +140,7 @@ void libraryMathLongToInt(std::vector<std::string> &arguments, const int &argume
 		delete intVar;
 }
 
-void libraryMathDoubleToInt(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryMathDoubleToInt(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdDouble;
@@ -157,7 +157,7 @@ void libraryMathDoubleToInt(std::vector<std::string> &arguments, const int &argu
 		delete doubleVar;
 }
 
-void libraryMathDoubleToLong(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryMathDoubleToLong(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdDouble;

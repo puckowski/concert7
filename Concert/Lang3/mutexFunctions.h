@@ -7,7 +7,7 @@
 
 #include "sourceFunctions.h"
 
-std::mutex* getMutex(const std::string &name)
+std::mutex* getMutex(const std::wstring &name)
 {
 	auto search = lockMap.find(name);
 
@@ -19,7 +19,7 @@ std::mutex* getMutex(const std::string &name)
 	return nullptr;
 }
 
-void createMutex(const std::string &name)
+void createMutex(const std::wstring &name)
 {
 	lockMap.insert({ name, new std::mutex() });
 }

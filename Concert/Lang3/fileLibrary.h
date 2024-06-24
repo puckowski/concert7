@@ -9,7 +9,7 @@
 #include "Var.h"
 #include "variableFunctions.h"
 
-void libraryGetFileSize(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryGetFileSize(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -17,7 +17,7 @@ void libraryGetFileSize(std::vector<std::string> &arguments, const int &argument
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = gHandleStore.getFileSize(pstr[r1]);
@@ -28,7 +28,7 @@ void libraryGetFileSize(std::vector<std::string> &arguments, const int &argument
 	}
 }
 
-void libraryIsFileExist(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryIsFileExist(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -36,7 +36,7 @@ void libraryIsFileExist(std::vector<std::string> &arguments, const int &argument
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = gHandleStore.isFileExist(pstr[r1]);
@@ -47,13 +47,13 @@ void libraryIsFileExist(std::vector<std::string> &arguments, const int &argument
 	}
 }
 
-void libraryCreateFile(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryCreateFile(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
 	Var* stringVar = getVar(arguments[2], r1, createdString);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 
 	gHandleStore.createFile(pstr[r1]);
 
@@ -63,7 +63,7 @@ void libraryCreateFile(std::vector<std::string> &arguments, const int &arguments
 	}
 }
 
-void libraryOpenFile(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryOpenFile(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	if (argumentsSize == 3)
 	{
@@ -71,7 +71,7 @@ void libraryOpenFile(std::vector<std::string> &arguments, const int &argumentsSi
 		bool createdString;
 		Var* stringVar = getVar(arguments[2], r1, createdString);
 
-		std::string* pstr = static_cast<std::string*>(stringVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 		int flag = 0;
 
 		gHandleStore.openFile(pstr[r1], flag);
@@ -91,7 +91,7 @@ void libraryOpenFile(std::vector<std::string> &arguments, const int &argumentsSi
 		bool createdOpenFlag;
 		Var* openFlagVar = getVar(arguments[3], r2, createdOpenFlag);
 
-		std::string* pstr = static_cast<std::string*>(stringVar->data);
+		std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 		int* flagData = static_cast<int*>(openFlagVar->data);
 
 		gHandleStore.openFile(pstr[r1], flagData[r2]);
@@ -108,13 +108,13 @@ void libraryOpenFile(std::vector<std::string> &arguments, const int &argumentsSi
 	}
 }
 
-void libraryCreateDirectory(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryCreateDirectory(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
 	Var* stringVar = getVar(arguments[2], r1, createdString);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
@@ -128,13 +128,13 @@ void libraryCreateDirectory(std::vector<std::string> &arguments, const int &argu
 	}
 }
 
-void libraryCloseFile(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryCloseFile(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
 	Var* stringVar = getVar(arguments[2], r1, createdString);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 
 	gHandleStore.closeFile(pstr[r1]);
 
@@ -144,13 +144,13 @@ void libraryCloseFile(std::vector<std::string> &arguments, const int &argumentsS
 	}
 }
 
-void libraryRemoveFile(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryRemoveFile(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
 	Var* stringVar = getVar(arguments[2], r1, createdString);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 
 	gHandleStore.removeFile(pstr[r1]);
 
@@ -160,7 +160,7 @@ void libraryRemoveFile(std::vector<std::string> &arguments, const int &arguments
 	}
 }
 
-void libraryRenameFile(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryRenameFile(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -170,8 +170,8 @@ void libraryRenameFile(std::vector<std::string> &arguments, const int &arguments
 	bool createdNewName;
 	Var* newNameVar = getVar(arguments[3], r2, createdNewName);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
-	std::string* newNameData = static_cast<std::string*>(newNameVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+	std::wstring* newNameData = static_cast<std::wstring*>(newNameVar->data);
 
 	gHandleStore.renameFile(pstr[r1], newNameData[r2]);
 
@@ -186,7 +186,7 @@ void libraryRenameFile(std::vector<std::string> &arguments, const int &arguments
 	}
 }
 
-void libraryWriteString(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryWriteString(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -196,8 +196,8 @@ void libraryWriteString(std::vector<std::string> &arguments, const int &argument
 	bool createdStringText;
 	Var* stringVarText = getVar(arguments[3], r1Text, createdStringText);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
-	std::string* pstrText = static_cast<std::string*>(stringVarText->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+	std::wstring* pstrText = static_cast<std::wstring*>(stringVarText->data);
 
 	gHandleStore.writeStringToFile(pstr[r1], pstrText[r1Text]);
 
@@ -212,7 +212,7 @@ void libraryWriteString(std::vector<std::string> &arguments, const int &argument
 	}
 }
 
-void libraryGetLine(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryGetLine(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -220,8 +220,8 @@ void libraryGetLine(std::vector<std::string> &arguments, const int &argumentsSiz
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar); 
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
-	std::string* returnData = static_cast<std::string*>(v->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
 
 	returnData[returnVarInt] = gHandleStore.getLineFromFile(pstr[r1]);
 
@@ -231,7 +231,7 @@ void libraryGetLine(std::vector<std::string> &arguments, const int &argumentsSiz
 	}
 }
 
-void libraryIsOpen(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryIsOpen(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -239,7 +239,7 @@ void libraryIsOpen(std::vector<std::string> &arguments, const int &argumentsSize
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = gHandleStore.isOpen(pstr[r1]);
@@ -248,7 +248,7 @@ void libraryIsOpen(std::vector<std::string> &arguments, const int &argumentsSize
 		delete stringVar;
 }
 
-void libraryIsAtEndOfFile(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryIsAtEndOfFile(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -256,7 +256,7 @@ void libraryIsAtEndOfFile(std::vector<std::string> &arguments, const int &argume
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar); 
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = gHandleStore.isAtEndOfFile(pstr[r1]);
@@ -265,7 +265,7 @@ void libraryIsAtEndOfFile(std::vector<std::string> &arguments, const int &argume
 		delete stringVar;
 }
 
-void librarySeek(std::vector<std::string> &arguments, const int &argumentsSize)
+void librarySeek(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -275,7 +275,7 @@ void librarySeek(std::vector<std::string> &arguments, const int &argumentsSize)
 	bool createdSeek;
 	Var* seekVar = getVar(arguments[3], r2, createdSeek);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* seekData = static_cast<int*>(seekVar->data);
 
 	gHandleStore.seekg(pstr[r1], seekData[r2]);
@@ -287,7 +287,7 @@ void librarySeek(std::vector<std::string> &arguments, const int &argumentsSize)
 		delete seekVar;
 }
 
-void libraryRead(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryRead(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -295,7 +295,7 @@ void libraryRead(std::vector<std::string> &arguments, const int &argumentsSize)
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = gHandleStore.read(pstr[r1]);
@@ -304,7 +304,7 @@ void libraryRead(std::vector<std::string> &arguments, const int &argumentsSize)
 		delete stringVar;
 }
 
-void libraryWrite(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryWrite(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -314,10 +314,10 @@ void libraryWrite(std::vector<std::string> &arguments, const int &argumentsSize)
 	bool createdWrite;
 	Var* writeVar = getVar(arguments[3], r2, createdWrite);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* writeData = static_cast<int*>(writeVar->data);
 	
-	char data = writeData[0];
+	wchar_t data = writeData[0];
 	gHandleStore.write(pstr[r1], data);
 
 	if (createdString)
@@ -327,7 +327,7 @@ void libraryWrite(std::vector<std::string> &arguments, const int &argumentsSize)
 		delete writeVar;
 }
 
-void libraryTell(std::vector<std::string> &arguments, const int &argumentsSize)
+void libraryTell(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -335,7 +335,7 @@ void libraryTell(std::vector<std::string> &arguments, const int &argumentsSize)
 
 	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
 
-	std::string* pstr = static_cast<std::string*>(stringVar->data);
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* returnData = static_cast<int*>(v->data);
 
 	returnData[returnVarInt] = gHandleStore.tellg(pstr[r1]);

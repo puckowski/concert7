@@ -55,66 +55,66 @@ enum Operator
 	OPERATOR_GREATER_THAN_EQUALS = 5
 };
 
-const std::map<std::string, ReservedWord> RESERVED_WORD_IDENTIFIER_MAP =
+const std::map<std::wstring, ReservedWord> RESERVED_WORD_IDENTIFIER_MAP =
 {
-	{ "int",    TYPE_INT },
-	{ "long",   TYPE_LONG },
-	{ "double", TYPE_DOUBLE },
-	{ "string", TYPE_STRING },
-	{ "object", TYPE_OBJECT }
+	{ L"int",    TYPE_INT },
+	{ L"long",   TYPE_LONG },
+	{ L"double", TYPE_DOUBLE },
+	{ L"string", TYPE_STRING },
+	{ L"object", TYPE_OBJECT }
 };
 
-const std::map<const std::string, const ReservedWord> RESERVED_WORD_MAP =
+const std::map<const std::wstring, const ReservedWord> RESERVED_WORD_MAP =
 {
-	{ "int",        TYPE_INT },
-	{ "double",     TYPE_DOUBLE },
-	{ "string",     TYPE_STRING },
-	{ "function",   TYPE_FUNCTION },
-	{ "return",     KEYWORD_RETURN },
-	{ "call",       KEYWORD_CALL },
-	{ "end",        KEYWORD_END },
-	{ "if",         KEYWORD_IF },
-	{ "while",      KEYWORD_WHILE },
-	{ "sizeof",     KEYWORD_SIZEOF },
-	{ "include",    KEYWORD_INCLUDE },
-	{ "import",     KEYWORD_IMPORT },
-	{ "detach",     KEYWORD_DETACH },
-	{ "join",       KEYWORD_JOIN },
-	{ "println",    KEYWORD_PRINTLN },
-	{ "print",      KEYWORD_PRINT },
-	{ "read",       KEYWORD_READ },
-	{ "readln",     KEYWORD_READLN },
-	{ "lock",       KEYWORD_LOCK },
-	{ "unlock",     KEYWORD_UNLOCK },
-	{ "break",      KEYWORD_BREAK },
-	{ "try",        KEYWORD_TRY },
-	{ "catch",      KEYWORD_CATCH },
-	{ "delete",     KEYWORD_DELETE },
-	{ "mutex",      KEYWORD_MUTEX },
-	{ "else",       KEYWORD_ELSE },
-	{ "system",     KEYWORD_SYSTEM },
-	{ "long",       TYPE_LONG },
-	{ "exec",       KEYWORD_EXEC },
-	{ "exit",       KEYWORD_EXIT },
-	{ "instanceof", KEYWORD_INSTANCEOF },
-	{ "new",        KEYWORD_NEW },
-	{ "continue",   KEYWORD_CONTINUE },
-	{ "object",     TYPE_OBJECT },
-	{ "keys",       KEYWORD_KEYS },
-	{ "alias",      KEYWORD_ALIAS },
-	{ "reassign",   KEYWORD_REASSIGN }
+	{ L"int",        TYPE_INT },
+	{ L"double",     TYPE_DOUBLE },
+	{ L"string",     TYPE_STRING },
+	{ L"function",   TYPE_FUNCTION },
+	{ L"return",     KEYWORD_RETURN },
+	{ L"call",       KEYWORD_CALL },
+	{ L"end",        KEYWORD_END },
+	{ L"if",         KEYWORD_IF },
+	{ L"while",      KEYWORD_WHILE },
+	{ L"sizeof",     KEYWORD_SIZEOF },
+	{ L"include",    KEYWORD_INCLUDE },
+	{ L"import",     KEYWORD_IMPORT },
+	{ L"detach",     KEYWORD_DETACH },
+	{ L"join",       KEYWORD_JOIN },
+	{ L"println",    KEYWORD_PRINTLN },
+	{ L"print",      KEYWORD_PRINT },
+	{ L"read",       KEYWORD_READ },
+	{ L"readln",     KEYWORD_READLN },
+	{ L"lock",       KEYWORD_LOCK },
+	{ L"unlock",     KEYWORD_UNLOCK },
+	{ L"break",      KEYWORD_BREAK },
+	{ L"try",        KEYWORD_TRY },
+	{ L"catch",      KEYWORD_CATCH },
+	{ L"delete",     KEYWORD_DELETE },
+	{ L"mutex",      KEYWORD_MUTEX },
+	{ L"else",       KEYWORD_ELSE },
+	{ L"system",     KEYWORD_SYSTEM },
+	{ L"long",       TYPE_LONG },
+	{ L"exec",       KEYWORD_EXEC },
+	{ L"exit",       KEYWORD_EXIT },
+	{ L"instanceof", KEYWORD_INSTANCEOF },
+	{ L"new",        KEYWORD_NEW },
+	{ L"continue",   KEYWORD_CONTINUE },
+	{ L"object",     TYPE_OBJECT },
+	{ L"keys",       KEYWORD_KEYS },
+	{ L"alias",      KEYWORD_ALIAS },
+	{ L"reassign",   KEYWORD_REASSIGN }
 };
-const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string, const ReservedWord>>>> RESERVED_WORD_MAP_END = RESERVED_WORD_MAP.end();
+const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const ReservedWord>>>> RESERVED_WORD_MAP_END = RESERVED_WORD_MAP.end();
 
-const std::map<const std::string, const Operator> OPERATOR_MAP =
+const std::map<const std::wstring, const Operator> OPERATOR_MAP =
 {
-	{ "==", OPERATOR_EQUALS },
-	{ "!=", OPERATOR_NOT_EQUALS },
-	{ "<",  OPERATOR_LESS_THAN },
-	{ ">",  OPERATOR_GREATER_THAN },
-	{ "<=", OPERATOR_LESS_THAN_EQUALS },
-	{ ">=", OPERATOR_GREATER_THAN_EQUALS }
+	{ L"==", OPERATOR_EQUALS },
+	{ L"!=", OPERATOR_NOT_EQUALS },
+	{ L"<",  OPERATOR_LESS_THAN },
+	{ L">",  OPERATOR_GREATER_THAN },
+	{ L"<=", OPERATOR_LESS_THAN_EQUALS },
+	{ L">=", OPERATOR_GREATER_THAN_EQUALS }
 };
-const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string, const Operator>>>> OPERATOR_MAP_END = OPERATOR_MAP.end();
+const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const Operator>>>> OPERATOR_MAP_END = OPERATOR_MAP.end();
 
 #endif
