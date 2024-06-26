@@ -187,6 +187,12 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
+		case STRING_WCHAR_AT:
+		{
+			libraryStringWcharAt(tokens, tokensSize);
+
+			break;
+		}
 		case MATH_SRAND:
 		{
 			libraryMathSeedRand(tokens, tokensSize);
@@ -283,9 +289,9 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
-		case STRING_CHAR_TO_INT:
+		case STRING_WCHAR_TO_INT:
 		{
-			libraryCharToInt(tokens, tokensSize);
+			libraryWcharToInt(tokens, tokensSize);
 
 			break;
 		}

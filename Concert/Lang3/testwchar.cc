@@ -30,6 +30,10 @@ while isFileAtEnd == 0;
 		println "called wchar_to_string on ", wchar, ".";
 		println "wchar_to_string result: ", char, ".";
 		
+		call wchar_to_int : char -> wchar;
+		println "called wchar_to_int on ", char, ".";
+		println "wchar_to_int result: ", wchar, ".";
+		
 		call tell_file_pointer : "testchinese.txt" -> filePointer;
 		println "called tell_file_pointer on \"testchinese.txt\".";
 		println "tell_file_pointer result: ", filePointer, ".";
@@ -67,6 +71,10 @@ while isFileAtEnd == 0;
 		call char_to_string : byte -> char;
 		println "called char_to_string on ", byte, ".";
 		println "char_to_string result: ", char, ".";
+		
+		call wchar_to_int : char -> byte;
+		println "called wchar_to_int on ", char, ".";
+		println "wchar_to_int result: ", byte, ".";
 		
 		call tell_file_pointer : "testchinese.txt" -> filePointer;
 		println "called tell_file_pointer on \"testchinese.txt\".";

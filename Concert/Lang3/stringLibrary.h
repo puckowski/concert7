@@ -30,6 +30,29 @@ void libraryStringCharAt(std::vector<std::wstring> &arguments, const int &argume
 		delete indexVar;
 }
 
+void libraryStringWcharAt(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1, r2;
+	bool createdString, createdIndex;
+	Var* stringVar = getVar(arguments[2], r1, createdString);
+	Var* indexVar = getVar(arguments[3], r2, createdIndex);
+
+	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+	int* indexData = static_cast<int*>(indexVar->data);
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
+
+	wchar_t c = pstr[r1][indexData[0]];
+	returnData[returnVarInt] = std::wstring(1, c);
+
+	if (createdString)
+		delete stringVar;
+
+	if (createdIndex)
+		delete indexVar;
+}
+
 void libraryWcharToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
@@ -120,7 +143,7 @@ void libraryStringToDouble(std::vector<std::wstring> &arguments, const int &argu
 		delete stringVar;
 }
 
-void libraryCharToInt(std::vector<std::wstring> &arguments, const int &argumentsSize)
+void libraryWcharToInt(std::vector<std::wstring>& arguments, const int& argumentsSize)
 {
 	int r1;
 	bool createdString;

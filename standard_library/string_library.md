@@ -23,11 +23,12 @@ import string;
 | to_int            | Convert to an integer type                             |
 | to_double         | Convert to a double type                               | 
 | char_at           | Return the character at an index                       |
+| wchar_at          | Return the wchar at an index                           |
 | char_to_string    | Convert a character, stored in an integer, to a string |
 | wchar_to_string   | Convert a wchar, stored in an integer, to a string     |
 | int_to_string     | Convert an integer to a string                         |
 | double_to_string  | Convert a double to a string                           |
-| char_to_int       | Convert a character to an integer                      |
+| wchar_to_int      | Convert a wchar to an integer                          |
 | to_lower_case     | Convert a string to lower case                         |
 | to_upper_case     | Convert a string to upper case                         |
 
@@ -81,12 +82,12 @@ tempDouble = -1.0;
 call to_double : sToD -> tempDouble;
 ```
 
-### char_at
+### wchar_at
 
 ```cpp
 string CHAR_AT_TEST_STRING = "This is a test string.";
 string firstChar = "?";
-call char_at : CHAR_AT_TEST_STRING, 0 -> firstChar;
+call wchar_at : CHAR_AT_TEST_STRING, 0 -> firstChar;
 ```
 
 ### char_to_string
@@ -121,12 +122,12 @@ tempString = "?";
 call double_to_string : dToS -> tempString;
 ```
 
-### char_to_int
+### wchar_to_int
 
 ```cpp
 string firstChar = "?";
 int charInt = -1;
-call char_to_int : firstChar -> charInt;
+call wchar_to_int : firstChar -> charInt;
 ```
 
 ### to_lower_case

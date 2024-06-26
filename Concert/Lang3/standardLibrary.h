@@ -37,7 +37,6 @@ enum LibraryFunction
 	STRING_DOUBLE_TO_STRING = 31,
 	MATH_INT_TO_DOUBLE = 32,
 	MATH_DOUBLE_TO_INT = 33,
-	STRING_CHAR_TO_INT = 34,
 	MATH_INT_TO_LONG = 35,
 	STRING_TO_LOWER_CASE = 36,
 	STRING_TO_UPPER_CASE = 37,
@@ -53,11 +52,13 @@ enum LibraryFunction
 	STRING_WCHAR_TO_STRING = 47,
 	FILE_OPEN_BYTE_FILE = 48,
 	FILE_WRITE_WCHAR = 49,
-	FILE_READ_WCHAR = 50
+	FILE_READ_WCHAR = 50,
+	STRING_WCHAR_TO_INT = 51,
+	STRING_WCHAR_AT = 52
 };
 
-std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"char_to_string", L"wchar_to_string",
-	L"int_to_string", L"double_to_string", L"char_to_int", L"to_lower_case", L"to_upper_case" };
+std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"wchar_at", L"char_to_string", L"wchar_to_string",
+	L"int_to_string", L"double_to_string", L"wchar_to_int", L"to_lower_case", L"to_upper_case" };
 std::vector<std::wstring>* fileLibraryFunctions = new std::vector<std::wstring>{ L"open_file",  L"open_byte_file", L"close_file", L"write_string", L"get_line", L"is_open", L"is_end",
 	L"is_file_exist", L"create_file", L"get_file_size", L"seek_file_pointer", L"read_byte", L"write_byte", L"read_wchar", L"write_wchar", L"remove_file", L"rename_file", L"tell_file_pointer",
 	L"create_directory" };
@@ -94,6 +95,7 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"create_file", FILE_CREATE_FILE },
 	{ L"get_file_size", FILE_GET_FILE_SIZE },
 	{ L"char_at", STRING_CHAR_AT },
+	{ L"wchar_at", STRING_WCHAR_AT },
 	{ L"seed_random", MATH_SRAND },
 	{ L"get_random", MATH_RAND },
 	{ L"seek_file_pointer", FILE_SEEK },
@@ -109,7 +111,7 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"double_to_string", STRING_DOUBLE_TO_STRING },
 	{ L"int_to_double", MATH_INT_TO_DOUBLE },
 	{ L"double_to_int", MATH_DOUBLE_TO_INT },
-	{ L"char_to_int", STRING_CHAR_TO_INT },
+	{ L"wchar_to_int", STRING_WCHAR_TO_INT },
 	{ L"int_to_long", MATH_INT_TO_LONG },
 	{ L"to_lower_case", STRING_TO_LOWER_CASE },
 	{ L"to_upper_case", STRING_TO_UPPER_CASE },
