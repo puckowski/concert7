@@ -21,6 +21,7 @@ namespace ConcertHandleEnvironment
 	{
 	private:
 		std::unordered_map<std::wstring, std::wfstream*> mHandleMap;
+		std::unordered_map<std::wstring, std::fstream*> mByteHandleMap;
 
 	protected:
 
@@ -31,6 +32,7 @@ namespace ConcertHandleEnvironment
 
 		void clearStore();
 		std::wfstream* getHandle(const std::wstring& name);
+		std::fstream* getByteHandle(const std::wstring& name);
 		int createDirectory(const std::wstring& name);
 
 		std::ifstream::pos_type getFileSize(const std::wstring& name);
@@ -40,6 +42,7 @@ namespace ConcertHandleEnvironment
 		void createFile(const std::wstring& name);
 
 		void openFile(const std::wstring& name, int& openFileFlag);
+		void openByteFile(const std::wstring& name, int& openFileFlag);
 
 		void closeFile(const std::wstring& name);
 
@@ -58,8 +61,10 @@ namespace ConcertHandleEnvironment
 		int tellg(const std::wstring& name);
 
 		int read(const std::wstring& name);
+		int readByte(const std::wstring& name);
 
 		void write(const std::wstring& name, wchar_t& data);
+		void writeByte(const std::wstring& name, char& data);
 	};
 }
 

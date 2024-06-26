@@ -49,13 +49,17 @@ enum LibraryFunction
 	REGEX_MATCH = 43,
 	REGEX_REPLACE = 44,
 	GET_THREAD_ID = 45,
-	ABSOLUTE_VALUE = 46
+	ABSOLUTE_VALUE = 46,
+	STRING_WCHAR_TO_STRING = 47,
+	FILE_OPEN_BYTE_FILE = 48,
+	FILE_WRITE_WCHAR = 49,
+	FILE_READ_WCHAR = 50
 };
 
-std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"char_to_string", 
+std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"char_to_string", L"wchar_to_string",
 	L"int_to_string", L"double_to_string", L"char_to_int", L"to_lower_case", L"to_upper_case" };
-std::vector<std::wstring>* fileLibraryFunctions = new std::vector<std::wstring>{ L"open_file", L"close_file", L"write_string", L"get_line", L"is_open", L"is_end",
-	L"is_file_exist", L"create_file", L"get_file_size", L"seek_file_pointer", L"read_byte", L"write_byte", L"remove_file", L"rename_file", L"tell_file_pointer",
+std::vector<std::wstring>* fileLibraryFunctions = new std::vector<std::wstring>{ L"open_file",  L"open_byte_file", L"close_file", L"write_string", L"get_line", L"is_open", L"is_end",
+	L"is_file_exist", L"create_file", L"get_file_size", L"seek_file_pointer", L"read_byte", L"write_byte", L"read_wchar", L"write_wchar", L"remove_file", L"rename_file", L"tell_file_pointer",
 	L"create_directory" };
 std::vector<std::wstring>* mathLibraryFunctions = new std::vector<std::wstring>{ L"seed_random", L"get_random", L"int_to_double", L"double_to_int", L"int_to_long", L"long_to_int",
 	L"long_to_double", L"double_to_long", L"absolute_value" };
@@ -80,6 +84,7 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"to_int", STRING_TO_INT },
 	{ L"to_double", STRING_TO_DOUBLE },
 	{ L"open_file", FILE_OPEN_FILE },
+	{ L"open_byte_file", FILE_OPEN_BYTE_FILE },
 	{ L"close_file", FILE_CLOSE_FILE },
 	{ L"write_string", FILE_WRITE_STRING },
 	{ L"get_line", FILE_GET_LINE },
@@ -94,6 +99,8 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"seek_file_pointer", FILE_SEEK },
 	{ L"read_byte", FILE_READ },
 	{ L"write_byte", FILE_WRITE },
+	{ L"read_wchar", FILE_READ_WCHAR },
+	{ L"write_wchar", FILE_WRITE_WCHAR },
 	{ L"remove_file", FILE_REMOVE },
 	{ L"rename_file", FILE_RENAME },
 	{ L"tell_file_pointer", FILE_TELLG },
@@ -114,7 +121,8 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"regex_match", REGEX_MATCH },
 	{ L"regex_replace", REGEX_REPLACE },
 	{ L"get_thread_id", GET_THREAD_ID },
-	{ L"absolute_value", ABSOLUTE_VALUE }
+	{ L"absolute_value", ABSOLUTE_VALUE },
+	{ L"wchar_to_string", STRING_WCHAR_TO_STRING }
 };
 const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const LibraryFunction>>>> LIBRARY_FUNCTION_MAP_END = LIBRARY_FUNCTION_MAP.end();
 

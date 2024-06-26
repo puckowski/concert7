@@ -39,6 +39,10 @@ The following may be implicitly cast without a library call. Note that overflows
 |int      |long   |
 |long     |int    |
 
+## Character Encoding
+
+Concert ```string``` uses UTF-16 encoding.
+
 ## Declaration
 
 int declaration examples:

@@ -14,24 +14,27 @@ import io;
 
 ## Functions
 
-| Name              | Description                                                       |
-|:------------------|:------------------------------------------------------------------|
-| open_file         | Open an existing file for input and output. Optional binary flag. |
-| close_file        | Close an open file                                                |
-| write_string      | Write a string to a file                                          |
-| get_line          | Get a line from a file                                            |
-| is_open           | Check if a file is open                                           |
-| is_end            | Check if read file contents to end                                |
-| is_file_exist     | Check if file exists                                              |
-| create_file       | Create a new file                                                 |
-| get_file_size     | Return file size                                                  |
-| seek_file_pointer | Seek binary file pointer to byte position                         |
-| read_byte         | Read a byte from a file                                           |
-| write_byte        | Write a byte to a file                                            |
-| remove_file       | Remove a file                                                     |
-| rename_file       | Rename a file                                                     |
-| tell_file_pointer | Return the byte position of the binary file pointer               |
-| create_directory  | Create a directory                                                |
+| Name                   | Description                                                             |
+|:-----------------------|:------------------------------------------------------------------------|
+| open_file              | Open an existing file for wchar input and output. Optional binary flag. |
+| open_byte_file         | Open an existing file for byte input and output. Optional binary flag.  |
+| close_file             | Close an open file                                                      |
+| write_string           | Write a string to a file                                                |
+| get_line               | Get a line from a file                                                  |
+| is_open                | Check if a file is open                                                 |
+| is_end                 | Check if read file contents to end                                      |
+| is_file_exist          | Check if file exists                                                    |
+| create_file            | Create a new file                                                       |
+| get_file_size          | Return file size                                                        |
+| seek_file_pointer      | Seek binary file pointer to byte position                               |
+| read_byte              | Read a byte from a file                                                 |
+| write_byte             | Write a byte to a file                                                  |
+| read_wchar             | Read a wchar from a file                                                |
+| write_wchar            | Write a wchar to a file                                                 |
+| remove_file            | Remove a file                                                           |
+| rename_file            | Rename a file                                                           |
+| tell_file_pointer      | Return the byte position of the binary file pointer                     |
+| create_directory       | Create a directory                                                      |
 
 ## Examples
 
@@ -42,6 +45,15 @@ call open_file : "create_file_test.txt";
 
 # Open binary file
 call open_file : "test.bin" 1;
+```
+
+### open_byte_file
+
+```cpp
+call open_byte_file : "create_file_test.txt";
+
+# Open binary file
+call open_byte_file : "test.bin" 1;
 ```
 
 ### close_file
@@ -117,7 +129,7 @@ call close_file : "create_file_test.txt";
 
 ```cpp
 int OPEN_AS_BINARY = 1;
-call open_file : "create_file_test.txt", OPEN_AS_BINARY;
+call open_byte_file : "create_file_test.txt", OPEN_AS_BINARY;
 int byte;
 call read_byte : "create_file_test.txt" -> byte;
 call close_file : "create_file_test.txt";
@@ -127,8 +139,27 @@ call close_file : "create_file_test.txt";
 
 ```cpp
 int OPEN_AS_BINARY = 1;
-call open_file : "create_file_test.txt", OPEN_AS_BINARY;
+call open_byte_file : "create_file_test.txt", OPEN_AS_BINARY;
 call write_byte : "create_file_test.txt", 63;
+call close_file : "create_file_test.txt";
+```
+
+### read_wchar
+
+```cpp
+int OPEN_AS_BINARY = 1;
+call open_file : "create_file_test.txt", OPEN_AS_BINARY;
+int wchar;
+call read_wchar : "create_file_test.txt" -> wchar;
+call close_file : "create_file_test.txt";
+```
+
+### write_wchar
+
+```cpp
+int OPEN_AS_BINARY = 1;
+call open_file : "create_file_test.txt", OPEN_AS_BINARY;
+call write_wchar : "create_file_test.txt", 35835;
 call close_file : "create_file_test.txt";
 ```
 

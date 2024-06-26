@@ -1,24 +1,6 @@
 import math;
 import string;
  
-struct "sname";
-int y;
-struct;
-
-new "sname" "t2";
-
-t2.y = 99018;
-println t2.y;
-
-new "sname" "t4";
-t4.y = 83263;
-
-println t4.y;
-
-string partialWelcome = "Hello";
-string fullWelcome = partialWelcome + ", world!";
-println fullWelcome;
-
 include sstring.txt;
 
 function convertIntToBase : int as input, int as newBase;
@@ -92,70 +74,5 @@ function convertIntToHex : int as input, int as newBase;
 	string reversed;
 	call reverseString : strValue -> reversed;
 return reversed;
-
-int dd = 2372323;
-int nb = 16;
-string reversed;
-
-call convertIntToHex : dd, nb -> reversed;
-println reversed;
-
-nb = 10;
-call convertIntToBase : dd, nb -> reversed;
-println reversed;
-
-string ss = "hello";
-string ss2 = "llo";
-int rs;
-
-call endsWith : ss, ss2 -> rs;
-println rs;
-
-string tosub = "abcdefghijklmnop";
-int si = 2;
-int sti = 9;
-string subbed;
-call substring : tosub, si, sti -> subbed;
-println subbed;
-
-string sindex = "ghi";
-int sint;
-call indexOf : tosub, sindex -> sint;
-println sint;
-
-tosub = "abcdefghijklmnopghi";
-println "calling";
-string torep = "ghi";
-string ssval = "YUO";
-string replaced;
-call replaceAll : tosub, torep, ssval -> replaced;
-println replaced;
-
-tosub = "abcdefghijklmnopghiuopend";
-call replaceAll : tosub, torep, ssval -> replaced;
-println replaced;
-
-tosub = "abcdefghijklmnopghi";
-call replaceFirst : tosub, torep, ssval -> replaced;
-println replaced;
-
-string lc;
-call to_lower_case : replaced -> lc;
-println lc;
-
-call to_upper_case : lc -> lc;
-println lc;
-
-int ats = 10;
-int bts = 1800;
-int cts = (ats * bts) + 15;
-println cts;
-
-int aee = 25;
-int bee = 1033;
-int cee = (aee * bee) + 56 / 2;
-int dee = (2 + (cee - 1000)) - 9;
-println dee;
-println cee;
 
 exit;

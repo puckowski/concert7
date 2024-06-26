@@ -17,10 +17,26 @@ ConcertHandleEnvironment::HandleStore::~HandleStore()
 			delete handleEntry.second;
 		}
 	}
+
+	for (auto handleEntry : mByteHandleMap)
+	{
+		if (handleEntry.second != nullptr)
+		{
+			delete handleEntry.second;
+		}
+	}
 }
 
 void ConcertHandleEnvironment::HandleStore::clearStore() {
 	for (auto handleEntry : mHandleMap)
+	{
+		if (handleEntry.second != nullptr)
+		{
+			delete handleEntry.second;
+		}
+	}
+
+	for (auto handleEntry : mByteHandleMap)
 	{
 		if (handleEntry.second != nullptr)
 		{
@@ -36,6 +52,18 @@ std::wfstream* ConcertHandleEnvironment::HandleStore::getHandle(const std::wstri
 	if (search != mHandleMap.end())
 	{
 		return search->second;
+	}
+
+	return nullptr;
+}
+
+std::fstream* ConcertHandleEnvironment::HandleStore::getByteHandle(const std::wstring& name)
+{
+	auto searchByte = mByteHandleMap.find(name);
+
+	if (searchByte != mByteHandleMap.end())
+	{
+		return searchByte->second;
 	}
 
 	return nullptr;
@@ -67,7 +95,7 @@ void ConcertHandleEnvironment::HandleStore::createFile(const std::wstring &name)
 	fileStream->close();
 }
 
-void ConcertHandleEnvironment::HandleStore::openFile(const std::wstring &name, int &openFileFlag)
+void ConcertHandleEnvironment::HandleStore::openFile(const std::wstring& name, int& openFileFlag)
 {
 	std::wfstream* fileStream = getHandle(name);
 
@@ -85,7 +113,42 @@ void ConcertHandleEnvironment::HandleStore::openFile(const std::wstring &name, i
 		fileStream->open(name, std::fstream::in | std::fstream::out | std::fstream::binary);
 	}
 
+	auto it = mHandleMap.find(name);
+	if (it != mHandleMap.end()) 
+	{
+		it->second->close();
+		mHandleMap.erase(it->first);
+	}
+
 	mHandleMap.insert({ name, fileStream });
+}
+
+void ConcertHandleEnvironment::HandleStore::openByteFile(const std::wstring& name, int& openFileFlag)
+{
+	std::fstream* fileStream = getByteHandle(name);
+
+	if (fileStream == nullptr)
+	{
+		fileStream = new std::fstream();
+	}
+
+	if (openFileFlag == 0)
+	{
+		fileStream->open(name, std::fstream::in | std::fstream::out);
+	}
+	else if (openFileFlag == 1)
+	{
+		fileStream->open(name, std::fstream::in | std::fstream::out | std::fstream::binary);
+	}
+
+	auto it = mByteHandleMap.find(name);
+	if (it != mByteHandleMap.end())
+	{
+		it->second->close();
+		mByteHandleMap.erase(it->first);
+	}
+
+	mByteHandleMap.insert({ name, fileStream });
 }
 
 void ConcertHandleEnvironment::HandleStore::closeFile(const std::wstring &name)
@@ -94,38 +157,108 @@ void ConcertHandleEnvironment::HandleStore::closeFile(const std::wstring &name)
 
 	if (fileStream == nullptr)
 	{
-		return;
+		std::fstream* byteFileStream = getByteHandle(name);
+
+		if (byteFileStream != nullptr)
+		{
+			byteFileStream->flush();
+
+			byteFileStream->close();
+			mByteHandleMap.erase(name);
+		}
 	}
+	else
+	{
+		fileStream->flush();
 
-	fileStream->flush();
-
-	fileStream->close();
-	mHandleMap.erase(name);
+		fileStream->close();
+		mHandleMap.erase(name);
+	}
 }
 
 void ConcertHandleEnvironment::HandleStore::writeStringToFile(const std::wstring &name, const std::wstring &text)
 {
 	std::wfstream* handle = getHandle(name);
 
-	*handle << text;
+	if (handle != nullptr)
+	{
+		*handle << text;
+	}
+	else
+	{
+		std::fstream* byteHandle = getByteHandle(name);
+
+		if (byteHandle != nullptr)
+		{
+			std::string str = boost::locale::conv::utf_to_utf<char>(text);
+			*byteHandle << str;
+		}
+
+	}
 }
 
 std::wstring ConcertHandleEnvironment::HandleStore::getLineFromFile(const std::wstring &name)
 {
 	std::wstring line;
-	std::getline(*getHandle(name), line);
+
+	auto handle = getHandle(name);
+
+	if (handle != nullptr)
+	{
+		std::getline(*handle, line);
+	}
+	else
+	{
+		auto byteHandle = getByteHandle(name);
+
+		std::string str;
+		std::getline(*byteHandle, str);
+		line = utf8_to_wstring(str);
+	}
 
 	return line;
 }
 
 bool ConcertHandleEnvironment::HandleStore::isOpen(const std::wstring &name)
 {
-	return getHandle(name)->is_open();
+	auto handle = getHandle(name);
+	
+	if (handle != nullptr)
+	{
+		return handle->is_open();
+	}
+	else
+	{
+		auto byteHandle = getByteHandle(name);
+
+		if (byteHandle != nullptr)
+		{
+			return byteHandle->is_open();
+		}
+	}
+
+	return false;
 }
 
 bool ConcertHandleEnvironment::HandleStore::isAtEndOfFile(const std::wstring &name)
 {
-	return getHandle(name)->eof();
+	auto handle = getHandle(name);
+
+	if (handle != nullptr)
+	{
+		return handle->eof();
+	}
+	else
+	{
+		auto byteHandle = getByteHandle(name);
+
+		if (byteHandle != nullptr)
+		{
+			return byteHandle->eof();
+		}
+	}
+
+	return true;
 }
 
 int ConcertHandleEnvironment::HandleStore::removeFile(const std::wstring &name)
@@ -145,14 +278,46 @@ int ConcertHandleEnvironment::HandleStore::renameFile(const std::wstring &name, 
 
 void ConcertHandleEnvironment::HandleStore::seekg(const std::wstring &name, int &position)
 {
-	getHandle(name)->seekg(position);
+	auto handle = getHandle(name);
 
-	getHandle(name)->seekp(position);
+	if (handle != nullptr)
+	{
+		handle->seekg(position);
+
+		handle->seekp(position);
+	}
+	else
+	{
+		auto byteHandle = getByteHandle(name);
+
+		if (byteHandle != nullptr)
+		{
+			byteHandle->seekg(position);
+
+			byteHandle->seekp(position);
+		}
+	}
 }
 
 int ConcertHandleEnvironment::HandleStore::tellg(const std::wstring &name)
 {
-	return getHandle(name)->tellg();
+	auto handle = getHandle(name);
+
+	if (handle != nullptr)
+	{
+		return handle->tellg();
+	}
+	else
+	{
+		auto byteHandle = getByteHandle(name);
+
+		if (byteHandle != nullptr)
+		{
+			return byteHandle->tellg();
+		}
+	}
+
+	return 0;
 }
 
 int ConcertHandleEnvironment::HandleStore::read(const std::wstring &name)
@@ -164,9 +329,23 @@ int ConcertHandleEnvironment::HandleStore::read(const std::wstring &name)
 	return returnValue;
 }
 
-void ConcertHandleEnvironment::HandleStore::write(const std::wstring &name, wchar_t &data)
+int ConcertHandleEnvironment::HandleStore::readByte(const std::wstring& name)
 {
-	getHandle(name)->write(reinterpret_cast<const wchar_t*>(&data), sizeof(char));
+	char data;
+	getByteHandle(name)->read(&data, 1);
+	int returnValue = data;
+
+	return returnValue;
+}
+
+void ConcertHandleEnvironment::HandleStore::write(const std::wstring& name, wchar_t& data)
+{
+	getHandle(name)->write(reinterpret_cast<const wchar_t*>(&data), sizeof(wchar_t));
+}
+
+void ConcertHandleEnvironment::HandleStore::writeByte(const std::wstring& name, char& data)
+{
+	getByteHandle(name)->write(reinterpret_cast<const char*>(&data), sizeof(char));
 }
 
 #endif

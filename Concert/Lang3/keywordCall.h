@@ -127,6 +127,12 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
+		case FILE_OPEN_BYTE_FILE:
+		{
+			libraryOpenByteFile(tokens, tokensSize);
+
+			break;
+		}
 		case FILE_CLOSE_FILE:
 		{
 			libraryCloseFile(tokens, tokensSize);
@@ -201,11 +207,23 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 		}
 		case FILE_READ:
 		{
+			libraryReadByte(tokens, tokensSize);
+
+			break;
+		}
+		case FILE_READ_WCHAR:
+		{
 			libraryRead(tokens, tokensSize);
 
 			break;
 		}
 		case FILE_WRITE:
+		{
+			libraryWriteByte(tokens, tokensSize);
+
+			break;
+		}
+		case FILE_WRITE_WCHAR:
 		{
 			libraryWrite(tokens, tokensSize);
 
@@ -232,6 +250,12 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 		case STRING_CHAR_TO_STRING:
 		{
 			libraryCharToString(tokens, tokensSize);
+
+			break;
+		}
+		case STRING_WCHAR_TO_STRING:
+		{
+			libraryWcharToString(tokens, tokensSize);
 
 			break;
 		}

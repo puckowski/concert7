@@ -22,7 +22,7 @@ class ObjectStore;
 
 const std::wstring SOFTWARE_NAME = L"Concert";
 const std::wstring SOFTWARE_VERSION_STRING = L"0.0.8.8";
-const std::wstring SOFTWARE_VERSION_CODE = L"1300";
+const std::wstring SOFTWARE_VERSION_CODE = L"1310";
 const std::wstring SOFTWARE_AUTHOR = L"Daniel Puckowski";
 
 extern std::unordered_map<std::wstring, std::wstring> varLockMap;

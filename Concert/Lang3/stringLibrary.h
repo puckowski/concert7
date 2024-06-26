@@ -30,7 +30,29 @@ void libraryStringCharAt(std::vector<std::wstring> &arguments, const int &argume
 		delete indexVar;
 }
 
-void libraryCharToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
+void libraryWcharToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
+{
+	int r1;
+	bool createdString;
+	Var* stringVar = getVar(arguments[2], r1, createdString);
+
+	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+	int* pstr = static_cast<int*>(stringVar->data);
+	wchar_t charValue = pstr[r1];
+
+	std::wstring* returnData = static_cast<std::wstring*>(v->data);
+
+	std::wstring resultStr;
+	resultStr.push_back(charValue);
+
+	returnData[returnVarInt] = resultStr;
+
+	if (createdString)
+		delete stringVar;
+}
+
+void libraryCharToString(std::vector<std::wstring>& arguments, const int& argumentsSize)
 {
 	int r1;
 	bool createdString;

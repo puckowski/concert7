@@ -14,21 +14,22 @@ import string;
 
 ## Functions
 
-| Name             | Description                                            |
-|:-----------------|:-------------------------------------------------------|
-| substring        | Return a substring                                     |
-| find             | Find the index of a substring                          |
-| contains         | Check the existence of a substring                     |
-| length           | Return the length                                      |
-| to_int           | Convert to an integer type                             |
-| to_double        | Convert to a double type                               | 
-| char_at          | Return the character at an index                       |
-| char_to_string   | Convert a character, stored in an integer, to a string |
-| int_to_string    | Convert an integer to a string                         |
-| double_to_string | Convert a double to a string                           |
-| char_to_int      | Convert a character to an integer                      |
-| to_lower_case    | Convert a string to lower case                         |
-| to_upper_case    | Convert a string to upper case                         |
+| Name              | Description                                            |
+|:------------------|:-------------------------------------------------------|
+| substring         | Return a substring                                     |
+| find              | Find the index of a substring                          |
+| contains          | Check the existence of a substring                     |
+| length            | Return the length                                      |
+| to_int            | Convert to an integer type                             |
+| to_double         | Convert to a double type                               | 
+| char_at           | Return the character at an index                       |
+| char_to_string    | Convert a character, stored in an integer, to a string |
+| wchar_to_string   | Convert a wchar, stored in an integer, to a string     |
+| int_to_string     | Convert an integer to a string                         |
+| double_to_string  | Convert a double to a string                           |
+| char_to_int       | Convert a character to an integer                      |
+| to_lower_case     | Convert a string to lower case                         |
+| to_upper_case     | Convert a string to upper case                         |
 
 ## Examples
 
@@ -94,6 +95,14 @@ call char_at : CHAR_AT_TEST_STRING, 0 -> firstChar;
 int byte;
 string char;
 call char_to_string : byte -> char;
+```
+
+### wchar_to_string
+
+```cpp
+int wchar;
+string char;
+call wchar_to_string : wchar -> char;
 ```
 
 ### int_to_string

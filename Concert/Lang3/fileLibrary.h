@@ -108,6 +108,51 @@ void libraryOpenFile(std::vector<std::wstring> &arguments, const int &argumentsS
 	}
 }
 
+void libraryOpenByteFile(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	if (argumentsSize == 3)
+	{
+		int r1;
+		bool createdString;
+		Var* stringVar = getVar(arguments[2], r1, createdString);
+
+		std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+		int flag = 0;
+
+		gHandleStore.openByteFile(pstr[r1], flag);
+
+		if (createdString)
+		{
+			delete stringVar;
+		}
+	}
+	else //if (argumentsSize == 4)
+	{
+		int r1;
+		bool createdString;
+		Var* stringVar = getVar(arguments[2], r1, createdString);
+
+		int r2;
+		bool createdOpenFlag;
+		Var* openFlagVar = getVar(arguments[3], r2, createdOpenFlag);
+
+		std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+		int* flagData = static_cast<int*>(openFlagVar->data);
+
+		gHandleStore.openByteFile(pstr[r1], flagData[r2]);
+
+		if (createdString)
+		{
+			delete stringVar;
+		}
+
+		if (createdOpenFlag)
+		{
+			delete openFlagVar;
+		}
+	}
+}
+
 void libraryCreateDirectory(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
@@ -304,7 +349,7 @@ void libraryRead(std::vector<std::wstring> &arguments, const int &argumentsSize)
 		delete stringVar;
 }
 
-void libraryWrite(std::vector<std::wstring> &arguments, const int &argumentsSize)
+void libraryWriteByte(std::vector<std::wstring> &arguments, const int &argumentsSize)
 {
 	int r1;
 	bool createdString;
@@ -317,6 +362,46 @@ void libraryWrite(std::vector<std::wstring> &arguments, const int &argumentsSize
 	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
 	int* writeData = static_cast<int*>(writeVar->data);
 	
+	char data = writeData[0];
+	gHandleStore.writeByte(pstr[r1], data);
+
+	if (createdString)
+		delete stringVar;
+
+	if (createdWrite)
+		delete writeVar;
+}
+
+void libraryReadByte(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdString;
+	Var* stringVar = getVar(arguments[2], r1, createdString);
+
+	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+	int* returnData = static_cast<int*>(v->data);
+
+	returnData[returnVarInt] = gHandleStore.readByte(pstr[r1]);
+
+	if (createdString)
+		delete stringVar;
+}
+
+void libraryWrite(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdString;
+	Var* stringVar = getVar(arguments[2], r1, createdString);
+
+	int r2;
+	bool createdWrite;
+	Var* writeVar = getVar(arguments[3], r2, createdWrite);
+
+	std::wstring* pstr = static_cast<std::wstring*>(stringVar->data);
+	int* writeData = static_cast<int*>(writeVar->data);
+
 	wchar_t data = writeData[0];
 	gHandleStore.write(pstr[r1], data);
 
