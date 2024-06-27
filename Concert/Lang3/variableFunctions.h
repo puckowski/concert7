@@ -201,6 +201,24 @@ Var* getVar(const std::wstring &name, int &val, bool &created)
 	return var;
 }
 
+Var* getSingleQuoteVar(const std::wstring& name, bool& created)
+{
+	created = false;
+
+	Var* var = nullptr;
+
+	if (name.find(L"'") != std::wstring::npos)
+	{
+		std::wstring temp = name.substr(1);
+		temp = temp.substr(0, temp.length() - 1);
+
+		var = new Var(temp);
+		created = true;
+	}
+
+	return var;
+}
+
 Var* getVar(const std::wstring &name, int &val)
 {
 	VarStore* vs = gWorkspaceStore->getStore();

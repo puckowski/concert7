@@ -53,7 +53,7 @@ call get_file_size : "musicmanagerinstaller.exe" -> musicManagerSize;
 println "get_file_size result: musicmanagerinstaller.exe is ", musicManagerSize, " bytes large.";
 
 call open_file : "create_file_test.txt";
-println "called open_file on: \"create_file_test.txt\".";
+println "called open_file on: \"create_file_test.txt\" 1 time.";
 
 call close_file : "create_file_test.txt";
 println "called close_file on: \"create_file_test.txt\".";
@@ -69,7 +69,7 @@ call create_file : "create_file_test.txt";
 println "called create_file... created \"create_file_test.txt\".";
 
 call open_file : "create_file_test.txt";
-println "called open_file on: \"create_file_test.txt\".";
+println "called open_file on: \"create_file_test.txt\" 2 times.";
 
 int isFileOpen;
 call is_open : "create_file_test.txt" -> isFileOpen;
@@ -89,7 +89,7 @@ call close_file : "create_file_test.txt";
 println "called close_file on: \"create_file_test.txt\".";
  
 call open_file : "create_file_test.txt";
-println "called open_file on: \"create_file_test.txt\".";
+println "called open_file on: \"create_file_test.txt\" 3 times.";
 
 string getLineResult;
 call get_line : "create_file_test.txt" -> getLineResult;
@@ -113,7 +113,7 @@ call create_file : "create_file_test.txt";
 println "called create_file... created \"create_file_test.txt\".";
 
 call open_file : "create_file_test.txt";
-println "called open_file on: \"create_file_test.txt\".";
+println "called open_file on: \"create_file_test.txt\" 4 times.";
 
 call write_string : "create_file_test.txt", "Hello, world!";
 println "called write_string on: \"create_file_test.txt\".";
@@ -123,7 +123,7 @@ call close_file : "create_file_test.txt";
 println "called close_file on: \"create_file_test.txt\".";
 
 call open_file : "create_file_test.txt", 1;
-println "called open_file on: \"create_file_test.txt\".";
+println "called open_file on: \"create_file_test.txt\" 5 times.";
 
 isFileAtEnd = 0;
 int filePointer = 0;
@@ -144,7 +144,7 @@ while isFileAtEnd == 0;
 	call seek_file_pointer : "create_file_test.txt", filePointer;
 	println "called seek_file_pointer on \"create_file_test.txt\".";
 
-	call read_byte : "create_file_test.txt" -> byte;
+	call read_wchar : "create_file_test.txt" -> byte;
 	println "called read_byte on \"create_file_test.txt\".";
 	println "read_byte result: ", byte, ".";
 
@@ -157,13 +157,13 @@ call close_file : "create_file_test.txt";
 println "called close_file on: \"create_file_test.txt\".";
 
 call open_file : "create_file_test.txt", 1;
-println "called open_file on: \"create_file_test.txt\".";
+println "called open_file on: \"create_file_test.txt\" 6 times.";
 
 call seek_file_pointer : "create_file_test.txt", 0;
-call write_byte : "create_file_test.txt", 63;
+call write_wchar : "create_file_test.txt", 63;
 
 call seek_file_pointer : "create_file_test.txt", 1;
-call write_byte : "create_file_test.txt", 63;
+call write_wchar : "create_file_test.txt", 63;
 
 call close_file : "create_file_test.txt";
 println "called close_file on: \"create_file_test.txt\".";
@@ -232,9 +232,9 @@ println "called char_at on \"", CONTAINS_TEST_STRING, "\".";
 println "char_at result for 0: ", firstChar, ".";
 
 int charInt = -1;
-call char_to_int : firstChar -> charInt;
-println "called char_to_int on \"T\".";
-println "char_to_int result: ", charInt, ".";
+call wchar_to_int : firstChar -> charInt;
+println "called wchar_to_int on \"T\".";
+println "wchar_to_int result: ", charInt, ".";
 
 int iToS = 234;
 double dToS = 3.14;
@@ -274,7 +274,7 @@ function crc16 : string as message, int as length;
 		crc = ((crc >>> 8) | (crc << 8)) & 65535;
 		
 		call char_at : message, j -> char;
-        call char_to_int : char -> charValue;
+        call wchar_to_int : char -> charValue;
 		
 		int tmp = charValue & 255;
 		crc ^= tmp;

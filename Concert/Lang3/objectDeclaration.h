@@ -32,22 +32,41 @@ void declareObjectVariable(const int& tokensSize, std::vector<std::wstring>& tok
 		{
 			std::wstring storeName = name.substr(0, accessorIndex);
 			std::wstring varName = name.substr(accessorIndex + 1, name.length());
-			std::wstring::size_type indexQuote = varName.find(L"'");
 
-			if (indexQuote != std::wstring::npos)
+			bool createdVar;
+			Var* dynamicNameVar = getSingleQuoteVar(varName, createdVar);
+
+			if (dynamicNameVar != nullptr)
 			{
-				varName = varName.substr(indexQuote + 1, varName.find(L"'", indexQuote + 1) - 1);
+				std::wstring* pstr = static_cast<std::wstring*>(dynamicNameVar->data);
+				VarStore* gStore = gWorkspaceStore->getStore();
+
 				int r1;
-				Var* v = getVar(varName, r1);
-				std::wstring* pstr = static_cast<std::wstring*>(v->data);
-				varName = pstr[r1];
+				Var* underlyingValue = gStore->getVar(pstr[0], r1);
+
+				if (underlyingValue != nullptr)
+				{
+					std::wstring* pstr2 = static_cast<std::wstring*>(underlyingValue->data);
+					int intValue = 0;
+
+					ObjectStore** var = static_cast<ObjectStore**>(gStore->getVar(storeName, intValue)->data);
+					ObjectStore* obj = var[intValue];
+					obj->addVar(pstr2[r1], TYPE_OBJECT);
+				}
+
+				if (createdVar)
+				{
+					delete dynamicNameVar;
+				}
 			}
+			else
+			{
+				int intValue = 0;
 
-			int intValue = 0;
-
-			ObjectStore** var = static_cast<ObjectStore**>(gWorkspaceStore->getStore()->getVar(storeName, intValue)->data);
-			ObjectStore* obj = var[intValue];
-			obj->addVar(varName, TYPE_OBJECT);
+				ObjectStore** var = static_cast<ObjectStore**>(gWorkspaceStore->getStore()->getVar(storeName, intValue)->data);
+				ObjectStore* obj = var[intValue];
+				obj->addVar(varName, TYPE_OBJECT);
+			}
 		}
 	}
 	else if (tokensSize == DECLARE_OBJECT_ARRAY)
@@ -71,22 +90,41 @@ void declareObjectVariable(const int& tokensSize, std::vector<std::wstring>& tok
 		{
 			std::wstring storeName = name.substr(0, accessorIndex);
 			std::wstring varName = name.substr(accessorIndex + 1, name.length());
-			std::wstring::size_type indexQuote = varName.find(L"'");
 
-			if (indexQuote != std::wstring::npos)
+			bool createdVar;
+			Var* dynamicNameVar = getSingleQuoteVar(varName, createdVar);
+
+			if (dynamicNameVar != nullptr)
 			{
-				varName = varName.substr(indexQuote + 1, varName.find(L"'", indexQuote + 1) - 1);
+				std::wstring* pstr = static_cast<std::wstring*>(dynamicNameVar->data);
+				VarStore* gStore = gWorkspaceStore->getStore();
+
 				int r1;
-				Var* v = getVar(varName, r1);
-				std::wstring* pstr = static_cast<std::wstring*>(v->data);
-				varName = pstr[r1];
+				Var* underlyingValue = gStore->getVar(pstr[0], r1);
+
+				if (underlyingValue != nullptr)
+				{
+					std::wstring* pstr2 = static_cast<std::wstring*>(underlyingValue->data);
+					int intValue = 0;
+
+					ObjectStore** var = static_cast<ObjectStore**>(gStore->getVar(storeName, intValue)->data);
+					ObjectStore* obj = var[intValue];
+					obj->addVar(pstr2[r1], TYPE_OBJECT, sizeArray[index]);
+				}
+
+				if (createdVar)
+				{
+					delete dynamicNameVar;
+				}
 			}
+			else
+			{
+				int intValue = 0;
 
-			int intValue = 0;
-
-			ObjectStore** var = static_cast<ObjectStore**>(gWorkspaceStore->getStore()->getVar(storeName, intValue)->data);
-			ObjectStore* obj = var[intValue];
-			obj->addVar(varName, TYPE_OBJECT, sizeArray[index]);
+				ObjectStore** var = static_cast<ObjectStore**>(gWorkspaceStore->getStore()->getVar(storeName, intValue)->data);
+				ObjectStore* obj = var[intValue];
+				obj->addVar(varName, TYPE_OBJECT, sizeArray[index]);
+			}
 		}
 
 		if (createdVar == true)

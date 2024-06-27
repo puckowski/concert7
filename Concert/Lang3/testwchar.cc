@@ -84,3 +84,43 @@ end;
 
 call close_file : "testchinese.txt";
 println "called close_file on: \"testchinese.txt\".";
+
+call open_file : "testchinese.txt", 1;
+println "called open_file on: \"testchinese.txt\".";
+
+isFileAtEnd = 0;
+filePointer = 0;
+string line;
+
+while isFileAtEnd == 0;
+	call get_line : "testchinese.txt" -> line;
+	println "called get_line on \"testchinese.txt\".";
+	println "get_line result: ", line, ".";
+	
+	call is_end : "testchinese.txt" -> isFileAtEnd;
+	println "called is_end on \"testchinese.txt\".";
+	println "is_end result: ", isFileAtEnd, ".";
+end;
+
+call close_file : "testchinese.txt";
+println "called close_file on: \"testchinese.txt\".";
+
+call open_byte_file : "testchinese.txt", 1;
+println "called open_file on: \"testchinese.txt\".";
+
+isFileAtEnd = 0;
+filePointer = 0;
+line = "";
+
+while isFileAtEnd == 0;
+	call get_line : "testchinese.txt" -> line;
+	println "called get_line on \"testchinese.txt\".";
+	println "get_line result: ", line, ".";
+		
+	call is_end : "testchinese.txt" -> isFileAtEnd;
+	println "called is_end on \"testchinese.txt\".";
+	println "is_end result: ", isFileAtEnd, ".";
+end;
+
+call close_file : "testchinese.txt";
+println "called close_file on: \"testchinese.txt\".";

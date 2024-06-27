@@ -153,9 +153,9 @@ while isFileAtEnd == 0;
 	println "called read_byte on \"create_file_test.txt\".";
 	println "read_byte result: ", byte, ".";
 
-	call char_to_string : byte -> char;
-	println "called char_to_string on ", byte, ".";
-	println "char_to_string result: ", char, ".";
+	call wchar_to_string : byte -> char;
+	println "called wchar_to_string on ", byte, ".";
+	println "wchar_to_string result: ", char, ".";
 end;
 
 call close_file : "create_file_test.txt";
@@ -237,9 +237,9 @@ println "called char_at on \"", CONTAINS_TEST_STRING, "\".";
 println "char_at result for 0: ", firstChar, ".";
 
 int charInt = -1;
-call char_to_int : firstChar -> charInt;
-println "called char_to_int on \"T\".";
-println "char_to_int result: ", charInt, ".";
+call wchar_to_int : firstChar -> charInt;
+println "called wchar_to_int on \"T\".";
+println "wchar_to_int result: ", charInt, ".";
 
 int iToS = 234;
 double dToS = 3.14;
@@ -279,7 +279,7 @@ function crc16 : string as message, int as length;
 		crc = ((crc >>> 8) | (crc << 8)) & 65535;
 		
 		call char_at : message, j -> char;
-        call char_to_int : char -> charValue;
+        call wchar_to_int : char -> charValue;
 		
 		int tmp = charValue & 255;
 		crc ^= tmp;

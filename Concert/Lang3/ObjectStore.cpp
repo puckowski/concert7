@@ -22,7 +22,7 @@ ObjectStore::ObjectStore()
 
 ObjectStore::~ObjectStore()
 {
-	for (auto it = mVars.begin(); it != mVars.end(); ++it)
+	for (auto it = mVars.begin(); it != mVars.end();)
 	{
 		Var* v = it->second;
 		it = mVars.erase(it);

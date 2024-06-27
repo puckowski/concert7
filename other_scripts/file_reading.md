@@ -39,6 +39,10 @@ while isFileAtEnd == 0;
 		println "called wchar_to_string on ", wchar, ".";
 		println "wchar_to_string result: ", char, ".";
 		
+		call wchar_to_int : char -> wchar;
+		println "called wchar_to_int on ", char, ".";
+		println "wchar_to_int result: ", wchar, ".";
+		
 		call tell_file_pointer : "testchinese.txt" -> filePointer;
 		println "called tell_file_pointer on \"testchinese.txt\".";
 		println "tell_file_pointer result: ", filePointer, ".";
@@ -77,10 +81,54 @@ while isFileAtEnd == 0;
 		println "called char_to_string on ", byte, ".";
 		println "char_to_string result: ", char, ".";
 		
+		call wchar_to_int : char -> byte;
+		println "called wchar_to_int on ", char, ".";
+		println "wchar_to_int result: ", byte, ".";
+		
 		call tell_file_pointer : "testchinese.txt" -> filePointer;
 		println "called tell_file_pointer on \"testchinese.txt\".";
 		println "tell_file_pointer result: ", filePointer, ".";
 	end;
+end;
+
+call close_file : "testchinese.txt";
+println "called close_file on: \"testchinese.txt\".";
+
+call open_file : "testchinese.txt", 1;
+println "called open_file on: \"testchinese.txt\".";
+
+isFileAtEnd = 0;
+filePointer = 0;
+string line;
+
+while isFileAtEnd == 0;
+	call get_line : "testchinese.txt" -> line;
+	println "called get_line on \"testchinese.txt\".";
+	println "get_line result: ", line, ".";
+	
+	call is_end : "testchinese.txt" -> isFileAtEnd;
+	println "called is_end on \"testchinese.txt\".";
+	println "is_end result: ", isFileAtEnd, ".";
+end;
+
+call close_file : "testchinese.txt";
+println "called close_file on: \"testchinese.txt\".";
+
+call open_byte_file : "testchinese.txt", 1;
+println "called open_file on: \"testchinese.txt\".";
+
+isFileAtEnd = 0;
+filePointer = 0;
+line = "";
+
+while isFileAtEnd == 0;
+	call get_line : "testchinese.txt" -> line;
+	println "called get_line on \"testchinese.txt\".";
+	println "get_line result: ", line, ".";
+		
+	call is_end : "testchinese.txt" -> isFileAtEnd;
+	println "called is_end on \"testchinese.txt\".";
+	println "is_end result: ", isFileAtEnd, ".";
 end;
 
 call close_file : "testchinese.txt";
