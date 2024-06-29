@@ -36,6 +36,8 @@ void executeKeywordExec(std::vector<std::wstring> &tokens)
 	bool newThreadFlag = false;
 	exec(jumpToLine, newThreadFlag, codeStore, gWorkspaceStore, 0, 0);
 
+	codeStore->gStatements.resize(jumpToLine);
+
 	currentLine = oldCurrentLine;
 
 	statementCount = codeStore->gStatements.size();

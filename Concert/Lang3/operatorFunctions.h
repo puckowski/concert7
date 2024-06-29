@@ -1135,6 +1135,16 @@ bool execDivideOperator(ReservedWord& assignmentType, std::wstring& lhs, std::ws
 	}
 	}
 
+	if (createdLhs == true)
+	{
+		delete lhsVar;
+	}
+
+	if (createdRhs == true)
+	{
+		delete rhsVar;
+	}
+
 	return false;
 }
 
@@ -1189,6 +1199,16 @@ bool execModuloOperator(ReservedWord& assignmentType, std::wstring& lhs, std::ws
 
 		break;
 	}
+	}
+
+	if (createdLhs == true)
+	{
+		delete lhsVar;
+	}
+
+	if (createdRhs == true)
+	{
+		delete rhsVar;
 	}
 
 	return false;
