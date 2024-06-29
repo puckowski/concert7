@@ -44,10 +44,11 @@ void executeKeywordTry(int &currentLine, std::vector<std::wstring> &tokens)
 		return;
 	}
 
+	int blockCount = 0;
+
 	do
 	{
 		currentLine++;
-		int blockCount = 0;
 
 		tokens = codeStore->gStatements[currentLine];
 

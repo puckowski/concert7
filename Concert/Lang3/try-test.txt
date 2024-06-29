@@ -1,0 +1,76 @@
+import string;
+import math;
+import io;
+import regex;
+import thread;
+
+
+try;
+	int dividend = 10;
+	print "Dividend: ", dividend;
+	int divisor = 1;
+	println ", Divisor: ", divisor;
+	if 1 == 1;
+		println "in try 1 == 1";
+	end;
+	try;
+		int y = 9 / 3;
+		println "inner try";
+	catch;
+		println "inner try catch";
+	end;
+    int quotient = dividend / divisor;
+	if 2 == 2;
+		println "in try 2 == 2";
+	end;
+catch;
+    println "Exception occurred when calculating quotient.";
+	if 3 == 3;
+		println "in catch 3 == 3";
+	end;
+	try;
+		int y = 9 / 3;
+		println "inner catch try";
+	catch;
+		println "inner catch try catch";
+	end;
+end;
+
+
+string nonLatin = "读写汉字 - 学中文";
+
+println nonLatin;
+
+try;
+	int dividend = 10;
+	print "Dividend: ", dividend;
+	int divisor = 0;
+	println ", Divisor: ", divisor;
+	if 1 == 1;
+		println "in try 1 == 1";
+	end;
+	try;
+		int y = 9 / 3;
+		println "inner try";
+	catch;
+		println "inner try catch";
+	end;
+    int quotient = dividend / divisor;
+	if 2 == 2;
+		println "in try 2 == 2";
+	end;
+catch;
+    println "Exception occurred when calculating quotient.";
+	if 3 == 3;
+		println "in catch 3 == 3";
+	end;
+	try;
+		int y = 9 / 0;
+		println "inner catch try";
+	catch;
+		println "inner catch try catch";
+	end;
+	println "end final catch";
+end;
+
+println "end program";
