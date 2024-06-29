@@ -37,6 +37,7 @@ bool debugEnabled;
 
 int main(int argc, char *argv[])
 {
+	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
 
 	//argc = 2;

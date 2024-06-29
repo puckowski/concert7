@@ -1,0 +1,12 @@
+string inputLine;
+
+print "> ";
+readln inputLine;
+
+println "input: '", inputLine, "'";
+
+string secondToken;
+print "> ";
+read inputLine, secondToken;
+
+println "input: '", inputLine, "' and '", secondToken, "'";
