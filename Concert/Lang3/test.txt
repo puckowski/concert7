@@ -377,6 +377,16 @@ string threadName;
 call get_thread_id -> threadName;
 println "thread name: ", threadName;
 
+try;
+	int dividend = 10;
+	print "Dividend: ", dividend;
+	int divisor = 0;
+	println ", Divisor: ", divisor;
+    int quotient = dividend / divisor;
+catch;
+    println "Exception occurred when calculating quotient.";
+end;
+
 println "test print, with comma", threadName;
 
 string nonLatin = "读写汉字 - 学中文";

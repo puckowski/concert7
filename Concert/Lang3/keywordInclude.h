@@ -8,6 +8,7 @@
 #include "interpreter.h"
 #include "CodeStore.h"
 #include "sourceFunctions.h"
+#include "interpreter.h"
 
 void executeKeywordInclude(std::vector<std::wstring> &tokens, int &currentLine)
 {
@@ -29,7 +30,7 @@ void executeKeywordInclude(std::vector<std::wstring> &tokens, int &currentLine)
 	readStatementsFromFile(tokens[1], codeStore);
 
 	bool newThreadFlag = false;
-	exec(endOfCode, newThreadFlag, codeStore, gWorkspaceStore);
+	exec(endOfCode, newThreadFlag, codeStore, gWorkspaceStore, 0, 0);
 
 	currentLine = oldCurrentLine;
 }

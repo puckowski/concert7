@@ -17,7 +17,7 @@ void executeKeywordTry(int &currentLine, std::vector<std::wstring> &tokens)
 
 	try
 	{
-		exec(currentLine);
+		exec(currentLine, false, nullptr, nullptr, 0, 1);
 	}
 	catch (...)
 	{

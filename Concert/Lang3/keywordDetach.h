@@ -84,7 +84,7 @@ void executeKeywordDetach(const int &tokensSize, std::vector<std::wstring> &toke
 	
 	bool b = true;
 	int linetmp = 0;
-	std::thread t(exec, std::ref(linetmp), b, newCodeStore, ws, 0);
+	std::thread t(exec, std::ref(linetmp), b, newCodeStore, ws, 0, 0);
 	t.detach();
 }
 

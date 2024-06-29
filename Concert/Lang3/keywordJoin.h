@@ -83,7 +83,7 @@ void executeKeywordJoin(const int &tokensSize, std::vector<std::wstring> &tokens
 
 	bool b = true;
 	int linetmp = 0;
-	std::thread t(exec, std::ref(linetmp), b, newCodeStore, ws, 0);
+	std::thread t(exec, std::ref(linetmp), b, newCodeStore, ws, 0, 0);
 	t.join();
 }
 

@@ -26,6 +26,7 @@ thread_local int currentLine;
 thread_local int statementCount;
 thread_local int returnVarInt;
 thread_local bool createdRetVar;
+thread_local int tryBlockCount;
 
 thread_local bool createStruct;
 thread_local std::unordered_map<std::wstring, int> mStructMap;

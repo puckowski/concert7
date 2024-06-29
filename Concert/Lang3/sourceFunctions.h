@@ -20,7 +20,7 @@
 
 #include "header.h"
 
-extern void exec(int &line, bool detached = false, CodeStore* myCodeStore = nullptr, WorkspaceStore* myWorkspaceStore = nullptr, int jumpBackTo = 0);
+extern void exec(int& line, bool detached = false, CodeStore* myCodeStore = nullptr, WorkspaceStore* myWorkspaceStore = nullptr, int jumpBackTo = 0, int newTryBlocks = 0);
 
 void addFunctionToMap(const std::wstring &name, int line)
 {

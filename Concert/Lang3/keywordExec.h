@@ -34,7 +34,7 @@ void executeKeywordExec(std::vector<std::wstring> &tokens)
 	int oldCurrentLine = currentLine;
 
 	bool newThreadFlag = false;
-	exec(jumpToLine, newThreadFlag, codeStore, gWorkspaceStore, 0);
+	exec(jumpToLine, newThreadFlag, codeStore, gWorkspaceStore, 0, 0);
 
 	currentLine = oldCurrentLine;
 

@@ -22,7 +22,7 @@ class ObjectStore;
 
 const std::wstring SOFTWARE_NAME = L"Concert";
 const std::wstring SOFTWARE_VERSION_STRING = L"0.0.8.9";
-const std::wstring SOFTWARE_VERSION_CODE = L"1350";
+const std::wstring SOFTWARE_VERSION_CODE = L"1365";
 const std::wstring SOFTWARE_AUTHOR = L"Daniel Puckowski";
 
 extern std::unordered_map<std::wstring, std::wstring> varLockMap;
@@ -45,6 +45,7 @@ extern thread_local int currentLine;
 extern thread_local int statementCount;
 extern thread_local int returnVarInt;
 extern thread_local bool createdRetVar;
+extern thread_local int tryBlockCount;
 
 extern std::mutex callNameMutex;
 extern std::vector<std::wstring> callNameStack;
