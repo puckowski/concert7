@@ -11,7 +11,7 @@ function crc16
 		crc = ((crc >>> 8) | (crc << 8)) & 65535;
 		
 		call char_at : message, j -> char;
-        call char_to_int : char -> charValue;
+        call wchar_to_int : char -> charValue;
 		
 		int tmp = charValue & 255;
 		crc ^= tmp;

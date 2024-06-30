@@ -71,7 +71,7 @@ call length : LENGTH_TEST_STRING -> testStringLength;
 ```cpp
 string firstChar = "?";
 int charInt = -1;
-call char_to_int : firstChar -> charInt;
+call to_int : firstChar -> charInt;
 ```
 
 ### to_double

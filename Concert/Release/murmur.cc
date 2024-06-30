@@ -18,7 +18,7 @@ function murmurHash32 : string as key, int as seed;
 		int k;
 		string char;
 		call char_at : key, i -> char;
-		call char_to_int : char -> k;
+		call wchar_to_int : char -> k;
 		
 		h = k * m;
 		int shift = k;

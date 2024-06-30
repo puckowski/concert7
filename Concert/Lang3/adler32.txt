@@ -15,7 +15,7 @@ function adler32 : string as message, int as messageLength;
   
     while n < messageLength;
         call char_at : message, n -> char;
-        call char_to_int : char -> charValue;
+        call wchar_to_int : char -> charValue;
     
         s1 = (s1 + charValue) % MOD_ADLER;
         s2 = (s2 + s1) % MOD_ADLER;
