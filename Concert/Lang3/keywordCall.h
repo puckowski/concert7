@@ -355,15 +355,27 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
-		case GET_THREAD_ID:
+		case THREAD_GET_THREAD_ID:
 		{
 			libraryThreadGetId(tokens, tokensSize);
 
 			break;
 		}
-		case ABSOLUTE_VALUE:
+		case MATH_ABSOLUTE_VALUE:
 		{
 			libraryMathAbsoluteValue(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_SQRT:
+		{
+			libraryMathSqrt(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_LOG10:
+		{
+			libraryMathLog10(tokens, tokensSize);
 
 			break;
 		}

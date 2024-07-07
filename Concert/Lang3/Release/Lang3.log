@@ -1,1 +1,144 @@
-﻿  Lang3.vcxproj -> C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Release\Lang3.exe
+﻿  main.cpp
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\sourceFunctions.h(894,70): warning C4459: declaration of 'codeStore' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(33,32): message : see declaration of 'codeStore'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\sourceFunctions.h(894,70): warning C4100: 'codeStore': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\sourceFunctions.h(913,42): warning C4459: declaration of 'currentLine' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\sourceFunctions.h(913,96): warning C4459: declaration of 'codeStore' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(33,32): message : see declaration of 'codeStore'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(77,12): warning C4189: 'op1Precedence': local variable is initialized but not referenced
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(78,12): warning C4189: 'op2Precedence': local variable is initialized but not referenced
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(172,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(289,35): warning C4100: 'tokensSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1313,16): warning C4456: declaration of 'lhs' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1288,15): message : see declaration of 'lhs'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1336,26): warning C4456: declaration of 'lhs' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1288,15): message : see declaration of 'lhs'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1833,13): warning C4456: declaration of 'i' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1827,12): message : see declaration of 'i'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1833,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1922,13): warning C4456: declaration of 'i' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1916,12): message : see declaration of 'i'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\operatorFunctions.h(1922,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\intDeclaration.h(92,9): warning C4456: declaration of 'createdVar' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\intDeclaration.h(78,8): message : see declaration of 'createdVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\intDeclaration.h(108,20): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\intDeclaration.h(80,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\intDeclaration.h(122,19): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\intDeclaration.h(80,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\longDeclaration.h(92,9): warning C4456: declaration of 'createdVar' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\longDeclaration.h(78,8): message : see declaration of 'createdVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\longDeclaration.h(108,20): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\longDeclaration.h(80,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\longDeclaration.h(122,19): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\longDeclaration.h(80,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\doubleDeclaration.h(92,9): warning C4456: declaration of 'createdVar' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\doubleDeclaration.h(78,8): message : see declaration of 'createdVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\doubleDeclaration.h(108,20): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\doubleDeclaration.h(80,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\doubleDeclaration.h(122,19): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\doubleDeclaration.h(80,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringDeclaration.h(93,9): warning C4456: declaration of 'createdVar' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringDeclaration.h(79,8): message : see declaration of 'createdVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringDeclaration.h(109,20): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringDeclaration.h(81,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringDeclaration.h(123,19): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringDeclaration.h(81,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordFunction.h(49,10): warning C4189: 'createdVar': local variable is initialized but not referenced
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordInclude.h(13,68): warning C4459: declaration of 'currentLine' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringLibrary.h(23,9): warning C4244: 'initializing': conversion from 'wchar_t' to 'char', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringLibrary.h(65,20): warning C4244: 'initializing': conversion from 'int' to 'wchar_t', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringLibrary.h(89,52): warning C4244: 'argument': conversion from 'int' to 'const _Elem', possible loss of data
+          with
+          [
+              _Elem=wchar_t
+          ]
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringLibrary.h(232,55): warning C4244: 'argument': conversion from 'int' to 'const _Elem', possible loss of data
+          with
+          [
+              _Elem=wchar_t
+          ]
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(23,53): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(50,73): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(176,72): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(192,73): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(208,73): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(234,74): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(313,67): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(365,12): warning C4244: 'initializing': conversion from 'int' to 'char', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(352,72): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(405,15): warning C4244: 'initializing': conversion from 'int' to 'wchar_t', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\fileLibrary.h(392,68): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(15,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(13,75): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(13,53): warning C4100: 'arguments': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(105,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(116,49): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(116,41): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(127,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(152,39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(163,48): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(163,40): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(174,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(195,36): warning C4244: '=': conversion from '__int64' to 'double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(231,36): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(248,36): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(265,36): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\regexLibrary.h(33,7): warning C4459: declaration of 'returnVar' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(36,26): message : see declaration of 'returnVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\regexLibrary.h(65,7): warning C4459: declaration of 'returnVar' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(36,26): message : see declaration of 'returnVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\regexLibrary.h(86,74): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\threadLibrary.h(14,7): warning C4459: declaration of 'returnVar' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(36,26): message : see declaration of 'returnVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordBreak.h(10,31): warning C4459: declaration of 'currentLine' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordTry.h(14,29): warning C4459: declaration of 'currentLine' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordSizeof.h(25,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordPrintln.h(16,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordPrintln.h(14,39): warning C4100: 'tokensSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordPrintln.h(53,16): warning C4189: 'charPtr': local variable is initialized but not referenced
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordPrint.h(15,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordPrint.h(13,37): warning C4100: 'tokensSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordRead.h(33,7): warning C4456: declaration of 'r1' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordRead.h(23,6): message : see declaration of 'r1'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordRead.h(34,8): warning C4456: declaration of 'lhsVar' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordRead.h(24,7): message : see declaration of 'lhsVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordRead.h(24,7): warning C4189: 'lhsVar': local variable is initialized but not referenced
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordEnd.h(7,29): warning C4459: declaration of 'currentLine' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordSystem.h(12,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordSystem.h(10,38): warning C4100: 'tokensSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordElse.h(7,88): warning C4459: declaration of 'currentLine' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordElse.h(7,36): warning C4100: 'tokensSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordContinue.h(10,34): warning C4459: declaration of 'currentLine' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordContinue.h(10,74): warning C4100: 'tokens': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordContinue.h(12,6): warning C4189: 'blockCount': local variable is initialized but not referenced
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\objectDeclaration.h(94,9): warning C4456: declaration of 'createdVar' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\objectDeclaration.h(77,8): message : see declaration of 'createdVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\objectDeclaration.h(110,20): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\objectDeclaration.h(79,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\objectDeclaration.h(124,19): warning C4456: declaration of 'var' hides previous local declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\objectDeclaration.h(79,8): message : see declaration of 'var'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordKeys.h(32,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordKeys.h(11,36): warning C4100: 'tokensSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\interpreter.h(305,99): warning C4100: 'jumpBackTo': unreferenced formal parameter
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\algorithm(3074,24): warning C4244: '=': conversion from 'int' to 'wchar_t', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\stringLibrary.h(281,126): message : see reference to function template instantiation '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,int(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)' being compiled
+          with
+          [
+              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Elem=wchar_t,
+              _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Fn=int (__cdecl *)(int)
+          ]
+  Generating code
+  97 of 4391 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    9 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Lang3.vcxproj -> C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Release\Lang3.exe

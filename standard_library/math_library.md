@@ -14,17 +14,19 @@ import math;
 
 ## Functions
 
-| Name           | Description                                        |
-|:---------------|:---------------------------------------------------|
-| seed_random    | Seed the random number generator using system time |
-| get_random     | Get a random integer                               |
-| int_to_double  | Convert an integer to a double                     |
-| double_to_int  | Convert a double to an integer                     |
-| int_to_long    | Convert an integer to a long                       |
-| long_to_int    | Convert a long to an integer                       |
-| long_to_double | Convert a long to a double                         |
-| double_to_long | Convert a double to a long                         |
-| absolute_value | Convert a integer, long, or double to its absolute value |
+| Name           | Description                                               |
+|:---------------|:----------------------------------------------------------|
+| seed_random    | Seed the random number generator using system time        |
+| get_random     | Get a random integer                                      |
+| int_to_double  | Convert an integer to a double                            |
+| double_to_int  | Convert a double to an integer                            |
+| int_to_long    | Convert an integer to a long                              |
+| long_to_int    | Convert a long to an integer                              |
+| long_to_double | Convert a long to a double                                |
+| double_to_long | Convert a double to a long                                |
+| absolute_value | Convert an integer, long, or double to its absolute value |
+| sqrt           | Get the square root of an integer, long, or double        |
+| log10          | Get the common logarithm an integer, long, or double      |
 
 ## Examples
 
@@ -102,4 +104,22 @@ double toLong = -3.14;
 long l;
 
 call absolute_value : toLong -> l;
+```
+
+### sqrt
+
+```cpp
+double value = 4;
+long l;
+
+call sqrt : value -> l;
+```
+
+### log10
+
+```cpp
+double value = 100;
+long l;
+
+call log10 : value -> l;
 ```

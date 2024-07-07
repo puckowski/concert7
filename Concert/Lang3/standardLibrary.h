@@ -47,14 +47,16 @@ enum LibraryFunction
 	REGEX_SEARCH = 42,
 	REGEX_MATCH = 43,
 	REGEX_REPLACE = 44,
-	GET_THREAD_ID = 45,
-	ABSOLUTE_VALUE = 46,
+	THREAD_GET_THREAD_ID = 45,
+	MATH_ABSOLUTE_VALUE = 46,
 	STRING_WCHAR_TO_STRING = 47,
 	FILE_OPEN_BYTE_FILE = 48,
 	FILE_WRITE_WCHAR = 49,
 	FILE_READ_WCHAR = 50,
 	STRING_WCHAR_TO_INT = 51,
-	STRING_WCHAR_AT = 52
+	STRING_WCHAR_AT = 52,
+	MATH_LOG10 = 53,
+	MATH_SQRT = 54
 };
 
 std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"wchar_at", L"char_to_string", L"wchar_to_string",
@@ -63,7 +65,7 @@ std::vector<std::wstring>* fileLibraryFunctions = new std::vector<std::wstring>{
 	L"is_file_exist", L"create_file", L"get_file_size", L"seek_file_pointer", L"read_byte", L"write_byte", L"read_wchar", L"write_wchar", L"remove_file", L"rename_file", L"tell_file_pointer",
 	L"create_directory" };
 std::vector<std::wstring>* mathLibraryFunctions = new std::vector<std::wstring>{ L"seed_random", L"get_random", L"int_to_double", L"double_to_int", L"int_to_long", L"long_to_int",
-	L"long_to_double", L"double_to_long", L"absolute_value" };
+	L"long_to_double", L"double_to_long", L"absolute_value", L"sqrt", L"log10" };
 std::vector<std::wstring>* regexLibraryFunctions = new std::vector<std::wstring>{ L"regex_search", L"regex_match", L"regex_replace" };
 std::vector<std::wstring>* threadLibraryFunctions = new std::vector<std::wstring>{ L"get_thread_id" };
 
@@ -122,9 +124,11 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"regex_search", REGEX_SEARCH },
 	{ L"regex_match", REGEX_MATCH },
 	{ L"regex_replace", REGEX_REPLACE },
-	{ L"get_thread_id", GET_THREAD_ID },
-	{ L"absolute_value", ABSOLUTE_VALUE },
-	{ L"wchar_to_string", STRING_WCHAR_TO_STRING }
+	{ L"get_thread_id", THREAD_GET_THREAD_ID },
+	{ L"absolute_value", MATH_ABSOLUTE_VALUE },
+	{ L"wchar_to_string", STRING_WCHAR_TO_STRING },
+	{ L"sqrt", MATH_SQRT },
+	{ L"log10", MATH_LOG10 }
 };
 const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const LibraryFunction>>>> LIBRARY_FUNCTION_MAP_END = LIBRARY_FUNCTION_MAP.end();
 

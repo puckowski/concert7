@@ -232,9 +232,9 @@ println "called char_at on \"", CONTAINS_TEST_STRING, "\".";
 println "char_at result for 0: ", firstChar, ".";
 
 int charInt = -1;
-call wchar_to_int : firstChar -> charInt;
-println "called wchar_to_int on \"T\".";
-println "wchar_to_int result: ", charInt, ".";
+call char_to_int : firstChar -> charInt;
+println "called char_to_int on \"T\".";
+println "char_to_int result: ", charInt, ".";
 
 int iToS = 234;
 double dToS = 3.14;
@@ -274,7 +274,7 @@ function crc16 : string as message, int as length;
 		crc = ((crc >>> 8) | (crc << 8)) & 65535;
 		
 		call char_at : message, j -> char;
-        call wchar_to_int : char -> charValue;
+        call char_to_int : char -> charValue;
 		
 		int tmp = charValue & 255;
 		crc ^= tmp;
