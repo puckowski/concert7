@@ -379,6 +379,42 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
+		case MATH_FLOOR:
+		{
+			libraryMathFloor(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_CEIL:
+		{
+			libraryMathCeil(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_ROUND:
+		{
+			libraryMathRound(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_SIN:
+		{
+			libraryMathSin(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_COS:
+		{
+			libraryMathCos(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_TAN:
+		{
+			libraryMathTan(tokens, tokensSize);
+
+			break;
+		}
 		}
 	}
 

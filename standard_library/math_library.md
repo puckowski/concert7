@@ -14,19 +14,25 @@ import math;
 
 ## Functions
 
-| Name           | Description                                               |
-|:---------------|:----------------------------------------------------------|
-| seed_random    | Seed the random number generator using system time        |
-| get_random     | Get a random integer                                      |
-| int_to_double  | Convert an integer to a double                            |
-| double_to_int  | Convert a double to an integer                            |
-| int_to_long    | Convert an integer to a long                              |
-| long_to_int    | Convert a long to an integer                              |
-| long_to_double | Convert a long to a double                                |
-| double_to_long | Convert a double to a long                                |
-| absolute_value | Convert an integer, long, or double to its absolute value |
-| sqrt           | Get the square root of an integer, long, or double        |
-| log10          | Get the common logarithm an integer, long, or double      |
+| Name           | Description                                                   |
+|:---------------|:--------------------------------------------------------------|
+| seed_random    | Seed the random number generator using system time            |
+| get_random     | Get a random integer                                          |
+| int_to_double  | Convert an integer to a double                                |
+| double_to_int  | Convert a double to an integer                                |
+| int_to_long    | Convert an integer to a long                                  |
+| long_to_int    | Convert a long to an integer                                  |
+| long_to_double | Convert a long to a double                                    |
+| double_to_long | Convert a double to a long                                    |
+| absolute_value | Convert an integer, long, or double to its absolute value     |
+| sqrt           | Get the square root of an integer, long, or double            |
+| log10          | Get the common logarithm an integer, long, or double          |
+| ceil           | Get the least value not less than an integer, long, or double |
+| round          | Get the nearest integer, long, or double                      |
+| floor          | Get theleast of an integer, long, or double                   |
+| sin            | Compute the sine of an integer, long, or double               |
+| cos            | Compute the cosine of an integer, long, or double             |
+| tan            | Compute the tangent of an integer, long, or double            |
 
 ## Examples
 
@@ -110,7 +116,7 @@ call absolute_value : toLong -> l;
 
 ```cpp
 double value = 4;
-long l;
+double l;
 
 call sqrt : value -> l;
 ```
@@ -119,7 +125,61 @@ call sqrt : value -> l;
 
 ```cpp
 double value = 100;
-long l;
+double l;
 
 call log10 : value -> l;
+```
+
+### ceil
+
+```cpp
+double value = 100.5;
+double l;
+
+call ceil : value -> l;
+```
+
+### round
+
+```cpp
+double value = 100.5;
+double l;
+
+call round : value -> l;
+```
+
+### floor
+
+```cpp
+double value = 100.5;
+double l;
+
+call floor : value -> l;
+```
+
+### sin
+
+```cpp
+double value = 100;
+double l;
+
+call sin : value -> l;
+```
+
+### cos
+
+```cpp
+double value = 100;
+double l;
+
+call cos : value -> l;
+```
+
+### tan
+
+```cpp
+double value = 100;
+double l;
+
+call tan : value -> l;
 ```

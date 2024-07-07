@@ -87,6 +87,288 @@ void libraryMathAbsoluteValue(std::vector<std::wstring>& arguments, const int& a
 		delete intVar;
 }
 
+void libraryMathCeil(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdInt;
+	Var* intVar = getVar(arguments[2], r1, createdInt);
+
+	switch (intVar->type)
+	{
+	case TYPE_INT:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		int* pstr = static_cast<int*>(intVar->data);
+		int* returnData = static_cast<int*>(v->data);
+
+		returnData[returnVarInt] = std::ceil(pstr[r1]);
+
+		break;
+	}
+	case TYPE_LONG:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		long long int* pstr = static_cast<long long int*>(intVar->data);
+		long long int* returnData = static_cast<long long int*>(v->data);
+
+		returnData[returnVarInt] = std::ceill(pstr[r1]);
+
+		break;
+	}
+	case TYPE_DOUBLE:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		double* pstr = static_cast<double*>(intVar->data);
+		double* returnData = static_cast<double*>(v->data);
+
+		returnData[returnVarInt] = std::ceilf(pstr[r1]);
+
+		break;
+	}
+	}
+
+	if (createdInt)
+		delete intVar;
+}
+
+void libraryMathFloor(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdInt;
+	Var* intVar = getVar(arguments[2], r1, createdInt);
+
+	switch (intVar->type)
+	{
+	case TYPE_INT:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		int* pstr = static_cast<int*>(intVar->data);
+		int* returnData = static_cast<int*>(v->data);
+
+		returnData[returnVarInt] = std::floor(pstr[r1]);
+
+		break;
+	}
+	case TYPE_LONG:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		long long int* pstr = static_cast<long long int*>(intVar->data);
+		long long int* returnData = static_cast<long long int*>(v->data);
+
+		returnData[returnVarInt] = std::floorl(pstr[r1]);
+
+		break;
+	}
+	case TYPE_DOUBLE:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		double* pstr = static_cast<double*>(intVar->data);
+		double* returnData = static_cast<double*>(v->data);
+
+		returnData[returnVarInt] = std::floorf(pstr[r1]);
+
+		break;
+	}
+	}
+
+	if (createdInt)
+		delete intVar;
+}
+
+void libraryMathRound(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdInt;
+	Var* intVar = getVar(arguments[2], r1, createdInt);
+
+	switch (intVar->type)
+	{
+	case TYPE_INT:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		int* pstr = static_cast<int*>(intVar->data);
+		int* returnData = static_cast<int*>(v->data);
+
+		returnData[returnVarInt] = std::round(pstr[r1]);
+
+		break;
+	}
+	case TYPE_LONG:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		long long int* pstr = static_cast<long long int*>(intVar->data);
+		long long int* returnData = static_cast<long long int*>(v->data);
+
+		returnData[returnVarInt] = std::roundl(pstr[r1]);
+
+		break;
+	}
+	case TYPE_DOUBLE:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		double* pstr = static_cast<double*>(intVar->data);
+		double* returnData = static_cast<double*>(v->data);
+
+		returnData[returnVarInt] = std::roundf(pstr[r1]);
+
+		break;
+	}
+	}
+
+	if (createdInt)
+		delete intVar;
+}
+
+void libraryMathSin(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdInt;
+	Var* intVar = getVar(arguments[2], r1, createdInt);
+
+	switch (intVar->type)
+	{
+	case TYPE_INT:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		int* pstr = static_cast<int*>(intVar->data);
+		int* returnData = static_cast<int*>(v->data);
+
+		returnData[returnVarInt] = std::sin(pstr[r1]);
+
+		break;
+	}
+	case TYPE_LONG:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		long long int* pstr = static_cast<long long int*>(intVar->data);
+		long long int* returnData = static_cast<long long int*>(v->data);
+
+		returnData[returnVarInt] = std::sinl(pstr[r1]);
+
+		break;
+	}
+	case TYPE_DOUBLE:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		double* pstr = static_cast<double*>(intVar->data);
+		double* returnData = static_cast<double*>(v->data);
+
+		returnData[returnVarInt] = std::sinf(pstr[r1]);
+
+		break;
+	}
+	}
+
+	if (createdInt)
+		delete intVar;
+}
+
+void libraryMathCos(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdInt;
+	Var* intVar = getVar(arguments[2], r1, createdInt);
+
+	switch (intVar->type)
+	{
+	case TYPE_INT:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		int* pstr = static_cast<int*>(intVar->data);
+		int* returnData = static_cast<int*>(v->data);
+
+		returnData[returnVarInt] = std::cos(pstr[r1]);
+
+		break;
+	}
+	case TYPE_LONG:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		long long int* pstr = static_cast<long long int*>(intVar->data);
+		long long int* returnData = static_cast<long long int*>(v->data);
+
+		returnData[returnVarInt] = std::cosl(pstr[r1]);
+
+		break;
+	}
+	case TYPE_DOUBLE:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		double* pstr = static_cast<double*>(intVar->data);
+		double* returnData = static_cast<double*>(v->data);
+
+		returnData[returnVarInt] = std::cosf(pstr[r1]);
+
+		break;
+	}
+	}
+
+	if (createdInt)
+		delete intVar;
+}
+
+void libraryMathTan(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdInt;
+	Var* intVar = getVar(arguments[2], r1, createdInt);
+
+	switch (intVar->type)
+	{
+	case TYPE_INT:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		int* pstr = static_cast<int*>(intVar->data);
+		int* returnData = static_cast<int*>(v->data);
+
+		returnData[returnVarInt] = std::tan(pstr[r1]);
+
+		break;
+	}
+	case TYPE_LONG:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		long long int* pstr = static_cast<long long int*>(intVar->data);
+		long long int* returnData = static_cast<long long int*>(v->data);
+
+		returnData[returnVarInt] = std::tanl(pstr[r1]);
+
+		break;
+	}
+	case TYPE_DOUBLE:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		double* pstr = static_cast<double*>(intVar->data);
+		double* returnData = static_cast<double*>(v->data);
+
+		returnData[returnVarInt] = std::tanf(pstr[r1]);
+
+		break;
+	}
+	}
+
+	if (createdInt)
+		delete intVar;
+}
+
 void libraryMathLog10(std::vector<std::wstring>& arguments, const int& argumentsSize)
 {
 	int r1;
