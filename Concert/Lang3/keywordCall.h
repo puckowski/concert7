@@ -415,6 +415,24 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
+		case MATH_GET_PI:
+		{
+			libraryMathPi(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_SET_PRECISION: 
+		{
+			libraryMathSetPrecision(tokens, tokensSize);
+
+			break;
+		}
+		case MATH_EXP: 
+		{
+			libraryMathExp(tokens, tokensSize);
+
+			break;
+		}
 		}
 	}
 

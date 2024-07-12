@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
+#include <cmath>
 
 #include "header.h"
 #include "Var.h"
@@ -85,6 +86,71 @@ void libraryMathAbsoluteValue(std::vector<std::wstring>& arguments, const int& a
 
 	if (createdInt)
 		delete intVar;
+}
+
+void libraryMathExp(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	int r1;
+	bool createdInt;
+	Var* intVar = getVar(arguments[2], r1, createdInt);
+
+	switch (intVar->type)
+	{
+	case TYPE_INT:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		int* pstr = static_cast<int*>(intVar->data);
+		int* returnData = static_cast<int*>(v->data);
+
+		returnData[returnVarInt] = std::exp(pstr[r1]);
+
+		break;
+	}
+	case TYPE_LONG:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		long long int* pstr = static_cast<long long int*>(intVar->data);
+		long long int* returnData = static_cast<long long int*>(v->data);
+
+		returnData[returnVarInt] = std::expl(pstr[r1]);
+
+		break;
+	}
+	case TYPE_DOUBLE:
+	{
+		Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+		double* pstr = static_cast<double*>(intVar->data);
+		double* returnData = static_cast<double*>(v->data);
+
+		returnData[returnVarInt] = std::exp(pstr[r1]);
+
+		break;
+	}
+	}
+
+	if (createdInt)
+		delete intVar;
+}
+
+void libraryMathPi(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+	double* returnData = static_cast<double*>(v->data);
+
+	returnData[returnVarInt] = 3.141592653589793;
+}
+
+void libraryMathSetPrecision(std::vector<std::wstring>& arguments, const int& argumentsSize)
+{
+	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+
+	int* returnData = static_cast<int*>(v->data);
+
+	std::cout << std::setprecision(returnData[returnVarInt]);
 }
 
 void libraryMathCeil(std::vector<std::wstring>& arguments, const int& argumentsSize)

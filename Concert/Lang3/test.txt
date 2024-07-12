@@ -502,3 +502,17 @@ try;
 catch;
 	println "Variable was deleted.";
 end;
+
+double pi_val = 0;
+call get_pi -> pi_val;
+println pi_val;
+
+call set_precision : 17;
+println pi_val;
+
+call set_precision : 10;
+println pi_val;
+
+double toexp = 1.6;
+call exp : toexp -> toexp;
+println toexp;
