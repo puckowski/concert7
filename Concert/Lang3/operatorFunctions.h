@@ -77,13 +77,13 @@ bool hasPrecedence(std::wstring& op1, std::wstring& op2)
 	const int op1Precedence = OPERATOR_PRECEDENCE_MAP.find(op1)->second;
 	const int op2Precedence = OPERATOR_PRECEDENCE_MAP.find(op2)->second;
 
-	if (op2 >= op1)
+	if (op2Precedence >= op1Precedence)
 	{
-		return true;
+		return false;
 	}
 	else
 	{
-		return false;
+		return true;
 	}
 }
 
