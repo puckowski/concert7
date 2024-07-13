@@ -433,6 +433,18 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
+		case THREAD_HARDWARE_CONCURRENCY:
+		{
+			libraryThreadHardwareConcurrency(tokens, tokensSize);
+
+			break;
+		}
+		case THREAD_SLEEP:
+		{
+			libraryThreadSleep(tokens, tokensSize);
+			
+			break;
+		}
 		}
 	}
 

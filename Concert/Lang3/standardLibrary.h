@@ -65,7 +65,9 @@ enum LibraryFunction
 	MATH_TAN = 60,
 	MATH_GET_PI = 61,
 	MATH_SET_PRECISION = 62,
-	MATH_EXP = 63
+	MATH_EXP = 63,
+	THREAD_HARDWARE_CONCURRENCY = 64,
+	THREAD_SLEEP = 65
 };
 
 std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"wchar_at", L"char_to_string", L"wchar_to_string",
@@ -76,7 +78,7 @@ std::vector<std::wstring>* fileLibraryFunctions = new std::vector<std::wstring>{
 std::vector<std::wstring>* mathLibraryFunctions = new std::vector<std::wstring>{ L"seed_random", L"get_random", L"int_to_double", L"double_to_int", L"int_to_long", L"long_to_int",
 	L"long_to_double", L"double_to_long", L"absolute_value", L"sqrt", L"log10", L"round", L"floor", L"ceil", L"sin", L"cos", L"tan", L"get_pi", L"set_precision", L"exp" };
 std::vector<std::wstring>* regexLibraryFunctions = new std::vector<std::wstring>{ L"regex_search", L"regex_match", L"regex_replace" };
-std::vector<std::wstring>* threadLibraryFunctions = new std::vector<std::wstring>{ L"get_thread_id" };
+std::vector<std::wstring>* threadLibraryFunctions = new std::vector<std::wstring>{ L"get_thread_id", L"hardware_concurrency", L"sleep" };
 
 thread_local const std::map<const std::wstring, std::vector<std::wstring>*> LIBRARY_IMPORT_MAP =
 {
@@ -146,7 +148,9 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"tan", MATH_TAN },
 	{ L"get_pi", MATH_GET_PI },
 	{ L"set_precision", MATH_SET_PRECISION },
-	{ L"exp", MATH_EXP }
+	{ L"exp", MATH_EXP }, 
+	{ L"hardware_concurrency", THREAD_HARDWARE_CONCURRENCY },
+	{ L"sleep", THREAD_SLEEP }
 };
 const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const LibraryFunction>>>> LIBRARY_FUNCTION_MAP_END = LIBRARY_FUNCTION_MAP.end();
 

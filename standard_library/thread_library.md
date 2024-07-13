@@ -14,9 +14,11 @@ import thread;
 
 ## Functions
 
-| Name           | Description                                        |
-|:---------------|:---------------------------------------------------|
-| get_thread_id  | Get the current thread's ID. |
+| Name                 | Description                                            |
+|:---------------------|:-------------------------------------------------------|
+| get_thread_id        | Get the current thread's ID.                           |
+| hardware_concurrency | Try to get system hardware thread count. May report 0. |
+| sleep                | Sleep for argument milliseconds.                       |
 
 ## Examples
 
@@ -28,4 +30,19 @@ Returns a sttring representing the current thread's ID.
 string data;
 
 call get_thread_id -> data;
+```
+
+### hardware_concurrency
+
+```cpp
+int threadCount = 0;
+call hardware_concurrency -> threadCount;
+```
+
+### sleep
+
+```cpp
+int millis = 500;
+println "Sleeping for ", millis, " millis";
+call sleep : millis;
 ```

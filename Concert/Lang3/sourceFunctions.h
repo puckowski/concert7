@@ -856,41 +856,6 @@ void readStatementsFromFile(const std::wstring& filename)
 	addExitTokenVectorIfNeeded();
 }
 
-bool readStatementsFromConsole()
-{
-	std::vector<std::wstring> lines;
-	std::wstring line;
-	/*
-	do
-	{
-		std::cout << "> ";
-		std::getline(std::cin, line);
-
-		if (line.empty() == true)
-		{
-			break;
-		}
-		else if (line == L"exit")
-		{
-			return false;
-		}
-		else
-		{
-			lines.push_back(line);
-		}
-	} while (true);
-
-	for (std::vector<std::wstring>::iterator it = lines.begin(); it != lines.end(); ++it)
-	{
-		line = *it;
-
-		std::vector<std::wstring> tokens;
-		tokenizeStatement3(line, tokens);
-	}*/
-
-	return true;
-}
-
 void readStatementsFromFile(const std::wstring &filename, CodeStore* codeStore)
 {
 	std::ifstream file(filename);

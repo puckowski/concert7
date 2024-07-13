@@ -516,3 +516,10 @@ println pi_val;
 double toexp = 1.6;
 call exp : toexp -> toexp;
 println toexp;
+
+println "Sleeping...";
+call sleep : 555;
+
+int hwc = 0;
+call hardware_concurrency -> hwc;
+println "Hardware thread count check: ", hwc;

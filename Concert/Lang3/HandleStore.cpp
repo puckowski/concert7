@@ -118,6 +118,7 @@ void ConcertHandleEnvironment::HandleStore::openFile(const std::wstring& name, i
 	{
 		it->second->close();
 		mHandleMap.erase(it->first);
+		delete it->second;
 	}
 
 	mHandleMap.insert({ name, fileStream });
@@ -146,6 +147,7 @@ void ConcertHandleEnvironment::HandleStore::openByteFile(const std::wstring& nam
 	{
 		it->second->close();
 		mByteHandleMap.erase(it->first);
+		delete it->second;
 	}
 
 	mByteHandleMap.insert({ name, fileStream });
@@ -165,6 +167,7 @@ void ConcertHandleEnvironment::HandleStore::closeFile(const std::wstring &name)
 
 			byteFileStream->close();
 			mByteHandleMap.erase(name);
+			delete byteFileStream;
 		}
 	}
 	else
@@ -173,6 +176,7 @@ void ConcertHandleEnvironment::HandleStore::closeFile(const std::wstring &name)
 
 		fileStream->close();
 		mHandleMap.erase(name);
+		delete fileStream;
 	}
 }
 
@@ -264,7 +268,26 @@ bool ConcertHandleEnvironment::HandleStore::isAtEndOfFile(const std::wstring &na
 int ConcertHandleEnvironment::HandleStore::removeFile(const std::wstring &name)
 {
 	int result = std::remove(wstring_to_utf8(name).c_str());
-	mHandleMap.erase(name);
+
+	auto handle = getHandle(name);
+
+	if (handle != nullptr)
+	{
+		handle->close();
+		mHandleMap.erase(name);
+		delete handle;
+	}
+	else
+	{
+		auto byteHandle = getByteHandle(name);
+
+		if (byteHandle != nullptr)
+		{
+			byteHandle->close();
+			mByteHandleMap.erase(name);
+			delete byteHandle;
+		}
+	}
 
 	return result;
 }
