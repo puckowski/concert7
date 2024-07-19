@@ -9,7 +9,7 @@ string WELCOME = "Hello, world!";
 
 # Adler-32 is a checksum algorithm invented by Mark Adler in 1995.
 function adler32 : string as message, int as messageLength;
-    int DIVISOR = 65521;
+    int MOD_ADLER = 65521;
 
     string char;
     int charValue;
@@ -22,8 +22,8 @@ function adler32 : string as message, int as messageLength;
         call wchar_at : message, n -> char;
         call wchar_to_int : char -> charValue;
     
-        s1 = (s1 + charValue) % DIVISOR;
-        s2 = (s2 + s1) % DIVISOR;
+        s1 = (s1 + charValue) % MOD_ADLER;
+        s2 = (s2 + s1) % MOD_ADLER;
     
         n += 1;
     end;
