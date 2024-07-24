@@ -15,6 +15,7 @@
 #include "mathLibrary.h"
 #include "regexLibrary.h"
 #include "threadLibrary.h"
+#include "dateLibrary.h"
 
 void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens)
 {
@@ -443,6 +444,12 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 		{
 			libraryThreadSleep(tokens, tokensSize);
 			
+			break;
+		}
+		case DATE_LOCALTIME:
+		{
+			libraryDateLocaltime(tokens, tokensSize);
+
 			break;
 		}
 		}

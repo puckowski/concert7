@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CodeStore.h" />
+    <ClInclude Include="dateLibrary.h" />
     <ClInclude Include="declaration.h" />
     <ClInclude Include="doubleDeclaration.h" />
     <ClInclude Include="fileLibrary.h" />

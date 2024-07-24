@@ -67,7 +67,8 @@ enum LibraryFunction
 	MATH_SET_PRECISION = 62,
 	MATH_EXP = 63,
 	THREAD_HARDWARE_CONCURRENCY = 64,
-	THREAD_SLEEP = 65
+	THREAD_SLEEP = 65,
+	DATE_LOCALTIME = 66
 };
 
 std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"wchar_at", L"char_to_string", L"wchar_to_string",
@@ -79,6 +80,7 @@ std::vector<std::wstring>* mathLibraryFunctions = new std::vector<std::wstring>{
 	L"long_to_double", L"double_to_long", L"absolute_value", L"sqrt", L"log10", L"round", L"floor", L"ceil", L"sin", L"cos", L"tan", L"get_pi", L"set_precision", L"exp" };
 std::vector<std::wstring>* regexLibraryFunctions = new std::vector<std::wstring>{ L"regex_search", L"regex_match", L"regex_replace" };
 std::vector<std::wstring>* threadLibraryFunctions = new std::vector<std::wstring>{ L"get_thread_id", L"hardware_concurrency", L"sleep" };
+std::vector<std::wstring>* dateLibraryFunctions = new std::vector<std::wstring>{ L"localtime" };
 
 thread_local const std::map<const std::wstring, std::vector<std::wstring>*> LIBRARY_IMPORT_MAP =
 {
@@ -86,7 +88,8 @@ thread_local const std::map<const std::wstring, std::vector<std::wstring>*> LIBR
 	{ L"io", fileLibraryFunctions },
 	{ L"math", mathLibraryFunctions },
 	{ L"regex", regexLibraryFunctions },
-	{ L"thread", threadLibraryFunctions }
+	{ L"thread", threadLibraryFunctions },
+	{ L"date", dateLibraryFunctions }
 };
 
 const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
@@ -150,7 +153,8 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"set_precision", MATH_SET_PRECISION },
 	{ L"exp", MATH_EXP }, 
 	{ L"hardware_concurrency", THREAD_HARDWARE_CONCURRENCY },
-	{ L"sleep", THREAD_SLEEP }
+	{ L"sleep", THREAD_SLEEP },
+	{ L"localtime", DATE_LOCALTIME }
 };
 const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const LibraryFunction>>>> LIBRARY_FUNCTION_MAP_END = LIBRARY_FUNCTION_MAP.end();
 

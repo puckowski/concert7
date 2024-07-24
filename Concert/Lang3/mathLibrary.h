@@ -146,11 +146,17 @@ void libraryMathPi(std::vector<std::wstring>& arguments, const int& argumentsSiz
 
 void libraryMathSetPrecision(std::vector<std::wstring>& arguments, const int& argumentsSize)
 {
-	Var* v = getVar(arguments[argumentsSize - 1], returnVarInt, createdRetVar);
+	int r1;
+	bool createdVar;
+	Var* v = getVar(arguments[argumentsSize - 1], r1, createdVar);
 
-	int* returnData = static_cast<int*>(v->data);
+	int* data = static_cast<int*>(v->data);
 
-	std::cout << std::setprecision(returnData[returnVarInt]);
+	std::cout << std::setprecision(data[r1]);
+
+	if (createdVar) {
+		delete v;
+	}
 }
 
 void libraryMathCeil(std::vector<std::wstring>& arguments, const int& argumentsSize)

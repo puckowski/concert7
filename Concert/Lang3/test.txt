@@ -3,6 +3,7 @@ import math;
 import io;
 import regex;
 import thread;
+import date;
 
 int count = 0;
 mutex m;
@@ -523,3 +524,8 @@ call sleep : 555;
 int hwc = 0;
 call hardware_concurrency -> hwc;
 println "Hardware thread count check: ", hwc;
+
+string timeFormatted = "";
+call localtime : "%Y-%m-%d %H:%M:%S" -> timeFormatted;
+
+println timeFormatted;

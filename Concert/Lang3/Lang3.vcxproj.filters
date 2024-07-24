@@ -209,6 +209,9 @@
     <ClInclude Include="utf8.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="dateLibrary.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="smath.txt">

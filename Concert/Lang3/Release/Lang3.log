@@ -74,42 +74,42 @@ C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\L
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(106,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(117,47): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(117,39): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(171,39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(182,48): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(182,40): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(193,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(218,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(229,49): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(229,41): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(240,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(265,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(276,49): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(276,41): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(287,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(312,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(323,47): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(323,39): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(334,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(359,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(370,47): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(370,39): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(381,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(406,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(417,47): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(417,39): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(428,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(453,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(464,49): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(464,41): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(475,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(500,39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(511,48): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(511,40): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(522,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(543,36): warning C4244: '=': conversion from '__int64' to 'double', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(579,36): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(596,36): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(613,36): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(177,39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(188,48): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(188,40): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(199,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(224,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(235,49): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(235,41): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(246,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(271,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(282,49): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(282,41): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(293,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(318,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(329,47): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(329,39): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(340,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(365,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(376,47): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(376,39): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(387,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(412,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(423,47): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(423,39): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(434,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(459,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(470,49): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(470,41): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(481,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(506,39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(517,48): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(517,40): warning C4244: '=': conversion from 'long double' to '__int64', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(528,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(549,36): warning C4244: '=': conversion from '__int64' to 'double', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(585,36): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(602,36): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\mathLibrary.h(619,36): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\regexLibrary.h(33,7): warning C4459: declaration of 'returnVar' hides global declaration
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(36,26): message : see declaration of 'returnVar'
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\regexLibrary.h(65,7): warning C4459: declaration of 'returnVar' hides global declaration
@@ -118,6 +118,8 @@ C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\L
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\threadLibrary.h(15,7): warning C4459: declaration of 'returnVar' hides global declaration
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(36,26): message : see declaration of 'returnVar'
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\threadLibrary.h(34,74): warning C4100: 'argumentsSize': unreferenced formal parameter
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\dateLibrary.h(41,8): warning C4459: declaration of 'returnVar' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(36,26): message : see declaration of 'returnVar'
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordBreak.h(10,31): warning C4459: declaration of 'currentLine' hides global declaration
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordTry.h(14,29): warning C4459: declaration of 'currentLine' hides global declaration
@@ -163,8 +165,8 @@ C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\L
               _Fn=int (__cdecl *)(int)
           ]
   Generating code
-  97 of 4458 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
+  1 of 4493 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    9 functions had inline decision re-evaluated but remain unchanged
+    45 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Lang3.vcxproj -> C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Release\Lang3.exe
