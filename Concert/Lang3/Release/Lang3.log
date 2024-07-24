@@ -165,8 +165,8 @@ C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\L
               _Fn=int (__cdecl *)(int)
           ]
   Generating code
-  1 of 4493 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  99 of 4493 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    45 functions had inline decision re-evaluated but remain unchanged
+    9 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Lang3.vcxproj -> C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Release\Lang3.exe
