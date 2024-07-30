@@ -452,6 +452,12 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
+		case DATE_LOCALTIME_NS: 
+		{
+			libraryDateLocaltimeNs(tokens, tokensSize);
+
+			break;
+		}
 		}
 	}
 

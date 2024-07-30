@@ -529,3 +529,8 @@ string timeFormatted = "";
 call localtime : "%Y-%m-%d %H:%M:%S" -> timeFormatted;
 
 println timeFormatted;
+
+timeFormatted = "";
+call localtime_ns : "%Y-%m-%d %H:%M:%S" -> timeFormatted;
+
+println timeFormatted;

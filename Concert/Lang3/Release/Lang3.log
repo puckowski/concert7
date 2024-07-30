@@ -120,6 +120,8 @@ C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\L
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\threadLibrary.h(34,74): warning C4100: 'argumentsSize': unreferenced formal parameter
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\dateLibrary.h(41,8): warning C4459: declaration of 'returnVar' hides global declaration
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(36,26): message : see declaration of 'returnVar'
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\dateLibrary.h(91,14): warning C4459: declaration of 'returnVar' hides global declaration
+C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(36,26): message : see declaration of 'returnVar'
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordBreak.h(10,31): warning C4459: declaration of 'currentLine' hides global declaration
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\header.h(44,25): message : see declaration of 'currentLine'
 C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\Lang3 - Copy\Lang3\keywordTry.h(14,29): warning C4459: declaration of 'currentLine' hides global declaration
@@ -165,7 +167,7 @@ C:\Users\fooba\Downloads\Concert Programming Language (0.0.8.4.1)\Lang3 - Copy\L
               _Fn=int (__cdecl *)(int)
           ]
   Generating code
-  99 of 4493 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
+  99 of 4513 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     9 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
