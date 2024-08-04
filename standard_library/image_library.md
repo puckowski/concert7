@@ -2,7 +2,12 @@
 
 # Image library
 
-Provides standard image functions. Since 9.5.beta.
+Provides standard image functions. 
+
+| Version              | Extensions (Ignoring case) |
+|:---------------------|:---------------------------|
+| 9.5.beta             | .jpg, .jpeg                |
+| 9.5.rc               | .jpeg, .jpeg, .png         |
 
 ## Import
 
@@ -48,6 +53,14 @@ println "";
 ```
 
 ### write_channel_data
+
+Arguments:
+
+```
+filename: string, channelObjectName: string, outputQuality?: number
+```
+
+The ```outputQuality``` argument is optional for ```.jpg``` and ```.jpeg``` extensions, and should not be provided for ```.png``` extensions.
 
 ```cpp
 int writeResult = 0;

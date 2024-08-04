@@ -39,6 +39,9 @@
     <ClCompile Include="utf8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lodepng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CodeStore.h">
@@ -219,6 +222,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="imageLibrary.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lodepng.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

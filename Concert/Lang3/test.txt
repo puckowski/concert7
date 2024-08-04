@@ -562,3 +562,29 @@ int writeResult = 0;
 int outputQuality = 90;
 call write_channel_data : "out.JPG", "imgData1", outputQuality -> writeResult;
 println "Image write result: ", writeResult;
+
+string imgData2 = "imgData2";
+call read_channel_data : "1Hill.png", imgData2;
+
+redIdx = 0;
+imageChannelLength = imgData2.width * imgData2.height;
+println "Width x Height: ", imgData2.width, " ", imgData2.height;
+println "Image channel length: ", imageChannelLength;
+redLength = 0;
+sizeof imgData2.red redLength;
+println "Size of red channel: ", redLength;
+
+while redIdx < imageChannelLength;
+	print imgData2.red[redIdx], ", ";
+	redIdx += 1;
+	
+	if redIdx > 100;
+		break;
+	end;
+end;
+
+println "";
+
+writeResult = 0;
+call write_channel_data : "out.PNG", "imgData2" -> writeResult;
+println "Image write result: ", writeResult;

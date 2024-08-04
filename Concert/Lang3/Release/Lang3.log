@@ -1,5 +1,6 @@
 ﻿  CodeStore.cpp
   HandleStore.cpp
+  lodepng.cpp
   main.cpp
   ObjectStore.cpp
   utf8.cpp
@@ -161,12 +162,18 @@ C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\dateLibrary.h(41,8): warni
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\header.h(36,26): message : see declaration of 'returnVar' (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\dateLibrary.h(91,14): warning C4459: declaration of 'returnVar' hides global declaration (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\header.h(36,26): message : see declaration of 'returnVar' (compiling source file main.cpp)
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(87,40): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(88,44): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(89,44): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(92,7): warning C4459: declaration of 'returnVar' hides global declaration (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(107,41): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(108,45): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(109,45): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(112,8): warning C4459: declaration of 'returnVar' hides global declaration (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\header.h(36,26): message : see declaration of 'returnVar' (compiling source file main.cpp)
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(114,83): warning C4100: 'argumentsSize': unreferenced formal parameter (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(162,41): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(163,45): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(164,45): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(165,45): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(168,8): warning C4459: declaration of 'returnVar' hides global declaration (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\header.h(36,26): message : see declaration of 'returnVar' (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(193,83): warning C4100: 'argumentsSize': unreferenced formal parameter (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\keywordBreak.h(10,31): warning C4459: declaration of 'currentLine' hides global declaration (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\header.h(44,25): message : see declaration of 'currentLine' (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\keywordTry.h(14,29): warning C4459: declaration of 'currentLine' hides global declaration (compiling source file main.cpp)
@@ -210,6 +217,15 @@ C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\stringLibrary.h(281,126): 
               _Elem=wchar_t,
               _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
               _Fn=int (__cdecl *)(int)
+          ] (compiling source file main.cpp)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\algorithm(3074,25): warning C4244: 'argument': conversion from 'wchar_t' to 'unsigned char', possible loss of data (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\imageLibrary.h(34,50): message : see reference to function template instantiation '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,toLowercase::<lambda_1>>(const _InIt,const _InIt,_OutIt,_Fn)' being compiled
+          with
+          [
+              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Elem=wchar_t,
+              _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Fn=toLowercase::<lambda_1>
           ] (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\stb_image.h(972,21): warning C4505: 'stbi_failure_reason': unreferenced function with internal linkage has been removed (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\stb_image.h(1116,14): warning C4505: 'stbi_set_flip_vertically_on_load': unreferenced function with internal linkage has been removed (compiling source file main.cpp)
@@ -260,7 +276,7 @@ C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\ObjectStore.cpp(504): warn
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\ObjectStore.cpp(582): warning C4701: potentially uninitialized local variable 'currVarIndex' used
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\VarStore.cpp(595): warning C4701: potentially uninitialized local variable 'secondQuoteIndex' used
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\VarStore.cpp(678): warning C4701: potentially uninitialized local variable 'currVarIndex' used
-  All 4688 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 4963 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   Lang3.vcxproj -> C:\Users\fooba\Downloads\cc788\concert7\Concert\Release\Lang3.exe
   'pwsh.exe' is not recognized as an internal or external command,

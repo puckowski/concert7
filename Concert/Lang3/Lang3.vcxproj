@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="CodeStore.cpp" />
     <ClCompile Include="HandleStore.cpp" />
+    <ClCompile Include="lodepng.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectStore.cpp" />
     <ClCompile Include="utf8.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="keywordTry.h" />
     <ClInclude Include="keywordUnlock.h" />
     <ClInclude Include="keywordWhile.h" />
+    <ClInclude Include="lodepng.h" />
     <ClInclude Include="longDeclaration.h" />
     <ClInclude Include="mathLibrary.h" />
     <ClInclude Include="mutexFunctions.h" />
