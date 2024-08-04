@@ -10,3 +10,4 @@
 |[regex](https://github.com/puckowski/concert7/blob/master/standard_library/regex_library.md)     |Standard regular expression functions |
 |[thread](https://github.com/puckowski/concert7/blob/master/standard_library/thread_library.md)     |Thread utility functions |
 |[date](https://github.com/puckowski/concert7/blob/master/standard_library/date_library.md)     |Date and time utility functions |
+|[image](https://github.com/puckowski/concert7/blob/master/standard_library/image_library.md)   |Image utility functions         |

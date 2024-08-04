@@ -69,7 +69,9 @@ enum LibraryFunction
 	THREAD_HARDWARE_CONCURRENCY = 64,
 	THREAD_SLEEP = 65,
 	DATE_LOCALTIME = 66,
-	DATE_LOCALTIME_NS = 67
+	DATE_LOCALTIME_NS = 67,
+	IMAGE_READ_CHANNEL_DATA = 68,
+	IMAGE_WRITE_CHANNEL_DATA = 69
 };
 
 std::vector<std::wstring>* stringLibraryFunctions = new std::vector<std::wstring>{ L"substring" , L"find", L"contains", L"length", L"to_int", L"to_double", L"char_at", L"wchar_at", L"char_to_string", L"wchar_to_string",
@@ -82,6 +84,7 @@ std::vector<std::wstring>* mathLibraryFunctions = new std::vector<std::wstring>{
 std::vector<std::wstring>* regexLibraryFunctions = new std::vector<std::wstring>{ L"regex_search", L"regex_match", L"regex_replace" };
 std::vector<std::wstring>* threadLibraryFunctions = new std::vector<std::wstring>{ L"get_thread_id", L"hardware_concurrency", L"sleep" };
 std::vector<std::wstring>* dateLibraryFunctions = new std::vector<std::wstring>{ L"localtime", L"localtime_ns" };
+std::vector<std::wstring>* imageLibraryFunctions = new std::vector<std::wstring>{ L"read_channel_data", L"write_channel_data" };
 
 thread_local const std::map<const std::wstring, std::vector<std::wstring>*> LIBRARY_IMPORT_MAP =
 {
@@ -90,7 +93,8 @@ thread_local const std::map<const std::wstring, std::vector<std::wstring>*> LIBR
 	{ L"math", mathLibraryFunctions },
 	{ L"regex", regexLibraryFunctions },
 	{ L"thread", threadLibraryFunctions },
-	{ L"date", dateLibraryFunctions }
+	{ L"date", dateLibraryFunctions },
+	{ L"image", imageLibraryFunctions }
 };
 
 const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
@@ -152,11 +156,13 @@ const std::map<const std::wstring, const LibraryFunction> LIBRARY_FUNCTION_MAP =
 	{ L"tan", MATH_TAN },
 	{ L"get_pi", MATH_GET_PI },
 	{ L"set_precision", MATH_SET_PRECISION },
-	{ L"exp", MATH_EXP }, 
+	{ L"exp", MATH_EXP },
 	{ L"hardware_concurrency", THREAD_HARDWARE_CONCURRENCY },
 	{ L"sleep", THREAD_SLEEP },
 	{ L"localtime", DATE_LOCALTIME },
-	{ L"localtime_ns", DATE_LOCALTIME_NS }
+	{ L"localtime_ns", DATE_LOCALTIME_NS },
+	{ L"read_channel_data", IMAGE_READ_CHANNEL_DATA },
+	{ L"write_channel_data", IMAGE_WRITE_CHANNEL_DATA }
 };
 const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const LibraryFunction>>>> LIBRARY_FUNCTION_MAP_END = LIBRARY_FUNCTION_MAP.end();
 

@@ -16,8 +16,9 @@
 #include "regexLibrary.h"
 #include "threadLibrary.h"
 #include "dateLibrary.h"
+#include "imageLibrary.h"
 
-void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens)
+void executeKeywordCall(const int& tokensSize, std::vector<std::wstring>& tokens)
 {
 	int currentLineCopy = currentLine;
 
@@ -47,7 +48,7 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 		for (int i = 2; i < tokensSize; ++i)
 		{
-			if (tokens[i] == L"->") 
+			if (tokens[i] == L"->")
 			{
 				hasReturn = true;
 
@@ -314,7 +315,7 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
-		case FILE_CREATE_DIRECTORY: 
+		case FILE_CREATE_DIRECTORY:
 		{
 			libraryCreateDirectory(tokens, tokensSize);
 
@@ -344,7 +345,7 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
-		case REGEX_MATCH: 
+		case REGEX_MATCH:
 		{
 			libraryRegexMatch(tokens, tokensSize);
 
@@ -422,13 +423,13 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
-		case MATH_SET_PRECISION: 
+		case MATH_SET_PRECISION:
 		{
 			libraryMathSetPrecision(tokens, tokensSize);
 
 			break;
 		}
-		case MATH_EXP: 
+		case MATH_EXP:
 		{
 			libraryMathExp(tokens, tokensSize);
 
@@ -443,7 +444,7 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 		case THREAD_SLEEP:
 		{
 			libraryThreadSleep(tokens, tokensSize);
-			
+
 			break;
 		}
 		case DATE_LOCALTIME:
@@ -452,9 +453,21 @@ void executeKeywordCall(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			break;
 		}
-		case DATE_LOCALTIME_NS: 
+		case DATE_LOCALTIME_NS:
 		{
 			libraryDateLocaltimeNs(tokens, tokensSize);
+
+			break;
+		}
+		case IMAGE_READ_CHANNEL_DATA:
+		{
+			libraryImageReadChannelData(tokens, tokensSize);
+
+			break;
+		}
+		case IMAGE_WRITE_CHANNEL_DATA:
+		{
+			libraryImageWriteChannelData(tokens, tokensSize);
 
 			break;
 		}

@@ -4,6 +4,7 @@ import io;
 import regex;
 import thread;
 import date;
+import image;
 
 int count = 0;
 mutex m;
@@ -534,3 +535,30 @@ timeFormatted = "";
 call localtime_ns : "%Y-%m-%d %H:%M:%S" -> timeFormatted;
 
 println timeFormatted;
+
+string imgData1 = "imgData1";
+call read_channel_data : "1Hill.JPG", imgData1;
+
+int redIdx = 0;
+int imageChannelLength = imgData1.width * imgData1.height;
+println "Width x Height: ", imgData1.width, " ", imgData1.height;
+println "Image channel length: ", imageChannelLength;
+int redLength = 0;
+sizeof imgData1.red redLength;
+println "Size of red channel: ", redLength;
+
+while redIdx < imageChannelLength;
+	print imgData1.red[redIdx], ", ";
+	redIdx += 1;
+	
+	if redIdx > 100;
+		break;
+	end;
+end;
+
+println "";
+
+int writeResult = 0;
+int outputQuality = 90;
+call write_channel_data : "out.JPG", "imgData1", outputQuality -> writeResult;
+println "Image write result: ", writeResult;

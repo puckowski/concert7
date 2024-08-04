@@ -122,6 +122,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -146,6 +147,7 @@
     <ClInclude Include="fileLibrary.h" />
     <ClInclude Include="HandleStore.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="imageLibrary.h" />
     <ClInclude Include="intDeclaration.h" />
     <ClInclude Include="interpreter.h" />
     <ClInclude Include="keywordAlias.h" />
@@ -186,6 +188,8 @@
     <ClInclude Include="reservedWord.h" />
     <ClInclude Include="sourceFunctions.h" />
     <ClInclude Include="standardLibrary.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="stb_image_write.h" />
     <ClInclude Include="stringDeclaration.h" />
     <ClInclude Include="stringFunctions.h" />
     <ClInclude Include="stringLibrary.h" />
