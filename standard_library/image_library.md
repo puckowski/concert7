@@ -7,7 +7,7 @@ Provides standard image functions.
 | Version              | Extensions (Ignoring case) |
 |:---------------------|:---------------------------|
 | 9.5.beta             | .jpg, .jpeg                |
-| 9.5.rc               | .jpeg, .jpeg, .png         |
+| 9.5.rc               | .jpg, .jpeg, .png         |
 
 ## Import
 
@@ -19,14 +19,17 @@ import image;
 
 ## Functions
 
-| Name                 | Description                                                                         |
-|:---------------------|:------------------------------------------------------------------------------------|
-| read_channel_data    | Read RGB channel data, width, and height from a JPEG image into an object.          |
-| write_channel_data   | Write RGB channel data with optional quality using data from an object into a JPEG. |
+| Name                 | Description                                                                            |
+|:---------------------|:---------------------------------------------------------------------------------------|
+| read_channel_data    | Read (A)RGB channel data, width, and height from a JPEG image into an object.          |
+| write_channel_data   | Write (A)RGB channel data with optional quality using data from an object into a JPEG. |
 
 ## Examples
 
 ### read_channel_data
+
+Creates an object with ```width``` int, ```height``` int, ```red``` int array, ```green``` int array, ```blue``` int array, and ```alpha``` int array.
+The ```alpha``` int array is only defined when reading images with extension ```.png```.
 
 ```cpp
 string imgData1 = "imgData1";
