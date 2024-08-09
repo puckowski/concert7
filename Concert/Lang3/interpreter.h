@@ -339,6 +339,27 @@ void exec(int &line, bool detached, CodeStore* myCodeStore, WorkspaceStore* myWo
 		{
 			execLoop(tokens);
 		}
+		catch (const std::exception& exc) 
+		{
+			if (debugEnabled == true)
+			{
+				std::cout << std::endl;
+				std::cout << "exception occurred: " << exc.what() << std::endl;
+				std::cout << "current line: " << (currentLine + 1) << std::endl;
+				for (std::wstring tok : tokens)
+				{
+					std::wcout << tok << " ";
+				}
+				std::cout << std::endl;
+				std::cout << "current thread id: " << std::this_thread::get_id() << std::endl;
+				std::cout << "main thread id: " << mainThreadId << std::endl;
+				std::cout << "call stack: " << std::endl;
+				for (auto it = callNameStack.rbegin(); it != callNameStack.rend(); ++it)
+				{
+					std::wcout << *it << std::endl;
+				}
+			}
+		}
 		catch (...)
 		{
 			if (debugEnabled == true)
@@ -370,6 +391,7 @@ void exec(int &line, bool detached, CodeStore* myCodeStore, WorkspaceStore* myWo
 	{
 		delete myCodeStore;
 		delete myWorkspaceStore;
+		threadCount--;
 	}
 }
 

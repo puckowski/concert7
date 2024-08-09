@@ -26,15 +26,13 @@ void executeKeywordDetach(const int &tokensSize, std::vector<std::wstring> &toke
 
 	Var* v = nullptr;
 	int r1;
-	bool createdV = false;
 
-	for (int i = 2; i < tokensSize2; ++i)
+	for (int i = 2, tI = 2; i < tokensSize2; ++i, ++tI)
 	{
 		if (tokens2[i] == L"using")
 		{
 			i++;
-
-			Var* var = getVar(tokens[i - 1], r1);
+			Var* var = getVar(tokens[tI], r1);
 
 			ws->getStore()->addVar(var);
 			var->reassignCount++;
@@ -43,41 +41,27 @@ void executeKeywordDetach(const int &tokensSize, std::vector<std::wstring> &toke
 		}
 		else
 		{
-			auto type = RESERVED_WORD_IDENTIFIER_MAP.find(tokens[i]);
-
-			if (type != RESERVED_WORD_IDENTIFIER_MAP.end())
-			{
-				v = getVarFromLastWorkspace(callStack.front(), type->second, r1, createdV);
-			}
-			else
-			{
-				v = getVarFromLastWorkspace(callStack.front(), r1, createdV);
-			}
+			v = gWorkspaceStore->getStore()->getVar(callStack.front(), r1);		
 
 			callStack.erase(callStack.begin());
 
-			if (tokens[i + 2] == L"&")
+			if (tokens[tI] == L"&")
 			{
 				i += 3;
 
-				gWorkspaceStore->getStore()->addVarAliasWithPointer(v, r1, tokens[i]);
+				gWorkspaceStore->getStore()->addVarAliasWithPointer(v, r1, tokens[tI]);
 			}
 			else
 			{
 				i += 2;
 
-				ws->getStore()->addVar(tokens[i], v->type, v->size);
-				Var* v2 = ws->getStore()->getVar(tokens[i], r1);
+				ws->getStore()->addVar(tokens[tI], v->type, v->size);
+				Var* v2 = ws->getStore()->getVar(tokens[tI], r1);
 
 				for (int n = 0; n < v->size; ++n)
 				{
 					execAssignOperator(v2, n, v, n);
 				}
-			}
-
-			if (createdV)
-			{
-				delete v;
 			}
 		}
 	}
@@ -85,6 +69,7 @@ void executeKeywordDetach(const int &tokensSize, std::vector<std::wstring> &toke
 	bool b = true;
 	int linetmp = 0;
 	std::thread t(exec, std::ref(linetmp), b, newCodeStore, ws, 0, 0);
+	threadCount++;
 	t.detach();
 }
 

@@ -31,6 +31,7 @@ thread_local int tryBlockCount;
 thread_local bool createStruct;
 thread_local std::unordered_map<std::wstring, int> mStructMap;
 
+int threadCount;
 std::mutex callNameMutex;
 std::vector<std::wstring> callNameStack;
 bool debugEnabled;
@@ -58,6 +59,7 @@ int main(int argc, char *argv[])
 	}
 
 	mainThreadId = std::this_thread::get_id();
+	threadCount = 1;
 
 	codeStore = new CodeStore();
 

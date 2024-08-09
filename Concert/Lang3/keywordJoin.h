@@ -28,12 +28,12 @@ void executeKeywordJoin(const int &tokensSize, std::vector<std::wstring> &tokens
 	int r1;
 	bool createdV = false;
 
-	for (int i = 2; i < tokensSize2; ++i)
+	for (int i = 2, tI = 2; i < tokensSize2; ++i, ++tI)
 	{
 		if (tokens2[i] == L"using") 
 		{
 			i++;
-			Var* var = getVar(tokens[i - 1], r1); 
+			Var* var = getVar(tokens[tI], r1); 
 
 			ws->getStore()->addVar(var);
 			var->reassignCount++;
@@ -42,7 +42,7 @@ void executeKeywordJoin(const int &tokensSize, std::vector<std::wstring> &tokens
 		}
 		else
 		{
-			auto type = RESERVED_WORD_IDENTIFIER_MAP.find(tokens[i]);
+			auto type = RESERVED_WORD_IDENTIFIER_MAP.find(tokens[tI]);
 
 			if (type != RESERVED_WORD_IDENTIFIER_MAP.end())
 			{
@@ -55,18 +55,18 @@ void executeKeywordJoin(const int &tokensSize, std::vector<std::wstring> &tokens
 
 			callStack.erase(callStack.begin());
 
-			if (tokens[i + 2] == L"&")
+			if (tokens[tI] == L"&")
 			{
 				i += 3;
 
-				gWorkspaceStore->getStore()->addVarAliasWithPointer(v, r1, tokens[i]);
+				gWorkspaceStore->getStore()->addVarAliasWithPointer(v, r1, tokens[tI]);
 			}
 			else
 			{
 				i += 2;
 
-				ws->getStore()->addVar(tokens[i], v->type, v->size);
-				Var* v2 = ws->getStore()->getVar(tokens[i], r1);
+				ws->getStore()->addVar(tokens[tI], v->type, v->size);
+				Var* v2 = ws->getStore()->getVar(tokens[tI], r1);
 
 				for (int n = 0; n < v->size; ++n)
 				{
@@ -83,8 +83,15 @@ void executeKeywordJoin(const int &tokensSize, std::vector<std::wstring> &tokens
 
 	bool b = true;
 	int linetmp = 0;
+	const int startThreadCount = threadCount;
+	threadCount++;
 	std::thread t(exec, std::ref(linetmp), b, newCodeStore, ws, 0, 0);
 	t.join();
+
+	while (startThreadCount < threadCount)
+	{
+		std::this_thread::yield();
+	}
 }
 
 #endif
