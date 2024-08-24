@@ -91,6 +91,10 @@ call adler32 : WELCOME, welcomeLength -> hash;
 
 [Thread library](standard_library/thread_library.md)
 
+[Date library](standard_library/date_library.md)
+
+[Image library](standard_library/image_library.md)
+
 ## Examples
 
 [Code examples](code_examples.md)
