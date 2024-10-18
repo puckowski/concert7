@@ -16,6 +16,7 @@ void executeKeywordReturn(const int &tokensSize, std::vector<std::wstring> &toke
 		if (returnVar != nullptr)
 		{
 			delete returnVar;
+			returnVar = nullptr;
 		}
 
 		Var* v = getVar(tokens[1], returnVarInt, createdRetVar);

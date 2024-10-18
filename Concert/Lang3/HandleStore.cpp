@@ -15,6 +15,7 @@ ConcertHandleEnvironment::HandleStore::~HandleStore()
 		if (handleEntry.second != nullptr)
 		{
 			delete handleEntry.second;
+			handleEntry.second = nullptr;
 		}
 	}
 
@@ -23,6 +24,7 @@ ConcertHandleEnvironment::HandleStore::~HandleStore()
 		if (handleEntry.second != nullptr)
 		{
 			delete handleEntry.second;
+			handleEntry.second = nullptr;
 		}
 	}
 }
@@ -33,6 +35,7 @@ void ConcertHandleEnvironment::HandleStore::clearStore() {
 		if (handleEntry.second != nullptr)
 		{
 			delete handleEntry.second;
+			handleEntry.second = nullptr;
 		}
 	}
 
@@ -41,6 +44,7 @@ void ConcertHandleEnvironment::HandleStore::clearStore() {
 		if (handleEntry.second != nullptr)
 		{
 			delete handleEntry.second;
+			handleEntry.second = nullptr;
 		}
 	}
 }
@@ -119,6 +123,7 @@ void ConcertHandleEnvironment::HandleStore::openFile(const std::wstring& name, i
 		it->second->close();
 		mHandleMap.erase(it->first);
 		delete it->second;
+		it->second = nullptr;
 	}
 
 	mHandleMap.insert({ name, fileStream });
@@ -148,6 +153,7 @@ void ConcertHandleEnvironment::HandleStore::openByteFile(const std::wstring& nam
 		it->second->close();
 		mByteHandleMap.erase(it->first);
 		delete it->second;
+		it->second = nullptr;
 	}
 
 	mByteHandleMap.insert({ name, fileStream });
@@ -168,6 +174,7 @@ void ConcertHandleEnvironment::HandleStore::closeFile(const std::wstring &name)
 			byteFileStream->close();
 			mByteHandleMap.erase(name);
 			delete byteFileStream;
+			byteFileStream = nullptr;
 		}
 	}
 	else
@@ -177,6 +184,7 @@ void ConcertHandleEnvironment::HandleStore::closeFile(const std::wstring &name)
 		fileStream->close();
 		mHandleMap.erase(name);
 		delete fileStream;
+		fileStream = nullptr;
 	}
 }
 
@@ -276,6 +284,7 @@ int ConcertHandleEnvironment::HandleStore::removeFile(const std::wstring &name)
 		handle->close();
 		mHandleMap.erase(name);
 		delete handle;
+		handle = nullptr;
 	}
 	else
 	{
@@ -286,6 +295,7 @@ int ConcertHandleEnvironment::HandleStore::removeFile(const std::wstring &name)
 			byteHandle->close();
 			mByteHandleMap.erase(name);
 			delete byteHandle;
+			byteHandle = nullptr;
 		}
 	}
 

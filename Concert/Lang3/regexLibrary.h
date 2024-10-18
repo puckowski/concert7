@@ -37,14 +37,17 @@ void libraryRegexReplace(std::vector<std::wstring>& arguments, const int& argume
 
 	if (createdVar) {
 		delete v;
+		v = nullptr;
 	}
 
 	if (createdVar2) {
 		delete v2;
+		v2 = nullptr;
 	}
 
 	if (createdVar3) {
 		delete v3;
+		v3 = nullptr;
 	}
 }
 
@@ -76,10 +79,12 @@ void libraryRegexMatch(std::vector<std::wstring>& arguments, const int& argument
 
 	if (createdVar) {
 		delete v;
+		v = nullptr;
 	}
 
 	if (createdVar2) {
 		delete v2;
+		v2 = nullptr;
 	}
 }
 
@@ -140,14 +145,17 @@ void libraryRegexSearch(std::vector<std::wstring>& arguments, const int& argumen
 
 	if (createdVar) {
 		delete v;
+		v = nullptr;
 	}
 
 	if (createdVar2) {
 		delete v2;
+		v2 = nullptr;
 	}
 
 	if (createdVar3) {
 		delete v3;
+		v3 = nullptr;
 	}
 }
 

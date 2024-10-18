@@ -14,6 +14,7 @@ WorkspaceStore::~WorkspaceStore()
 		const VarStore* vs = it->second;
 		it = mVars.erase(it);
 		delete vs;
+		vs = nullptr;
 	}
 }
 
@@ -75,6 +76,7 @@ void WorkspaceStore::removeStore()
 	VarStore* vs = getStore(workspaceStack.back());
 	mVars.erase(workspaceStack.back());
 	delete vs;
+	vs = nullptr;
 }
 
 void WorkspaceStore::removeStore(const std::wstring &name)

@@ -22,6 +22,7 @@ void executeKeywordDelete(std::vector<std::wstring> &tokens)
 	if (created)
 	{
 		delete varName;
+		varName = nullptr;
 	}
 }
 

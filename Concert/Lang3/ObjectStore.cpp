@@ -27,6 +27,7 @@ ObjectStore::~ObjectStore()
 		Var* v = it->second;
 		it = mVars.erase(it);
 		delete v;
+		v = nullptr;
 	}
 }
 
@@ -51,6 +52,7 @@ void ObjectStore::addVar(const std::wstring& name, const ReservedWord& type)
 	if (it != mVars.end())
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = new Var(name, type);
 	}
 	else
@@ -66,6 +68,7 @@ void ObjectStore::addVar(Var* var)
 	if (it != mVars.end())
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = var;
 	}
 	else
@@ -88,6 +91,7 @@ int ObjectStore::removeVar(const std::wstring& name)
 	if (v != nullptr)
 	{
 		delete v;
+		v = nullptr;
 
 		return mVars.erase(name);
 	}
@@ -103,6 +107,7 @@ void ObjectStore::addVar(const std::wstring name, const ReservedWord type, const
 	if (it != mVars.end())
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = v;
 	}
 	else
@@ -119,6 +124,7 @@ Var* ObjectStore::addVarWithReference(const std::wstring name, const ReservedWor
 	if (it != mVars.end())
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = v;
 	}
 	else

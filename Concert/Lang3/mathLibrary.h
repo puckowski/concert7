@@ -37,8 +37,10 @@ void libraryMathIntToDouble(std::vector<std::wstring> &arguments, const int &arg
 
 	returnData[returnVarInt] = pstr[r1];
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathAbsoluteValue(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -84,8 +86,10 @@ void libraryMathAbsoluteValue(std::vector<std::wstring>& arguments, const int& a
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathExp(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -131,8 +135,10 @@ void libraryMathExp(std::vector<std::wstring>& arguments, const int& argumentsSi
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathPi(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -156,6 +162,7 @@ void libraryMathSetPrecision(std::vector<std::wstring>& arguments, const int& ar
 
 	if (createdVar) {
 		delete v;
+		v = nullptr;
 	}
 }
 
@@ -202,8 +209,10 @@ void libraryMathCeil(std::vector<std::wstring>& arguments, const int& argumentsS
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathFloor(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -249,8 +258,10 @@ void libraryMathFloor(std::vector<std::wstring>& arguments, const int& arguments
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathRound(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -296,8 +307,10 @@ void libraryMathRound(std::vector<std::wstring>& arguments, const int& arguments
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathSin(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -343,8 +356,10 @@ void libraryMathSin(std::vector<std::wstring>& arguments, const int& argumentsSi
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathCos(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -390,8 +405,10 @@ void libraryMathCos(std::vector<std::wstring>& arguments, const int& argumentsSi
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathTan(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -437,8 +454,10 @@ void libraryMathTan(std::vector<std::wstring>& arguments, const int& argumentsSi
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathLog10(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -484,8 +503,10 @@ void libraryMathLog10(std::vector<std::wstring>& arguments, const int& arguments
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathSqrt(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -531,8 +552,10 @@ void libraryMathSqrt(std::vector<std::wstring>& arguments, const int& argumentsS
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathLongToDouble(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -548,8 +571,10 @@ void libraryMathLongToDouble(std::vector<std::wstring> &arguments, const int &ar
 
 	returnData[returnVarInt] = pstr[r1];
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathIntToLong(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -567,8 +592,10 @@ void libraryMathIntToLong(std::vector<std::wstring> &arguments, const int &argum
 
 	returnData[returnVarInt] = ii;// pstr[r1];
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathLongToInt(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -584,8 +611,10 @@ void libraryMathLongToInt(std::vector<std::wstring> &arguments, const int &argum
 
 	returnData[returnVarInt] = pstr[r1];
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 void libraryMathDoubleToInt(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -601,8 +630,10 @@ void libraryMathDoubleToInt(std::vector<std::wstring> &arguments, const int &arg
 
 	returnData[returnVarInt] = pstr[r1];
 
-	if (createdDouble)
+	if (createdDouble) {
 		delete doubleVar;
+		doubleVar = nullptr;
+	}
 }
 
 void libraryMathDoubleToLong(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -618,8 +649,10 @@ void libraryMathDoubleToLong(std::vector<std::wstring> &arguments, const int &ar
 
 	returnData[returnVarInt] = pstr[r1];
 
-	if (createdDouble)
+	if (createdDouble) {
 		delete doubleVar;
+		doubleVar = nullptr;
+	}
 }
 
 #endif

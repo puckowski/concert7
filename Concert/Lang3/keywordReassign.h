@@ -36,11 +36,15 @@ void executeKeywordReassign(std::vector<std::wstring>& tokens)
 		nameVar->reassignTargetCount++;
 	}
 
-	if (createdVar)
+	if (createdVar) {
 		delete toReassignVar;
+		toReassignVar = nullptr;
+	}
 
-	if (createdVar2)
+	if (createdVar2) {
 		delete nameVar;
+		nameVar = nullptr;
+	}
 }
 
 #endif

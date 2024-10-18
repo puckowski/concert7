@@ -748,11 +748,13 @@ bool execPlusOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wstr
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -834,11 +836,13 @@ bool execMinusOperator(ReservedWord& assignmentType, std::wstring& lhs, std::wst
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -900,11 +904,13 @@ bool execLeftShiftOperator(ReservedWord& assignmentType, std::wstring& lhs, std:
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -966,11 +972,13 @@ bool execRightShiftOperator(ReservedWord& assignmentType, std::wstring& lhs, std
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1052,11 +1060,13 @@ bool execMultiplyOperator(ReservedWord& assignmentType, std::wstring& lhs, std::
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1138,11 +1148,13 @@ bool execDivideOperator(ReservedWord& assignmentType, std::wstring& lhs, std::ws
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1204,11 +1216,13 @@ bool execModuloOperator(ReservedWord& assignmentType, std::wstring& lhs, std::ws
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1271,11 +1285,13 @@ bool execXorOperator(ReservedWord& assignmentType, std::wstring& l, std::wstring
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1344,11 +1360,13 @@ bool execUnsignedRightShiftOperator(ReservedWord& assignmentType, std::wstring& 
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1413,11 +1431,13 @@ bool execBitwiseComplementOperator(ReservedWord& assignmentType, std::wstring& l
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1480,11 +1500,13 @@ bool execAndOperator(ReservedWord& assignmentType, std::wstring& l, std::wstring
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1547,11 +1569,13 @@ bool execOrOperator(ReservedWord& assignmentType, std::wstring& l, std::wstring 
 	if (createdLhs == true)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 
 	return false;
@@ -1811,6 +1835,7 @@ void execAssignOperator(Var* lhsVar, int& r1, Var* rhsVar, int& r2)
 		for (int i = 0; i < lhsVar->size; ++i)
 		{
 			delete objStore1[i];
+			objStore1[i] = nullptr;
 		}
 
 		ObjectStore** objStore = new ObjectStore * [rhsVar->size];
@@ -1900,6 +1925,7 @@ void execAssignOperator(Var* lhsVar, Var* rhsVar)
 		for (int i = 0; i < lhsVar->size; ++i)
 		{
 			delete objStore1[i];
+			objStore1[i] = nullptr;
 		}
 
 		ObjectStore** objStore = new ObjectStore * [rhsVar->size];
@@ -2105,6 +2131,7 @@ void execAssignOperator(const std::wstring& lhs, int r1, const std::wstring& rhs
 	if (created == true)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 }
 

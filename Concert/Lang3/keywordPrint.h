@@ -56,8 +56,10 @@ void executeKeywordPrint(const int &tokensSize, std::vector<std::wstring> &token
 		}
 		}
 
-		if (created == true)
+		if (created == true) {
 			delete v;
+			v = nullptr;
+		}
 	}
 }
 

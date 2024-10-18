@@ -53,6 +53,7 @@ VarStore::~VarStore()
 			Var* v = it->second;
 			it = mVars.erase(it);
 			delete v;
+			v = nullptr;
 		}
 		else if (it->second->reassignCount > 0)
 		{
@@ -70,6 +71,7 @@ VarStore::~VarStore()
 			Var* v = it->second;
 			it = mVars.erase(it);
 			delete v;
+			v = nullptr;
 		}
 	}
 }
@@ -87,6 +89,7 @@ void VarStore::addVar(const std::wstring &name, const ReservedWord &type)
 	if (it != mVars.end())
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = new Var(name, type);
 	}
 	else
@@ -102,6 +105,7 @@ void VarStore::addVar(Var* var)
 	if (it != mVars.end()) 
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = var;
 	}
 	else
@@ -123,6 +127,7 @@ int VarStore::removeVar(const std::wstring &name)
 	if (v != nullptr)
 	{
 		delete v;
+		v = nullptr;
 
 		return mVars.erase(name);
 	}
@@ -138,6 +143,7 @@ void VarStore::addVar(const std::wstring name, const ReservedWord type, const in
 	if (it != mVars.end())
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = v;
 	}
 	else
@@ -155,6 +161,7 @@ void VarStore::addVarAlias(const std::wstring toAliasName, const std::wstring al
 	if (it != mVars.end())
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = v;
 	}
 	else
@@ -171,6 +178,7 @@ void VarStore::addVarAliasWithPointer(Var* toAliasVar, int &varIndex, const std:
 	if (it != mVars.end()) 
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = v;
 	}
 	else 
@@ -208,6 +216,7 @@ Var* VarStore::addVarWithReference(const std::wstring name, const ReservedWord t
 	if (it != mVars.end()) 
 	{
 		delete it->second;
+		it->second = nullptr;
 		it->second = v;
 	}
 	else {

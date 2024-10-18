@@ -23,11 +23,15 @@ void libraryStringCharAt(std::vector<std::wstring> &arguments, const int &argume
 	char c = pstr[r1][indexData[0]];
 	returnData[returnVarInt] = std::wstring(1, c);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 
-	if (createdIndex)
+	if (createdIndex) {
 		delete indexVar;
+		indexVar = nullptr;
+	}
 }
 
 void libraryStringWcharAt(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -46,11 +50,15 @@ void libraryStringWcharAt(std::vector<std::wstring>& arguments, const int& argum
 	wchar_t c = pstr[r1][indexData[0]];
 	returnData[returnVarInt] = std::wstring(1, c);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 
-	if (createdIndex)
+	if (createdIndex) {
 		delete indexVar;
+		indexVar = nullptr;
+	}
 }
 
 void libraryWcharToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -71,8 +79,10 @@ void libraryWcharToString(std::vector<std::wstring> &arguments, const int &argum
 
 	returnData[returnVarInt] = resultStr;
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryCharToString(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -88,8 +98,10 @@ void libraryCharToString(std::vector<std::wstring>& arguments, const int& argume
 
 	returnData[returnVarInt] = std::wstring(1, pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryIntToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -105,8 +117,10 @@ void libraryIntToString(std::vector<std::wstring> &arguments, const int &argumen
 
 	returnData[returnVarInt] = std::to_wstring(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryDoubleToString(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -122,8 +136,10 @@ void libraryDoubleToString(std::vector<std::wstring> &arguments, const int &argu
 
 	returnData[returnVarInt] = std::to_wstring(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryStringToDouble(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -139,8 +155,10 @@ void libraryStringToDouble(std::vector<std::wstring> &arguments, const int &argu
 
 	returnData[returnVarInt] = std::stod(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryWcharToInt(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -156,8 +174,10 @@ void libraryWcharToInt(std::vector<std::wstring>& arguments, const int& argument
 
 	returnData[returnVarInt] = pstr[r1][0];
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryStringToInt(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -173,8 +193,10 @@ void libraryStringToInt(std::vector<std::wstring> &arguments, const int &argumen
 
 	returnData[returnVarInt] = std::stoi(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryStringLength(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -190,8 +212,10 @@ void libraryStringLength(std::vector<std::wstring> &arguments, const int &argume
 
 	returnData[returnVarInt] = pstr[r1].length();
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryStringContains(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -209,11 +233,15 @@ void libraryStringContains(std::vector<std::wstring> &arguments, const int &argu
 
 	returnData[returnVarInt] = (pstr[r1].find(substrData[r2]) != std::wstring::npos);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 
-	if (createdSubstr)
+	if (createdSubstr) {
 		delete substrVar;
+		substrVar = nullptr;
+	}
 }
 
 void libraryStringIndexOf(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -231,11 +259,15 @@ void libraryStringIndexOf(std::vector<std::wstring> &arguments, const int &argum
 
 	returnData[returnVarInt] = pstr[r1].find(indexData[r2]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 
-	if (createdIndex)
+	if (createdIndex) {
 		delete indexVar;
+		indexVar = nullptr;
+	}
 }
 
 void libraryStringSubstring(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -255,14 +287,20 @@ void libraryStringSubstring(std::vector<std::wstring> &arguments, const int &arg
 
 	returnData[returnVarInt] = pstr[r1].substr(startIndexData[r2], stopIndexData[r3]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 
-	if (createdStartIndex)
+	if (createdStartIndex) {
 		delete startIndexVar;
+		startIndexVar = nullptr;
+	}
 
-	if (createdStopIndex)
+	if (createdStopIndex) {
 		delete stopIndexVar;
+		stopIndexVar = nullptr;
+	}
 }
 
 void libraryStringLowerCase(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -280,8 +318,10 @@ void libraryStringLowerCase(std::vector<std::wstring> &arguments, const int &arg
 
 	std::transform(returnData[returnVarInt].begin(), returnData[returnVarInt].end(), returnData[returnVarInt].begin(), ::tolower);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryStringUpperCase(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -299,8 +339,10 @@ void libraryStringUpperCase(std::vector<std::wstring> &arguments, const int &arg
 
 	std::transform(returnData[returnVarInt].begin(), returnData[returnVarInt].end(), returnData[returnVarInt].begin(), ::toupper);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 #endif

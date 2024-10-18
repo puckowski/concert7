@@ -21,8 +21,10 @@ void executeKeywordAlias(std::vector<std::wstring>& tokens)
 	VarStore* vs = gWorkspaceStore->getStore();
 	vs->addVarAlias(toAliasName, aliasName);
 
-	if (createdVar2)
+	if (createdVar2) {
 		delete nameVar;
+		nameVar = nullptr;
+	}
 }
 
 #endif

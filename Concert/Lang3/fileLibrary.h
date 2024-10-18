@@ -25,6 +25,7 @@ void libraryGetFileSize(std::vector<std::wstring> &arguments, const int &argumen
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 }
 
@@ -44,6 +45,7 @@ void libraryIsFileExist(std::vector<std::wstring> &arguments, const int &argumen
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 }
 
@@ -60,6 +62,7 @@ void libraryCreateFile(std::vector<std::wstring> &arguments, const int &argument
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 }
 
@@ -79,6 +82,7 @@ void libraryOpenFile(std::vector<std::wstring> &arguments, const int &argumentsS
 		if (createdString) 
 		{
 			delete stringVar;
+			stringVar = nullptr;
 		}
 	}
 	else //if (argumentsSize == 4)
@@ -99,11 +103,13 @@ void libraryOpenFile(std::vector<std::wstring> &arguments, const int &argumentsS
 		if (createdString)
 		{
 			delete stringVar;
+			stringVar = nullptr;
 		}
 
 		if (createdOpenFlag)
 		{
 			delete openFlagVar;
+			openFlagVar = nullptr;
 		}
 	}
 }
@@ -124,6 +130,7 @@ void libraryOpenByteFile(std::vector<std::wstring>& arguments, const int& argume
 		if (createdString)
 		{
 			delete stringVar;
+			stringVar = nullptr;
 		}
 	}
 	else //if (argumentsSize == 4)
@@ -144,11 +151,13 @@ void libraryOpenByteFile(std::vector<std::wstring>& arguments, const int& argume
 		if (createdString)
 		{
 			delete stringVar;
+			stringVar = nullptr;
 		}
 
 		if (createdOpenFlag)
 		{
 			delete openFlagVar;
+			openFlagVar = nullptr;
 		}
 	}
 }
@@ -170,6 +179,7 @@ void libraryCreateDirectory(std::vector<std::wstring> &arguments, const int &arg
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 }
 
@@ -186,6 +196,7 @@ void libraryCloseFile(std::vector<std::wstring> &arguments, const int &arguments
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 }
 
@@ -202,6 +213,7 @@ void libraryRemoveFile(std::vector<std::wstring> &arguments, const int &argument
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 }
 
@@ -223,11 +235,13 @@ void libraryRenameFile(std::vector<std::wstring> &arguments, const int &argument
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 
 	if (createdNewName)
 	{
 		delete newNameVar;
+		newNameVar = nullptr;
 	}
 }
 
@@ -249,11 +263,13 @@ void libraryWriteString(std::vector<std::wstring> &arguments, const int &argumen
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 
 	if (createdStringText)
 	{
 		delete stringVarText;
+		stringVarText = nullptr;
 	}
 }
 
@@ -273,6 +289,7 @@ void libraryGetLine(std::vector<std::wstring> &arguments, const int &argumentsSi
 	if (createdString)
 	{
 		delete stringVar;
+		stringVar = nullptr;
 	}
 }
 
@@ -289,8 +306,10 @@ void libraryIsOpen(std::vector<std::wstring> &arguments, const int &argumentsSiz
 
 	returnData[returnVarInt] = gHandleStore.isOpen(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryIsAtEndOfFile(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -306,8 +325,10 @@ void libraryIsAtEndOfFile(std::vector<std::wstring> &arguments, const int &argum
 
 	returnData[returnVarInt] = gHandleStore.isAtEndOfFile(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void librarySeek(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -325,11 +346,15 @@ void librarySeek(std::vector<std::wstring> &arguments, const int &argumentsSize)
 
 	gHandleStore.seekg(pstr[r1], seekData[r2]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 
-	if (createdSeek)
+	if (createdSeek) {
 		delete seekVar;
+		seekVar = nullptr;
+	}
 }
 
 void libraryRead(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -345,8 +370,10 @@ void libraryRead(std::vector<std::wstring> &arguments, const int &argumentsSize)
 
 	returnData[returnVarInt] = gHandleStore.read(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryWriteByte(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -365,11 +392,15 @@ void libraryWriteByte(std::vector<std::wstring> &arguments, const int &arguments
 	char data = writeData[0];
 	gHandleStore.writeByte(pstr[r1], data);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 
-	if (createdWrite)
+	if (createdWrite) {
 		delete writeVar;
+		writeVar = nullptr;
+	}
 }
 
 void libraryReadByte(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -385,8 +416,10 @@ void libraryReadByte(std::vector<std::wstring>& arguments, const int& argumentsS
 
 	returnData[returnVarInt] = gHandleStore.readByte(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 void libraryWrite(std::vector<std::wstring>& arguments, const int& argumentsSize)
@@ -405,11 +438,15 @@ void libraryWrite(std::vector<std::wstring>& arguments, const int& argumentsSize
 	wchar_t data = writeData[0];
 	gHandleStore.write(pstr[r1], data);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 
-	if (createdWrite)
+	if (createdWrite) {
 		delete writeVar;
+		writeVar = nullptr;
+	}
 }
 
 void libraryTell(std::vector<std::wstring> &arguments, const int &argumentsSize)
@@ -425,8 +462,10 @@ void libraryTell(std::vector<std::wstring> &arguments, const int &argumentsSize)
 
 	returnData[returnVarInt] = gHandleStore.tellg(pstr[r1]);
 
-	if (createdString)
+	if (createdString) {
 		delete stringVar;
+		stringVar = nullptr;
+	}
 }
 
 #endif

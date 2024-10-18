@@ -77,6 +77,7 @@ void executeKeywordJoin(const int &tokensSize, std::vector<std::wstring> &tokens
 			if (createdV)
 			{
 				delete v;
+				v = nullptr;
 			}
 		}
 	}

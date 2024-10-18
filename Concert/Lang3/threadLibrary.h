@@ -57,8 +57,10 @@ void libraryThreadSleep(std::vector<std::wstring>& arguments, const int& argumen
 	}
 	}
 
-	if (createdInt)
+	if (createdInt) {
 		delete intVar;
+		intVar = nullptr;
+	}
 }
 
 #endif

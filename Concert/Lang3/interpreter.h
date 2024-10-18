@@ -390,7 +390,9 @@ void exec(int &line, bool detached, CodeStore* myCodeStore, WorkspaceStore* myWo
 	if (detached)
 	{
 		delete myCodeStore;
+		myCodeStore = nullptr;
 		delete myWorkspaceStore;
+		myWorkspaceStore = nullptr;
 		threadCount--;
 	}
 }

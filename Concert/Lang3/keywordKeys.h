@@ -37,6 +37,7 @@ void executeKeywordKeys(const int& tokensSize, std::vector<std::wstring>& tokens
 	if (createdVar == true)
 	{
 		delete nameVar;
+		nameVar = nullptr;
 	}
 }
 

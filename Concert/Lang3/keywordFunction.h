@@ -90,8 +90,10 @@ void executeKeywordFunction(const int &tokensSize, std::vector<std::wstring> &to
 					}
 				}
 
-				if (createdV)
+				if (createdV) {
 					delete v;
+					v = nullptr;
+				}
 			}
 		}
 	}

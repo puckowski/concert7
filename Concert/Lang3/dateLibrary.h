@@ -49,6 +49,7 @@ void libraryDateLocaltime(std::vector<std::wstring>& arguments, const int& argum
 
 	if (createdVar) {
 		delete formatVar;
+        formatVar = nullptr;
 	}
 }
 
@@ -99,6 +100,7 @@ void libraryDateLocaltimeNs(std::vector<std::wstring>& arguments, const int& arg
 
     if (createdVar) {
         delete formatVar;
+        formatVar = nullptr;
     }
 }
 

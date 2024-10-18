@@ -57,6 +57,7 @@ void declareIntVariable(const int &tokensSize, std::vector<std::wstring> &tokens
 				if (createdVar)
 				{
 					delete dynamicNameVar;
+					dynamicNameVar = nullptr;
 				}
 			}
 			else
@@ -113,6 +114,7 @@ void declareIntVariable(const int &tokensSize, std::vector<std::wstring> &tokens
 				if (createdVar)
 				{
 					delete dynamicNameVar;
+					dynamicNameVar = nullptr;
 				}
 			}
 			else
@@ -128,6 +130,7 @@ void declareIntVariable(const int &tokensSize, std::vector<std::wstring> &tokens
 		if (createdVar == true)
 		{
 			delete var;
+			var = nullptr;
 		}
 	}
 	else if (tokensSize >= INITIALIZE_TOKEN_COUNT_MINIMUM)
@@ -153,6 +156,7 @@ void declareIntVariable(const int &tokensSize, std::vector<std::wstring> &tokens
 			if (createdVar == true)
 			{
 				delete var;
+				var = nullptr;
 			}
 		}
 	}

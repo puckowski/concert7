@@ -45,6 +45,7 @@ void executeKeywordExec(std::vector<std::wstring> &tokens)
 	if (created)
 	{
 		delete v;
+		v = nullptr;
 	}
 }
 

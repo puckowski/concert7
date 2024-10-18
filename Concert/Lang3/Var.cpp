@@ -249,8 +249,10 @@ Var::~Var()
 		ObjectStore** objArray = static_cast<ObjectStore**>(data);
 		for (int i = 0; i < size; ++i) {
 			delete objArray[i];
+			objArray[i] = nullptr;
 		}
 		delete objArray;
+		objArray = nullptr;
 
 		break;
 	}
@@ -305,8 +307,10 @@ void Var::deleteData()
 		ObjectStore** objArray = static_cast<ObjectStore**>(data);
 		for (int i = 0; i < size; ++i) {
 			delete objArray[i];
+			objArray[i] = nullptr;
 		}
 		delete objArray;
+		objArray = nullptr;
 
 		break;
 	}

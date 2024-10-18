@@ -21,6 +21,7 @@ void executeKeywordSystem(const int &tokensSize, std::vector<std::wstring> &toke
 		if (created)
 		{
 			delete v;
+			v = nullptr;
 		}
 	}
 }

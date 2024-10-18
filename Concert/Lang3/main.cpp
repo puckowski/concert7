@@ -113,21 +113,28 @@ int main(int argc, char *argv[])
 	}
 
 	delete gWorkspaceStore;
+	gWorkspaceStore = nullptr;
 
 	delete stringLibraryFunctions;
+	stringLibraryFunctions = nullptr;
 	delete mathLibraryFunctions;
+	mathLibraryFunctions = nullptr;
 	delete fileLibraryFunctions;
+	fileLibraryFunctions = nullptr;
 
 	delete codeStore;
+	codeStore = nullptr;
 
 	for (auto mutex : lockMap)
 	{
 		delete mutex.second;
+		mutex.second = nullptr;
 	}
 
 	gHandleStore.clearStore();
 
 	delete returnVar;
+	returnVar = nullptr;
 
 	//std::cin.get();
 }

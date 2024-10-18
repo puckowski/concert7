@@ -56,6 +56,7 @@ void libraryImageWriteChannelData(std::vector<std::wstring>& arguments, const in
 		if (createdQualityVar)
 		{
 			delete v3;
+			v3 = nullptr;
 		}
 	}
 
@@ -183,10 +184,12 @@ void libraryImageWriteChannelData(std::vector<std::wstring>& arguments, const in
 
 	if (createdVar) {
 		delete v;
+		v = nullptr;
 	}
 
 	if (createdFileVar) {
 		delete v2;
+		v2 = nullptr;
 	}
 }
 
@@ -390,10 +393,12 @@ void libraryImageReadChannelData(std::vector<std::wstring>& arguments, const int
 
 	if (createdVar) {
 		delete v;
+		v = nullptr;
 	}
 
 	if (createdFileVar) {
 		delete v2;
+		v2 = nullptr;
 	}
 }
 

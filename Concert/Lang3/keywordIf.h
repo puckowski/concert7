@@ -315,11 +315,13 @@ void executeKeywordIf(std::vector<std::wstring> &tokens)
 	if (createdLhs)
 	{
 		delete lhsVar;
+		lhsVar = nullptr;
 	}
 
 	if (createdRhs)
 	{
 		delete rhsVar;
+		rhsVar = nullptr;
 	}
 }
 
