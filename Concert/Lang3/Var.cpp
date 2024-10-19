@@ -220,6 +220,7 @@ Var::~Var()
 	{
 		int* intArray = static_cast<int*>(data);
 		delete[] intArray;
+		intArray = nullptr;
 
 		break;
 	}
@@ -227,6 +228,7 @@ Var::~Var()
 	{
 		long long int* longLongArray = static_cast<long long int*>(data);
 		delete[] longLongArray;
+		longLongArray = nullptr;
 
 		break;
 	}
@@ -234,6 +236,7 @@ Var::~Var()
 	{
 		double* doubleArray = static_cast<double*>(data);
 		delete[] doubleArray;
+		doubleArray = nullptr;
 
 		break;
 	}
@@ -241,6 +244,7 @@ Var::~Var()
 	{
 		std::wstring* stringArray = static_cast<std::wstring*>(data);
 		delete[] stringArray;
+		stringArray = nullptr;
 
 		break;
 	}
@@ -278,6 +282,7 @@ void Var::deleteData()
 	{
 		int* intArray = static_cast<int*>(data);
 		delete[] intArray;
+		intArray = nullptr;
 
 		break;
 	}
@@ -285,6 +290,7 @@ void Var::deleteData()
 	{
 		long long int* longLongArray = static_cast<long long int*>(data);
 		delete[] longLongArray;
+		longLongArray = nullptr;
 
 		break;
 	}
@@ -292,6 +298,7 @@ void Var::deleteData()
 	{
 		double* doubleArray = static_cast<double*>(data);
 		delete[] doubleArray;
+		doubleArray = nullptr;
 
 		break;
 	}
@@ -299,6 +306,7 @@ void Var::deleteData()
 	{
 		std::wstring* stringArray = static_cast<std::wstring*>(data);
 		delete[] stringArray;
+		stringArray = nullptr;
 
 		break;
 	}

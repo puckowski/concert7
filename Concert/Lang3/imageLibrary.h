@@ -121,7 +121,9 @@ void libraryImageWriteChannelData(std::vector<std::wstring>& arguments, const in
 		}
 
 		delete[] rgbImage;
+		rgbImage = nullptr;
 		delete[] cstr;
+		cstr = nullptr;
 	}
 	else if (endsWith(lowercaseFileName, L".png"))
 	{
@@ -179,7 +181,9 @@ void libraryImageWriteChannelData(std::vector<std::wstring>& arguments, const in
 		}
 
 		delete[] rgbImage;
+		rgbImage = nullptr;
 		delete[] cstr;
+		cstr = nullptr;
 	}
 
 	if (createdVar) {
@@ -287,10 +291,14 @@ void libraryImageReadChannelData(std::vector<std::wstring>& arguments, const int
 			pstrData[0] = height;
 
 			delete[] redChannel;
+			redChannel = nullptr;
 			delete[] greenChannel;
+			greenChannel = nullptr;
 			delete[] blueChannel;
+			blueChannel = nullptr;
 
 			delete[] cstr;
+			cstr = nullptr;
 		}
 	}
 	else if (endsWith(lowercaseFileName, L".png"))
@@ -383,11 +391,16 @@ void libraryImageReadChannelData(std::vector<std::wstring>& arguments, const int
 			pstrData[0] = height;
 
 			delete[] redChannel;
+			redChannel = nullptr;
 			delete[] greenChannel;
+			greenChannel = nullptr;
 			delete[] blueChannel;
+			blueChannel = nullptr;
 			delete[] alphaChannel;
+			alphaChannel = nullptr;
 
 			delete[] cstr;
+			cstr = nullptr;
 		}
 	}
 
