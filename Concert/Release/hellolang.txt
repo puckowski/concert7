@@ -1,0 +1,7 @@
+string hw = "你好世界";
+
+println hw;
+
+hw += " and hello world";
+
+println hw;

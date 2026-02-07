@@ -1,0 +1,33 @@
+import string;
+import math;
+import io;
+import regex;
+import thread;
+import date;
+import image;
+
+string imgData2 = "imgData2";
+call read_channel_data : "1Hill.png", imgData2;
+
+int red = 0;
+int imageChannelLength = imgData2.width * imgData2.height;
+println "Width x Height: ", imgData2.width, " ", imgData2.height;
+println "Image channel length: ", imageChannelLength;
+int redLength = 0;
+sizeof imgData2.red redLength;
+println "Size of red channel: ", redLength;
+
+while red < imageChannelLength;
+	print imgData2.red[red], ", ";
+	imgData2.red[red] = 5;
+	imgData2.width  =0;
+	print imgData2.red[imgData2.red], ", ";
+	red += 1;
+	
+	if red > 100;
+		break;
+	end;
+end;
+
+println "";
+

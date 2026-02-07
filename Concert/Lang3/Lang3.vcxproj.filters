@@ -227,6 +227,9 @@
     <ClInclude Include="lodepng.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="keywordAddress.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="smath.txt">

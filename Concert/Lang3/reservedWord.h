@@ -42,7 +42,8 @@ enum ReservedWord
 	TYPE_OBJECT = 41,
 	KEYWORD_KEYS = 42,
 	KEYWORD_ALIAS = 43,
-	KEYWORD_REASSIGN = 44
+	KEYWORD_REASSIGN = 44,
+	KEYWORD_ADDRESS = 45
 };
 
 enum Operator
@@ -102,7 +103,8 @@ const std::map<const std::wstring, const ReservedWord> RESERVED_WORD_MAP =
 	{ L"object",     TYPE_OBJECT },
 	{ L"keys",       KEYWORD_KEYS },
 	{ L"alias",      KEYWORD_ALIAS },
-	{ L"reassign",   KEYWORD_REASSIGN }
+	{ L"reassign",   KEYWORD_REASSIGN },
+	{ L"address",    KEYWORD_ADDRESS }
 };
 const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::wstring, const ReservedWord>>>> RESERVED_WORD_MAP_END = RESERVED_WORD_MAP.end();
 

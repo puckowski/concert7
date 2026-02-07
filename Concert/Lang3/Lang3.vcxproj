@@ -151,6 +151,7 @@
     <ClInclude Include="imageLibrary.h" />
     <ClInclude Include="intDeclaration.h" />
     <ClInclude Include="interpreter.h" />
+    <ClInclude Include="keywordAddress.h" />
     <ClInclude Include="keywordAlias.h" />
     <ClInclude Include="keywordBreak.h" />
     <ClInclude Include="keywordCall.h" />

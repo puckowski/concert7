@@ -48,6 +48,7 @@
 #include "keywordKeys.h"
 #include "keywordAlias.h"
 #include "keywordReassign.h"
+#include "keywordAddress.h"
 
 void execLoop(std::vector<std::wstring> &tokens)
 {
@@ -290,6 +291,12 @@ void execLoop(std::vector<std::wstring> &tokens)
 			case KEYWORD_REASSIGN:
 			{
 				executeKeywordReassign(tokens);
+
+				break;
+			}
+			case KEYWORD_ADDRESS:
+			{
+				executeKeywordAddress(tokens);
 
 				break;
 			}

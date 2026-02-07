@@ -208,7 +208,7 @@ C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\objectDeclaration.h(126,19
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\objectDeclaration.h(80,8): message : see declaration of 'var' (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\keywordKeys.h(32,20): warning C4018: '<': signed/unsigned mismatch (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\keywordKeys.h(11,36): warning C4100: 'tokensSize': unreferenced formal parameter (compiling source file main.cpp)
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\interpreter.h(305,99): warning C4100: 'jumpBackTo': unreferenced formal parameter (compiling source file main.cpp)
+C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\interpreter.h(312,99): warning C4100: 'jumpBackTo': unreferenced formal parameter (compiling source file main.cpp)
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\algorithm(3074,24): warning C4244: '=': conversion from 'int' to 'wchar_t', possible loss of data (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\stringLibrary.h(319,126): message : see reference to function template instantiation '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,int(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)' being compiled
           with
@@ -271,13 +271,8 @@ C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\stb_image_write.h(1231,14)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\stb_image_write.h(1247,14): warning C4505: 'stbi_write_png_to_func': unreferenced function with internal linkage has been removed (compiling source file main.cpp)
 C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\stb_image_write.h(1625,14): warning C4505: 'stbi_write_jpg_to_func': unreferenced function with internal linkage has been removed (compiling source file main.cpp)
   Generating code
-  Previous IPDB not found, fall back to full compilation.
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\ObjectStore.cpp(510): warning C4701: potentially uninitialized local variable 'secondQuoteIndex' used
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\ObjectStore.cpp(588): warning C4701: potentially uninitialized local variable 'currVarIndex' used
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\VarStore.cpp(604): warning C4701: potentially uninitialized local variable 'secondQuoteIndex' used
-C:\Users\fooba\Downloads\cc788\concert7\Concert\Lang3\VarStore.cpp(687): warning C4701: potentially uninitialized local variable 'currVarIndex' used
-  All 4964 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  103 of 4965 functions ( 2.1%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    25 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Lang3.vcxproj -> C:\Users\fooba\Downloads\cc788\concert7\Concert\Release\Lang3.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
