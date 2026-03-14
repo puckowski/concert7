@@ -5,3 +5,11 @@ println hw;
 hw += " and hello world";
 
 println hw;
+
+int x = 5;
+
+int addr = 0;
+
+address x addr;
+
+println addr;
